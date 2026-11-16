@@ -11,25 +11,39 @@ $PluginSrc = Join-Path $RepoDir "plugins\everything-antigravity"
 
 $UserHome = [System.Environment]::GetFolderPath('UserProfile')
 $AntigravitySkills = Join-Path $UserHome ".gemini\antigravity\skills"
+$AntigravityConfigSkills = Join-Path $UserHome ".gemini\config\skills"
 $AntigravityPlugins = Join-Path $UserHome ".gemini\config\plugins"
 
 New-Item -ItemType Directory -Force -Path $AntigravitySkills | Out-Null
+New-Item -ItemType Directory -Force -Path $AntigravityConfigSkills | Out-Null
 New-Item -ItemType Directory -Force -Path $AntigravityPlugins | Out-Null
+
+function Create-SafeLink($linkPath, $targetPath) {
+    if (Test-Path $linkPath) {
+        Remove-Item -Recurse -Force $linkPath
+    }
+    try {
+        New-Item -ItemType SymbolicLink -Path $linkPath -Target $targetPath | Out-Null
+    } catch {
+        # Fallback to Junction if developer mode / symlink privileges are disabled
+        New-Item -ItemType Junction -Path $linkPath -Target $targetPath | Out-Null
+    }
+}
 
 Write-Host "[1/2] Linking skills to Google Antigravity..." -ForegroundColor Yellow
 if (Test-Path $SkillsSrc) {
     Get-ChildItem -Directory -Path $SkillsSrc | ForEach-Object {
-        $target = Join-Path $AntigravitySkills $_.Name
-        if (Test-Path $target) { Remove-Item -Recurse -Force $target }
-        New-Item -ItemType SymbolicLink -Path $target -Target $_.FullName | Out-Null
+        $target1 = Join-Path $AntigravitySkills $_.Name
+        $target2 = Join-Path $AntigravityConfigSkills $_.Name
+        Create-SafeLink $target1 $_.FullName
+        Create-SafeLink $target2 $_.FullName
     }
 }
 
 Write-Host "[2/2] Linking plugin to Google Antigravity plugins..." -ForegroundColor Yellow
 if (Test-Path $PluginSrc) {
     $pluginTarget = Join-Path $AntigravityPlugins "everything-antigravity"
-    if (Test-Path $pluginTarget) { Remove-Item -Recurse -Force $pluginTarget }
-    New-Item -ItemType SymbolicLink -Path $pluginTarget -Target $PluginSrc | Out-Null
+    Create-SafeLink $pluginTarget $PluginSrc
 }
 
 Write-Host "=========================================================" -ForegroundColor Green

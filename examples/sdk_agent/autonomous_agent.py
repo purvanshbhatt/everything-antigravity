@@ -3,9 +3,21 @@ Autonomous Agent Example using Antigravity Orchestrator & SDK patterns.
 Demonstrates subagent task dispatching, security inspection, and lifecycle telemetry.
 """
 
+import sys
+from pathlib import Path
 import asyncio
-from src.orchestrator import AntigravityOrchestrator
-from src.agent_shield import AgentShield
+
+# Ensure repository root is on sys.path
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+try:
+    from src.orchestrator import AntigravityOrchestrator
+    from src.agent_shield import AgentShield
+except ImportError:
+    from orchestrator import AntigravityOrchestrator
+    from agent_shield import AgentShield
 
 
 async def run_agent_workflow():

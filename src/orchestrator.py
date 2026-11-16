@@ -10,14 +10,15 @@ import asyncio
 from typing import Dict, Any, List, Optional, Callable
 
 # Attempt import of official google-antigravity SDK, provide fallback mock for tests/CLI
+# NOTE: Do NOT import Python stdlib 'antigravity', which is an xkcd easter egg module.
 try:
-    import antigravity as agy
+    from google import antigravity as agy
     HAS_SDK = True
-except ImportError:
+except (ImportError, AttributeError):
     try:
         import google_antigravity as agy
         HAS_SDK = True
-    except ImportError:
+    except (ImportError, AttributeError):
         HAS_SDK = False
         agy = None
 

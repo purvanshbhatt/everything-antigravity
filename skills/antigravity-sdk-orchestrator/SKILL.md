@@ -11,15 +11,18 @@ Develop and deploy autonomous agents using Google Antigravity (`google-antigravi
 ## SDK Architecture & Patterns
 1. **Agent Setup**:
    ```python
-   from antigravity import LocalAgentConfig, Agent
+   from google.antigravity import Agent, LocalAgentConfig, types
 
    config = LocalAgentConfig(
-       model="gemini-2.0-flash",
-       agent_behavior="autonomous",
-       max_subagent_depth=3
+       model="gemini-3.8-flash",
+       capabilities=types.CapabilitiesConfig(
+           agent_behavior=types.AgentBehavior.AUTONOMOUS,
+           max_subagent_depth=3,
+       ),
    )
-   async with Agent(config) as agent:
-       response = await agent.run("Implement feature X with full TDD")
+   async with Agent(config=config) as agent:
+       conversation = await agent.create_conversation()
+       response = await conversation.chat("Implement feature X with full TDD")
    ```
 2. **Custom Tool Binding**:
    - Register Python functions as agent tools with clean typing and docstrings.

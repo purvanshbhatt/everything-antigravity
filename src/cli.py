@@ -6,16 +6,25 @@ Central command-line interface for managing, verifying, and running EAG componen
 import os
 import sys
 import json
+import shutil
 import argparse
 from pathlib import Path
 from typing import Dict, Any, List
 
-# Local imports
-from src.agent_shield import AgentShield
-from src.compactor import ContextCompactor
-from src.orchestrator import AntigravityOrchestrator
-
+# Ensure repository root is in sys.path
 ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+# Local imports with robust fallbacks
+try:
+    from src.agent_shield import AgentShield
+    from src.compactor import ContextCompactor
+    from src.orchestrator import AntigravityOrchestrator
+except ImportError:
+    from agent_shield import AgentShield
+    from compactor import ContextCompactor
+    from orchestrator import AntigravityOrchestrator
 
 
 def get_repo_stats() -> Dict[str, Any]:
@@ -90,7 +99,7 @@ def cmd_verify(args):
     # 2. Verify Skills (frontmatter 'name' and 'description')
     skills_dir = ROOT_DIR / "skills"
     if skills_dir.exists():
-        for sdir in skills_dir.iterdir():
+        for sdir in sorted(skills_dir.iterdir()):
             if sdir.is_dir():
                 skill_md = sdir / "SKILL.md"
                 if not skill_md.exists():
@@ -113,7 +122,7 @@ def cmd_verify(args):
     # 3. Verify Subagents
     agents_dir = ROOT_DIR / "agents"
     if agents_dir.exists():
-        for agent_file in agents_dir.glob("*.md"):
+        for agent_file in sorted(agents_dir.glob("*.md")):
             content = agent_file.read_text(encoding="utf-8")
             if len(content.strip()) < 50:
                 errors.append(f"Agent description too short/empty: {agent_file.name}")
@@ -144,8 +153,14 @@ def cmd_shield(args):
         text = p.read_text(encoding="utf-8", errors="ignore")
     elif args.text:
         text = args.text
-    else:
+    elif not sys.stdin.isatty():
         text = sys.stdin.read()
+    else:
+        text = ""
+
+    if not text and not args.cmd:
+        print("Error: No input provided for AgentShield. Supply --text, --file, --cmd, or pipe input via stdin.")
+        sys.exit(1)
 
     result = shield.evaluate_payload(text, command=args.cmd)
     print(json.dumps(result, indent=2))
@@ -165,8 +180,14 @@ def cmd_compact(args):
         text = p.read_text(encoding="utf-8", errors="ignore")
     elif args.text:
         text = args.text
-    else:
+    elif not sys.stdin.isatty():
         text = sys.stdin.read()
+    else:
+        text = ""
+
+    if not text.strip():
+        print("Error: No text provided for compaction. Supply --text, --file, or pipe input via stdin.")
+        sys.exit(1)
 
     result = compactor.compact(text)
     if args.summary_only:
@@ -213,11 +234,15 @@ def cmd_list_agents(args):
 
 def cmd_install(args):
     """Installs EAG skills and configs into Antigravity user directories."""
-    user_skills_dir = Path.home() / ".gemini" / "antigravity" / "skills"
+    user_skills_dirs = [
+        Path.home() / ".gemini" / "antigravity" / "skills",
+        Path.home() / ".gemini" / "config" / "skills"
+    ]
     user_plugins_dir = Path.home() / ".gemini" / "config" / "plugins"
 
     print("🔧 Installing Everything Antigravity...")
-    user_skills_dir.mkdir(parents=True, exist_ok=True)
+    for usd in user_skills_dirs:
+        usd.mkdir(parents=True, exist_ok=True)
     user_plugins_dir.mkdir(parents=True, exist_ok=True)
 
     # Link skills
@@ -226,25 +251,29 @@ def cmd_install(args):
     if skills_src.exists():
         for sdir in skills_src.iterdir():
             if sdir.is_dir():
-                target = user_skills_dir / sdir.name
-                if target.exists() or target.is_symlink():
+                for usd in user_skills_dirs:
+                    target = usd / sdir.name
                     if target.is_symlink() or target.is_file():
                         target.unlink()
-                try:
-                    os.symlink(sdir, target)
-                    linked_count += 1
-                except Exception as e:
-                    print(f"Warning: could not symlink {sdir.name}: {e}")
+                    elif target.is_dir():
+                        shutil.rmtree(target)
+                    try:
+                        os.symlink(sdir, target)
+                        if usd == user_skills_dirs[0]:
+                            linked_count += 1
+                    except Exception as e:
+                        print(f"Warning: could not symlink {sdir.name} into {usd}: {e}")
 
-    print(f"✅ Successfully linked {linked_count} skills into {user_skills_dir}")
+    print(f"✅ Successfully linked {linked_count} skills into {user_skills_dirs[0]}")
 
     # Link plugin
     plugin_src = ROOT_DIR / "plugins" / "everything-antigravity"
     plugin_target = user_plugins_dir / "everything-antigravity"
     if plugin_src.exists():
-        if plugin_target.exists() or plugin_target.is_symlink():
-            if plugin_target.is_symlink() or plugin_target.is_file():
-                plugin_target.unlink()
+        if plugin_target.is_symlink() or plugin_target.is_file():
+            plugin_target.unlink()
+        elif plugin_target.is_dir():
+            shutil.rmtree(plugin_target)
         try:
             os.symlink(plugin_src, plugin_target)
             print(f"✅ Successfully linked plugin into {plugin_target}")
