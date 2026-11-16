@@ -1,7 +1,7 @@
 .PHONY: test verify status shield compact install clean
 
 test:
-	PYTHONPATH=. python3 -m pytest tests/ -v
+	python3 -m pytest tests/ -v
 
 verify:
 	python3 src/cli.py verify
