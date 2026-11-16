@@ -23,6 +23,8 @@ dist/
 
 # IDE & OS files
 .DS_Store
+*.tgz
+*.tar.gz
 Thumbs.db
 .idea/
 .vscode/

@@ -2,16 +2,35 @@
   "name": "everything-antigravity",
   "version": "1.0.0",
   "description": "The Agent Harness Operating System & Performance Optimization Suite for Google Antigravity, Gemini, and Agentic Engineering",
-  "main": "src/cli.py",
+  "main": "index.js",
   "bin": {
-    "eag": "./bin/eag.sh"
+    "eag": "./bin/eag.js",
+    "everything-antigravity": "./bin/eag.js"
   },
   "scripts": {
-    "test": "pytest tests/",
+    "test": "pytest tests/ && node -e \"const eag = require('./index.js'); console.log('Skills loaded:', eag.getSkills().length);\"",
     "verify": "python3 src/cli.py verify",
     "shield": "python3 src/cli.py shield",
-    "status": "python3 src/cli.py status"
+    "status": "python3 src/cli.py status",
+    "prepare": "chmod +x bin/eag.js bin/eag.sh"
   },
+  "files": [
+    "bin",
+    "src/*.py",
+    "skills",
+    "agents",
+    "commands",
+    "rules",
+    "mcp-configs",
+    "plugins",
+    ".antigravity",
+    "index.js",
+    "install.sh",
+    "install.ps1",
+    "LICENSE",
+    "README.md",
+    "pyproject.toml"
+  ],
   "keywords": [
     "antigravity",
     "google-antigravity",
@@ -23,12 +42,20 @@
     "game-dev",
     "multimedia",
     "marketing",
-    "security"
+    "security",
+    "agent-harness"
   ],
-  "author": "Antigravity Open Source Community",
+  "author": "Purvansh Bhatt",
   "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/google-antigravity-community/everything-antigravity"
-  }
+    "url": "git+https://github.com/purvanshbhatt/everything-antigravity.git"
+  },
+  "bugs": {
+    "url": "https://github.com/purvanshbhatt/everything-antigravity/issues"
+  },
+  "homepage": "https://github.com/purvanshbhatt/everything-antigravity#readme"
 }
