@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "gcp-bigquery": {
+      "command": "python3",
+      "args": ["-m", "google.cloud.bigquery.mcp"]
+    },
+    "firebase-tools": {
+      "command": "npx",
+      "args": ["-y", "firebase-mcp-server"]
+    }
+  }
+}

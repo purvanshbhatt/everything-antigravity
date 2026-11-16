@@ -1,0 +1,51 @@
+{
+  "name": "everything-antigravity-marketplace",
+  "displayName": "Everything Antigravity (EAG) Marketplace",
+  "description": "Curated skills, subagents, and tools for Google Antigravity and Agentic Engineering",
+  "version": "1.0.0",
+  "homepage": "https://github.com/google-antigravity-community/everything-antigravity",
+  "plugins": [
+    {
+      "id": "everything-antigravity/plugin/core",
+      "name": "everything-antigravity",
+      "displayName": "Everything Antigravity Core Suite",
+      "version": "1.0.0",
+      "description": "Comprehensive agent harness optimization suite covering marketing, security, engineering, game dev, and video/image multimedia for Google Antigravity.",
+      "category": "productivity",
+      "author": "Antigravity Community",
+      "repository": "https://github.com/google-antigravity-community/everything-antigravity",
+      "skills": [
+        "brand-discovery",
+        "growth-marketing",
+        "seo-audit",
+        "copywriting",
+        "pricing-strategy",
+        "agent-shield",
+        "security-audit",
+        "credential-sanitizer",
+        "sandbox-isolation",
+        "software-architecture",
+        "api-design",
+        "backend-patterns",
+        "flutter-mobile",
+        "cloud-devops",
+        "database-design",
+        "tdd-testing",
+        "safe-refactor",
+        "game-architecture",
+        "godot-engine",
+        "threejs-webgl",
+        "procedural-generation",
+        "game-audio-sfx",
+        "remotion-motion-graphics",
+        "ffmpeg-multimedia",
+        "ai-image-generation",
+        "image-processing-canvas",
+        "video-production-pipeline",
+        "antigravity-sdk-orchestrator",
+        "context-compaction",
+        "subagent-delegation"
+      ]
+    }
+  ]
+}

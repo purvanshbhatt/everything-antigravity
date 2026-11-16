@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "name": "everything-antigravity",
+  "harness": "google-antigravity",
+  "settings": {
+    "autoCompactionThreshold": 0.85,
+    "securityGuardrails": true,
+    "subagentDelegationDepth": 3,
+    "allowWorkspaceToolExec": true,
+    "defaultAgentBehavior": "autonomous"
+  },
+  "plugins": {
+    "everything-antigravity": {
+      "enabled": true,
+      "installedFrom": {
+        "id": "everything-antigravity/plugin/core",
+        "marketplace": "everything-antigravity-marketplace",
+        "version": "1.0.0"
+      }
+    }
+  }
+}

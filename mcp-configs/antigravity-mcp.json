@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "eag-guardrail-mcp": {
+      "command": "python3",
+      "args": ["-m", "src.agent_shield", "--stdio"],
+      "env": {
+        "EAG_MODE": "strict"
+      }
+    },
+    "filesystem-mcp": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
+    },
+    "memory-mcp": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "everything-antigravity",
+  "version": "1.0.0",
+  "description": "The Agent Harness Operating System & Performance Optimization Suite for Google Antigravity, Gemini, and Agentic Engineering",
+  "main": "src/cli.py",
+  "bin": {
+    "eag": "./bin/eag.sh"
+  },
+  "scripts": {
+    "test": "pytest tests/",
+    "verify": "python3 src/cli.py verify",
+    "shield": "python3 src/cli.py shield",
+    "status": "python3 src/cli.py status"
+  },
+  "keywords": [
+    "antigravity",
+    "google-antigravity",
+    "gemini",
+    "agentic-engineering",
+    "mcp",
+    "subagents",
+    "skills",
+    "game-dev",
+    "multimedia",
+    "marketing",
+    "security"
+  ],
+  "author": "Antigravity Open Source Community",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/google-antigravity-community/everything-antigravity"
+  }
+}
