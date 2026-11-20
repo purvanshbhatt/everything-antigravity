@@ -8,7 +8,7 @@
     "everything-antigravity": "bin/eag.js"
   },
   "scripts": {
-    "test": "node --test \"tests/js/*.test.js\"",
+    "test": "node scripts/run-tests.js",
     "validate": "node bin/eag.js validate",
     "validate:strict": "node bin/eag.js validate --strict",
     "catalog": "node scripts/catalog.js",
