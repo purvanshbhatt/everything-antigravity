@@ -1,35 +1,57 @@
-name: Everything Antigravity CI
+name: CI
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  validate-and-test:
-    runs-on: ubuntu-latest
+  node:
+    name: Node ${{ matrix.node }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
-        python-version: ["3.10", "3.11", "3.12"]
-
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: [18, 20, 22]
     steps:
       - uses: actions/checkout@v4
-
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: ${{ matrix.python-version }}
-
-      - name: Install dependencies
+          node-version: ${{ matrix.node }}
+      - name: Validate skills, agents, rules and manifests
+        run: node bin/eag.js validate
+      - name: Unit and integration tests (hooks, installer, CLI)
+        run: npm test
+      - name: Catalog is up to date
+        if: matrix.os == 'ubuntu-latest' && matrix.node == 20
         run: |
-          python -m pip install --upgrade pip
-          pip install pytest pyyaml click rich
-
-      - name: Verify EAG Integrity
+          node scripts/catalog.js
+          git diff --exit-code -- docs/CATALOG.md
+      - name: Install into a throwaway home and run doctor
+        shell: bash
         run: |
-          python src/cli.py verify
-
-      - name: Run Test Suite
+          HOME_DIR="$(mktemp -d)"
+          node bin/eag.js install --yes --home "$HOME_DIR"
+          node bin/eag.js doctor --home "$HOME_DIR"
+      - name: No secrets in the repository
+        if: matrix.os == 'ubuntu-latest' && matrix.node == 20
         run: |
-          PYTHONPATH=. pytest tests/ -v
+          git ls-files -z -- ':!tests' | xargs -0 node -e '
+            const fs = require("fs");
+            const { scanSecrets } = require("./scripts/lib/shield");
+            let bad = 0;
+            for (const f of process.argv.slice(1)) {
+              const hits = scanSecrets(fs.readFileSync(f, "utf8"));
+              if (hits.length) { bad++; console.log(`${f}: ${hits.map((h) => h.id).join(", ")}`); }
+            }
+            process.exit(bad ? 1 : 0);
+          '

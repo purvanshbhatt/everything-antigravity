@@ -1,31 +1,19 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Pytest & Test artifacts
-.pytest_cache/
-.coverage
-htmlcov/
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-
-# Distribution / packaging
-build/
-dist/
-*.egg-info/
-.eggs/
-
-# IDE & OS files
-.DS_Store
+# Dependencies and packaging
+node_modules/
 *.tgz
-*.tar.gz
-Thumbs.db
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Logs and coverage
+*.log
+coverage/
+
+# Editors and OS files
 .idea/
 .vscode/
 *.swp
+.DS_Store
+Thumbs.db

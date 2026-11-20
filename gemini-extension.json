@@ -1,0 +1,6 @@
+{
+  "name": "everything-antigravity",
+  "version": "2.0.0",
+  "description": "Skills, workflows, rules and guard hooks for Gemini CLI from the Everything Antigravity pack.",
+  "contextFileName": "rules/AGENTS.md"
+}

@@ -1,54 +1,58 @@
 {
   "name": "everything-antigravity",
-  "version": "1.0.0",
-  "description": "The Agent Harness Operating System & Performance Optimization Suite for Google Antigravity, Gemini, and Agentic Engineering",
+  "version": "2.0.0",
+  "description": "The one-stop performance pack for Google Antigravity and Gemini CLI: 79 skills and slash-command workflows, 23 subagents, glob-scoped rules, and verified hooks for guarding, memory, continuous learning and verify-before-done.",
   "main": "index.js",
   "bin": {
-    "eag": "./bin/eag.js",
-    "everything-antigravity": "./bin/eag.js"
+    "eag": "bin/eag.js",
+    "everything-antigravity": "bin/eag.js"
   },
   "scripts": {
-    "test": "pytest tests/ && node -e \"const eag = require('./index.js'); console.log('Skills loaded:', eag.getSkills().length);\"",
-    "verify": "python3 src/cli.py verify",
-    "shield": "python3 src/cli.py shield",
-    "status": "python3 src/cli.py status",
-    "prepare": "chmod +x bin/eag.js bin/eag.sh"
+    "test": "node --test \"tests/js/*.test.js\"",
+    "validate": "node bin/eag.js validate",
+    "validate:strict": "node bin/eag.js validate --strict",
+    "catalog": "node scripts/catalog.js",
+    "doctor": "node bin/eag.js doctor"
   },
   "files": [
-    "bin",
-    "src/*.py",
+    "bin/eag.js",
+    "scripts/hooks",
+    "scripts/lib",
+    "scripts/catalog.js",
     "skills",
     "agents",
-    "commands",
     "rules",
+    "assets",
+    "hooks.json",
+    "hooks/hooks.json",
+    "plugin.json",
+    "gemini-extension.json",
     "mcp-configs",
-    "plugins",
-    ".antigravity",
+    "docs",
     "index.js",
     "install.sh",
     "install.ps1",
     "LICENSE",
     "README.md",
-    "pyproject.toml"
+    "CHANGELOG.md"
   ],
   "keywords": [
     "antigravity",
     "google-antigravity",
     "gemini",
+    "gemini-cli",
     "agentic-engineering",
-    "mcp",
+    "agent-skills",
     "subagents",
-    "skills",
-    "game-dev",
-    "multimedia",
-    "marketing",
-    "security",
-    "agent-harness"
+    "hooks",
+    "mcp",
+    "tdd",
+    "security"
   ],
   "author": "Purvansh Bhatt",
   "license": "MIT",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "repository": {
     "type": "git",

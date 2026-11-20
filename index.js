@@ -1,73 +1,99 @@
-const fs = require('fs');
-const path = require('path');
-const { spawnSync } = require('child_process');
+'use strict';
+/**
+ * Programmatic API for Everything Antigravity.
+ *
+ *   const eag = require('everything-antigravity');
+ *   eag.classifyCommand('git push --force').level;   // 'ask'
+ *   eag.scanSecrets(fileText);                        // [{ id, severity, line, preview }]
+ *   eag.validateRepo(eag.ROOT).errors;                // []
+ */
+const fs = require('node:fs');
+const path = require('node:path');
+const { classifyCommand, scanSecrets, scanInjection } = require('./scripts/lib/shield');
+const { validateRepo } = require('./scripts/lib/validate');
+const { parseFrontmatter } = require('./scripts/lib/frontmatter');
+const installer = require('./scripts/lib/install');
+const { runDoctor } = require('./scripts/lib/doctor');
+const instincts = require('./scripts/lib/instincts');
+const sessions = require('./scripts/lib/sessions');
 
 const ROOT_DIR = __dirname;
 const SKILLS_DIR = path.join(ROOT_DIR, 'skills');
 const AGENTS_DIR = path.join(ROOT_DIR, 'agents');
-const COMMANDS_DIR = path.join(ROOT_DIR, 'commands');
 const RULES_DIR = path.join(ROOT_DIR, 'rules');
 const MCP_DIR = path.join(ROOT_DIR, 'mcp-configs');
 
-function listDir(dir, filter = () => true) {
+function listDir(dir, filter) {
   try {
-    if (!fs.existsSync(dir)) return [];
-    return fs.readdirSync(dir).filter(filter);
-  } catch (err) {
+    return fs.readdirSync(dir).filter(filter).sort();
+  } catch {
     return [];
   }
 }
 
+/** Skill directory names. */
 function getSkills() {
-  return listDir(SKILLS_DIR, (f) => fs.statSync(path.join(SKILLS_DIR, f)).isDirectory());
+  return listDir(SKILLS_DIR, (f) => fs.existsSync(path.join(SKILLS_DIR, f, 'SKILL.md')));
 }
 
+/** Skills that are slash-command workflows (description ends with "Invoke with /name."). */
+function getWorkflows() {
+  return getSkills().filter((name) => {
+    const { data } = parseFrontmatter(fs.readFileSync(path.join(SKILLS_DIR, name, 'SKILL.md'), 'utf8'));
+    return /Invoke with \//.test((data && data.description) || '');
+  });
+}
+
+/** Agent file names (`*.md`). */
 function getAgents() {
   return listDir(AGENTS_DIR, (f) => f.endsWith('.md'));
 }
 
-function getCommands() {
-  return listDir(COMMANDS_DIR, (f) => f.endsWith('.md'));
-}
-
+/** Rule file names (`*.md`). */
 function getRules() {
   return listDir(RULES_DIR, (f) => f.endsWith('.md'));
 }
 
-function getMcpConfig() {
-  const mcpPath = path.join(MCP_DIR, 'antigravity-mcp.json');
-  if (fs.existsSync(mcpPath)) {
-    return JSON.parse(fs.readFileSync(mcpPath, 'utf8'));
-  }
-  return null;
+/** Bundled MCP server catalog. */
+function getMcpCatalog() {
+  return JSON.parse(fs.readFileSync(path.join(MCP_DIR, 'catalog.json'), 'utf8'));
 }
 
-function runShieldScan(text, options = {}) {
-  const pythonCmd = options.python || (process.platform === 'win32' ? 'python' : 'python3');
-  const cliScript = path.join(ROOT_DIR, 'src', 'cli.py');
-  const result = spawnSync(pythonCmd, [cliScript, 'shield', '--text', text], {
-    encoding: 'utf8',
-    env: Object.assign({}, process.env, { PYTHONPATH: ROOT_DIR })
-  });
-  return {
-    exitCode: result.status,
-    stdout: result.stdout,
-    stderr: result.stderr
-  };
+/** v1-compatible: shield scan without spawning Python. */
+function runShieldScan(text) {
+  const secrets = scanSecrets(text);
+  const injection = scanInjection(text);
+  const passed = secrets.length === 0 && injection.length === 0;
+  return { exitCode: passed ? 0 : 1, passed, secrets, injection };
 }
 
 module.exports = {
-  version: require('./package.json').version,
+  version: installer.readVersion(ROOT_DIR),
+  ROOT: ROOT_DIR,
   ROOT_DIR,
   SKILLS_DIR,
   AGENTS_DIR,
-  COMMANDS_DIR,
   RULES_DIR,
   MCP_DIR,
   getSkills,
+  getWorkflows,
   getAgents,
-  getCommands,
   getRules,
-  getMcpConfig,
-  runShieldScan
+  getMcpCatalog,
+  // v1 aliases
+  getCommands: getWorkflows,
+  getMcpConfig: getMcpCatalog,
+  runShieldScan,
+  // core libraries
+  classifyCommand,
+  scanSecrets,
+  scanInjection,
+  validateRepo,
+  parseFrontmatter,
+  install: installer.install,
+  uninstall: installer.uninstall,
+  planInstall: installer.plan,
+  runDoctor,
+  instincts,
+  sessions,
 };

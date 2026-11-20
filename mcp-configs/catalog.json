@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "note": "Every MCP server adds tool definitions to the agent's context. Add only the servers you use. `eag mcp add <name>` previews by default and writes only with --yes, after backing up your mcp_config.json.",
+  "servers": {
+    "context7": {
+      "description": "Up-to-date library and framework documentation lookup (resolve a library, then query its docs).",
+      "when": "You work with fast-moving libraries and want current APIs instead of training-data guesses.",
+      "config": { "command": "npx", "args": ["-y", "@upstash/context7-mcp"] }
+    },
+    "sequential-thinking": {
+      "description": "Structured step-by-step reasoning scratchpad tool.",
+      "when": "Long multi-step design or debugging sessions where explicit thought revision helps.",
+      "config": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"] }
+    },
+    "memory": {
+      "description": "Local knowledge-graph memory (entities, relations, observations) persisted to a JSON file.",
+      "when": "You want structured long-term memory in addition to EAG instincts and session summaries.",
+      "config": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-memory"] }
+    },
+    "playwright": {
+      "description": "Browser automation through Playwright with accessibility-tree snapshots.",
+      "when": "Scripted E2E exploration outside Antigravity's built-in browser, or in Gemini CLI.",
+      "config": { "command": "npx", "args": ["-y", "@playwright/mcp@latest"] }
+    },
+    "chrome-devtools": {
+      "description": "Chrome DevTools for agents: performance traces, network, console, Lighthouse-style insights.",
+      "when": "Diagnosing web performance (LCP/INP/CLS), network errors and console failures.",
+      "config": { "command": "npx", "args": ["-y", "chrome-devtools-mcp@latest"] }
+    },
+    "firebase": {
+      "description": "Firebase CLI MCP server (projects, apps, rules, deploy status). Antigravity also has an official Firebase plugin.",
+      "when": "Firebase work from Gemini CLI, or when you prefer the CLI server over the plugin.",
+      "config": { "command": "npx", "args": ["-y", "firebase-tools@latest", "mcp"] }
+    },
+    "github": {
+      "description": "GitHub's remote MCP server (issues, PRs, repos, actions).",
+      "when": "Repository automation beyond what the `gh` CLI covers.",
+      "requiresSecret": "GITHUB_PERSONAL_ACCESS_TOKEN",
+      "config": {
+        "url": "https://api.githubcopilot.com/mcp/",
+        "headers": { "Authorization": "Bearer ${GITHUB_PERSONAL_ACCESS_TOKEN}" }
+      }
+    }
+  }
+}

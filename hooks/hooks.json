@@ -1,0 +1,44 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          { "type": "command", "name": "eag-session-start", "command": "node \"${extensionPath}${/}scripts${/}hooks${/}run.js\" session-start --harness gemini", "timeout": 10000 }
+        ]
+      }
+    ],
+    "BeforeTool": [
+      {
+        "matcher": "run_shell_command|write_file|replace",
+        "hooks": [
+          { "type": "command", "name": "eag-guard", "command": "node \"${extensionPath}${/}scripts${/}hooks${/}run.js\" pre-tool --harness gemini", "timeout": 10000 }
+        ]
+      }
+    ],
+    "AfterTool": [
+      {
+        "matcher": "run_shell_command|write_file|replace",
+        "hooks": [
+          { "type": "command", "name": "eag-tracker", "command": "node \"${extensionPath}${/}scripts${/}hooks${/}run.js\" post-tool --harness gemini", "timeout": 20000 }
+        ]
+      }
+    ],
+    "AfterAgent": [
+      {
+        "matcher": "*",
+        "hooks": [
+          { "type": "command", "name": "eag-verify-gate", "command": "node \"${extensionPath}${/}scripts${/}hooks${/}run.js\" stop --harness gemini", "timeout": 15000 }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "*",
+        "hooks": [
+          { "type": "command", "name": "eag-session-end", "command": "node \"${extensionPath}${/}scripts${/}hooks${/}run.js\" session-end --harness gemini", "timeout": 15000 }
+        ]
+      }
+    ]
+  }
+}

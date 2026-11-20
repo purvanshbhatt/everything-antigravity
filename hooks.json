@@ -1,0 +1,35 @@
+{
+  "eag-guard": {
+    "PreToolUse": [
+      {
+        "matcher": "run_command|write_file|write_to_file|replace_file_content|multi_replace_file_content|edit_file",
+        "hooks": [
+          { "type": "command", "command": "node scripts/hooks/run.js pre-tool", "timeout": 10 }
+        ]
+      }
+    ]
+  },
+  "eag-tracker": {
+    "PostToolUse": [
+      {
+        "matcher": "run_command|write_file|write_to_file|replace_file_content|multi_replace_file_content|edit_file",
+        "hooks": [
+          { "type": "command", "command": "node scripts/hooks/run.js post-tool", "timeout": 20 }
+        ]
+      }
+    ]
+  },
+  "eag-memory": {
+    "SessionStart": [
+      { "type": "command", "command": "node scripts/hooks/run.js session-start", "timeout": 10 }
+    ],
+    "Stop": [
+      { "type": "command", "command": "node scripts/hooks/run.js stop", "timeout": 15 }
+    ]
+  },
+  "eag-context": {
+    "PreInvocation": [
+      { "type": "command", "command": "node scripts/hooks/run.js pre-invocation", "timeout": 5 }
+    ]
+  }
+}
