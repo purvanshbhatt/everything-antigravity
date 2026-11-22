@@ -4,10 +4,9 @@ description: >-
   Designs and maintains a sales CRM and pipeline: stages defined by buyer
   commitments with exit criteria, BANT and MEDDICC or MEDDPICC qualification,
   required fields, forecast categories, weighted and coverage forecasting,
-  pipeline velocity, deal reviews and data hygiene in HubSpot, Salesforce,
-  Pipedrive or a Google Sheet. Use when the user sets up pipeline stages,
-  qualifies deals, builds a sales forecast, cleans CRM data or prepares a
-  pipeline review.
+  pipeline velocity, deal reviews and data hygiene in any CRM or a Google
+  Sheet. Use when the user sets up pipeline stages, qualifies deals, builds a
+  sales forecast, cleans CRM data or prepares a pipeline review.
 ---
 
 # CRM and Pipeline

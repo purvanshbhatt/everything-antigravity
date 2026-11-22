@@ -2,11 +2,11 @@
 name: sales-outreach
 description: >-
   Plans and drafts outbound sales outreach: ideal customer profile and
-  personas, trigger-based account lists with sources, tiered research and
-  personalization, multi-touch sequences, cold email structure, deliverability,
-  CAN-SPAM, GDPR, PECR and CASL basics, reply handling and follow-ups. Use when
-  the user wants cold emails, a prospect list or sequence, better reply rates,
-  or a compliance check on outreach. Drafts only; sending needs user confirmation.
+  personas, trigger-based account lists, tiered research and personalization,
+  multi-touch sequences, cold email structure, deliverability, CAN-SPAM, GDPR,
+  PECR and CASL basics, reply handling and follow-ups. Use when the user wants
+  cold emails, a prospect list or sequence, better reply rates, or a
+  compliance check on outreach. Drafts only; sending needs user confirmation.
 ---
 
 # Sales Outreach

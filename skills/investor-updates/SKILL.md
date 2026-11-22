@@ -1,20 +1,21 @@
 ---
 name: investor-updates
 description: >-
-  Writes investor updates and board materials: cadence and audience, a
-  consistent KPI table reconciled to source data, highlights, lowlights and
-  specific asks, cash and runway, board deck structure, pre-reads, decisions
-  and minutes, and delivering bad news early and plainly. Use when the user is
-  drafting an investor update, preparing a board meeting or deck, or deciding
-  how to communicate a missed target. Not financial or legal advice; sending
-  needs user confirmation.
+  Writes investor updates and board materials: a consistent KPI table tied to
+  source data, highlights, lowlights and specific asks, cash and runway, board
+  deck structure, pre-reads, decisions and minutes, and delivering bad news
+  early and plainly. Use when the user is drafting an investor update,
+  preparing a board meeting or deck, or deciding how to communicate a missed
+  target. Not financial or legal advice; sending needs user confirmation.
 ---
 
 # Investor Updates
 
 Regular, consistent, honest updates build the trust that matters when you need
 help or money. Show the same metrics every time, lead with the truth, and make
-every ask specific enough that an investor can act on it today.
+every ask specific enough that an investor can act on it today. This is not
+financial or legal advice: disclosure duties, board resolutions and securities
+questions belong with a qualified lawyer or accountant.
 
 ## When to use
 

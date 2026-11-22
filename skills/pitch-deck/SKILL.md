@@ -2,19 +2,20 @@
 name: pitch-deck
 description: >-
   Builds and critiques fundraising pitch decks: the one-line ask, a headline
-  narrative, slide order from pre-seed to Series A, problem and why-now
-  framing, bottom-up market sizing, traction with defined metrics, business
-  model, honest competition, team, use of funds, design for sent and presented
-  versions, investor red-teaming and data-room readiness. Use when the user is
-  preparing or reviewing a pitch deck or rewriting slides after investor
-  feedback. Not financial or legal advice.
+  narrative, slide order from pre-seed to Series A, bottom-up market sizing,
+  traction with defined metrics, honest competition, use of funds, design for
+  sent and presented versions, investor red-teaming and data-room readiness.
+  Use when the user is preparing or reviewing a pitch deck or rewriting slides
+  after investor feedback. Not financial or legal advice.
 ---
 
 # Pitch Deck
 
 A pitch deck tells one story: a painful problem, a credible solution, evidence
 it is working, and what the money will achieve. Every number must be true,
-defined and traceable; every slide headline states its takeaway.
+defined and traceable; every slide headline states its takeaway. This is not
+financial or legal advice: round structure, terms and securities rules belong
+with a qualified lawyer and financial adviser.
 
 ## When to use
 

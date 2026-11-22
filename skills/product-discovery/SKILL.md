@@ -2,11 +2,11 @@
 name: product-discovery
 description: >-
   Runs product discovery to decide what is worth building: outcome framing,
-  opportunity mapping, recruiting and running customer interviews about past
-  behaviour, synthesis with verbatim evidence, assumption mapping across value,
-  usability, feasibility and viability, and cheap tests such as fake doors,
-  concierge and prototype sessions. Use when the user has an idea to validate,
-  asks how to interview customers, or wants to de-risk a feature before a PRD.
+  opportunity mapping, customer interviews about past behaviour, synthesis
+  with verbatim evidence, assumption mapping across value, usability,
+  feasibility and viability, and cheap tests such as fake doors, concierge and
+  prototype sessions. Use when the user has an idea to validate, asks how to
+  interview customers, or wants to de-risk a feature before a PRD.
 ---
 
 # Product Discovery

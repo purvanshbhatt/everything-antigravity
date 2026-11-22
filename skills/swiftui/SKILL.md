@@ -6,7 +6,7 @@ description: >-
   injection, NavigationStack and value-based routing, sheets, layout and lists,
   #Preview, .task lifetimes, view-model and UI testing, and diagnosing slow or
   over-rendering views. Use when creating SwiftUI screens, fixing state or
-  navigation bugs, or speeding up SwiftUI on iOS, iPadOS, macOS or visionOS.
+  navigation bugs, or speeding up SwiftUI on Apple platforms.
 ---
 
 # SwiftUI

@@ -2,12 +2,11 @@
 name: financial-modeling
 description: >-
   Builds startup and small-business financial models in Google Sheets or
-  Excel: tab layout and formula conventions, driver-based revenue builds,
-  cohort and funnel models, headcount and cost plans, base, upside and
-  downside scenarios, burn and runway, three-statement basics with linked P&L,
-  balance sheet and cash flow, and integrity checks. Use when the user asks for
-  a financial model, revenue forecast, budget, runway or scenario analysis.
-  Not financial advice.
+  Excel: driver-based revenue builds, cohort and funnel models, headcount and
+  cost plans, base, upside and downside scenarios, burn and runway,
+  three-statement basics with linked P&L, balance sheet and cash flow, and
+  integrity checks. Use when the user asks for a financial model, revenue
+  forecast, budget, runway or scenario analysis. Not financial advice.
 ---
 
 # Financial Modeling

@@ -1,12 +1,12 @@
 ---
 name: product-analytics
 description: >-
-  Designs product analytics end to end: question-driven tracking plans, event
-  naming taxonomy, identity and consent, North Star and input metrics,
-  activation, funnels, retention cohorts, engagement ratios, dashboards and
-  data QA across GA4 with BigQuery export, Amplitude, Mixpanel and PostHog. Use
-  when the user asks what to track, how to name events, why a funnel drops,
-  how to measure retention or activation, or which metric should be the North Star.
+  Designs product analytics: question-driven tracking plans, event naming
+  taxonomy, identity and consent, North Star and input metrics, activation,
+  funnels, retention cohorts, engagement ratios, dashboards and data QA in GA4
+  and BigQuery, Amplitude, Mixpanel or PostHog. Use when the user asks what to
+  track, how to name events, why a funnel drops, how to measure retention or
+  activation, or which metric should be the North Star.
 ---
 
 # Product Analytics

@@ -1,13 +1,12 @@
 ---
 name: partnerships
 description: >-
-  Plans and runs partnerships and business development: partnership goals,
-  partner types, ideal partner profiles and scorecards, integration and
-  technology partnerships, referral, reseller, co-sell and marketplace deal
-  structures, rules of engagement, co-marketing and joint business plans. Use
-  when the user asks who to partner with, how to structure a partner deal or
-  revenue share, how to launch an integration partnership, or how to run
-  co-marketing. Not legal advice.
+  Plans and runs partnerships and business development: partner types, ideal
+  partner profiles and scorecards, integration partnerships, referral,
+  reseller, co-sell and marketplace deal structures, rules of engagement,
+  co-marketing and joint business plans. Use when the user asks who to partner
+  with, how to structure a partner deal or revenue share, how to launch an
+  integration partnership, or how to run co-marketing. Not legal advice.
 ---
 
 # Partnerships

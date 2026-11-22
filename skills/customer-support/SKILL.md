@@ -1,13 +1,12 @@
 ---
 name: customer-support
 description: >-
-  Sets up and runs customer support operations: channel and volume mapping,
-  ticket taxonomy and triage, priority matrices, SLAs, macros and saved
-  replies, drafting replies for human approval, escalation to engineering,
-  knowledge base articles, quality review, CSAT and the feedback loop from
-  tickets to the roadmap. Use when the user is working a support inbox,
-  drafting customer replies, designing SLAs or help-center content, or turning
-  tickets into product insight.
+  Sets up and runs customer support operations: ticket taxonomy and triage,
+  priority matrices, SLAs, macros and saved replies, drafting replies for
+  human approval, escalation to engineering, knowledge base articles, quality
+  review, CSAT and the feedback loop from tickets to the roadmap. Use when the
+  user is working a support inbox, drafting customer replies, designing SLAs
+  or help-center content, or turning tickets into product insight.
 ---
 
 # Customer Support
