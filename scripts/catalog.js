@@ -6,17 +6,8 @@ const path = require('node:path');
 const { validateRepo } = require('./lib/validate');
 
 const ROOT = path.resolve(__dirname, '..');
-const GROUPS = [
-  ['AI and agent engineering', ['gemini-api', 'google-adk', 'antigravity-customization', 'antigravity-sdk-orchestrator', 'mcp-server-development', 'prompt-engineering', 'agent-evals', 'rag-pipelines', 'llm-cost-routing', 'subagent-delegation', 'context-compaction']],
-  ['Architecture and backend', ['software-architecture', 'api-design', 'backend-patterns', 'database-design', 'auth-patterns', 'python-fastapi', 'golang-services', 'rust-systems']],
-  ['Frontend and mobile', ['frontend-react-nextjs', 'web-performance', 'accessibility-a11y', 'browser-automation', 'flutter-mobile']],
-  ['Quality', ['tdd-testing', 'safe-refactor', 'documentation-writing', 'git-workflow']],
-  ['Security', ['security-audit', 'agent-shield', 'credential-sanitizer', 'sandbox-isolation']],
-  ['Cloud and DevOps', ['cloud-devops', 'docker-containers', 'kubernetes-gke', 'terraform-iac', 'ci-cd-github-actions', 'observability-otel']],
-  ['Games', ['game-architecture', 'godot-engine', 'threejs-webgl', 'procedural-generation', 'game-audio-sfx']],
-  ['Media', ['remotion-motion-graphics', 'ffmpeg-multimedia', 'ai-image-generation', 'image-processing-canvas', 'video-production-pipeline']],
-  ['Business and growth', ['brand-discovery', 'growth-marketing', 'seo-audit', 'copywriting', 'pricing-strategy']],
-];
+// Category → knowledge-skill names. Skills missing from the file are listed under "Other".
+const GROUPS = Object.entries(require('./categories.json'));
 
 const esc = (s) => String(s).replace(/\|/g, '\\|').replace(/\s+/g, ' ').trim();
 const short = (s) => esc(String(s).split(/(?<=\.)\s/)[0]);

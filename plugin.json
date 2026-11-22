@@ -1,7 +1,7 @@
 {
   "name": "everything-antigravity",
   "displayName": "Everything Antigravity",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "The performance pack for Google Antigravity and Gemini CLI: 79 skills and slash-command workflows, 23 specialist subagents, glob-scoped language rules, and verified hooks for command guarding, secret protection, session memory, continuous learning and a verify-before-done gate.",
   "logo": "assets/logo.svg",
   "suggestedPrompts": [
