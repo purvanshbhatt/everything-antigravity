@@ -15,8 +15,8 @@ description: Ruby conventions
 
 ## Style
 
-- Follow the community Ruby Style Guide: two-space indent, `snake_case` methods and variables, `CamelCase` classes, `SCREAMING_SNAKE_CASE` constants, predicate methods end in `?`, dangerous variants in `!`.
-- Prefer small methods, guard clauses and early returns to nested conditionals.
+- Follow the community Ruby Style Guide: `snake_case` methods, `CamelCase` classes, predicates end in `?`, dangerous variants in `!`.
+- Prefer small methods and guard clauses to nested conditionals.
 - Use keyword arguments for optional or boolean parameters. No positional boolean flags.
 - Prefer `Enumerable` methods (`map`, `select`, `each_with_object`, `sum`) to manual accumulation. Use `find_each` for large Active Record sets.
 - Freeze constant collections. Never mutate arguments the caller owns.
@@ -51,6 +51,5 @@ description: Ruby conventions
 
 ## Tests
 
-- Follow the project's framework (RSpec or Minitest). Use factories with minimal attributes, request specs for endpoints, and no `sleep`.
-- Avoid `allow_any_instance_of`; inject collaborators instead.
+- Follow the project's framework (RSpec or Minitest). Minimal factories, request specs for endpoints, no `sleep`, no `allow_any_instance_of`.
 - Run the narrowest spec first (`bundle exec rspec path/to_spec.rb:42`), then the suite.

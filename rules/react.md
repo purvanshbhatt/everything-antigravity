@@ -13,7 +13,7 @@ TypeScript rules still apply to `.tsx`; this file adds React-specific constraint
 - Function components only. One exported component per file, named in `PascalCase` to match the file, unless the project groups small components.
 - Keep components small and pure: same props and state give the same output. No side effects, network calls or mutations during render.
 - Never define a component inside another component; hoist it so its state is not reset on every render.
-- Compose with `children` and props before reaching for context. Use context for rarely changing, widely needed values (theme, auth, locale), and split contexts by update frequency.
+- Compose with `children` and props before context. Use context for rarely changing, widely needed values (theme, auth, locale).
 - Type props explicitly. Do not spread unknown props onto DOM elements.
 
 ## Hooks
@@ -33,7 +33,7 @@ TypeScript rules still apply to `.tsx`; this file adds React-specific constraint
 ## Rendering and performance
 
 - Use stable, unique keys from data. Never use array indexes as keys for lists that reorder, insert or delete.
-- Measure before memoizing. Use `useMemo`, `useCallback` and `memo` for proven hot spots or referential stability, not by default; follow the React Compiler's guidance if the project uses it.
+- Measure before memoizing. Use `useMemo`, `useCallback` and `memo` for proven hot spots, not by default.
 - Virtualize long lists. Lazy-load heavy routes and components with `lazy` and `Suspense`.
 - Wrap independent regions in error boundaries and give every `Suspense` a meaningful fallback.
 
