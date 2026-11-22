@@ -27,6 +27,10 @@ Coverage for every major field, not just software engineering.
 - **9 new glob-scoped rules (30 in total):** Ruby, PHP, React, Elixir, Scala, Protobuf, GraphQL, notebooks and Markdown docs.
 - `scripts/categories.json` drives the catalog grouping in `docs/CATALOG.md`.
 
+### Fixed
+
+- The secret scanner no longer flags values that are only an environment-variable reference, such as `--password="$DB_PASSWORD"`, `%DB_PASSWORD%` or `$env:API_KEY`.
+
 ## [2.0.0] - 2026-11-20
 
 A ground-up rebuild as a native Antigravity plugin.
