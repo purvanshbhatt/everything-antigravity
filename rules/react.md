@@ -48,7 +48,6 @@ TypeScript rules still apply to `.tsx`; this file adds React-specific constraint
 
 - Never pass untrusted data to `dangerouslySetInnerHTML`; sanitize with DOMPurify if HTML is unavoidable. Reject `javascript:` URLs in user-supplied links.
 - Use semantic elements (`button`, `a`, `label`, headings) before ARIA. Every input has a label, every image has `alt`, and focus moves predictably after dialogs and route changes.
-- Keep `eslint-plugin-jsx-a11y` on where the project uses it.
 
 ## Tests
 

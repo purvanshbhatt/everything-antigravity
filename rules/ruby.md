@@ -25,13 +25,13 @@ description: Ruby conventions
 
 - Prefer plain methods, modules and composition over `method_missing`, `define_method` and `class_eval`. If you use `method_missing`, also define `respond_to_missing?`.
 - Never call `send`, `public_send`, `constantize` or `instance_variable_get` with user-controlled input.
-- Put monkey patches only in `config/initializers` or refinements, with a comment explaining why.
+- Put monkey patches only in `config/initializers` or refinements, with a reason.
 
 ## Errors and logging
 
 - Rescue specific exceptions. Never `rescue Exception` and never `rescue => e` around large blocks that hide bugs.
 - Define a small error hierarchy per library inheriting from `StandardError`. Re-raise with context instead of returning `nil` silently.
-- Log through `Rails.logger` or the project logger, never `puts` in library or app code. Do not log secrets, tokens or personal data.
+- Log through `Rails.logger` or the project logger, never `puts`. Do not log secrets or personal data.
 
 ## Rails
 

@@ -91,8 +91,8 @@ painful.
 
 ```text
 Bad:   "You have " + count + " " + item + "s"
-Good:  key "inventory.count" = "{count, plural, one {# {item}} other {# {item}}}"
-       (item names are their own keys with their own plural forms)
+Good:  key "inventory.potions" = "{count, plural, one {You have # potion} other {You have # potions}}"
+       One whole message per item type; translators add the plural categories their language needs.
 ```
 
 ## Anti-patterns
