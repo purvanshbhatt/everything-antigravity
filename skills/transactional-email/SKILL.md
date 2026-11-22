@@ -5,8 +5,7 @@ description: >-
   SendGrid, Mailgun, Amazon SES, Resend), SPF, DKIM and DMARC alignment on a
   sending subdomain, templates with plain-text parts, queued sending with
   idempotency, bounce and complaint webhooks with suppression, unsubscribe
-  headers where required, local capture with Mailpit, and deliverability
-  monitoring. Use when wiring password resets, receipts or notifications, or
+  headers where required, and deliverability monitoring. Use when wiring password resets, receipts or notifications, or
   when mail lands in spam.
 ---
 

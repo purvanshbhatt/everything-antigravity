@@ -5,7 +5,7 @@ description: >-
   audio understanding, speaker diarization, streaming recognition,
   text-to-speech with Cloud Text-to-Speech or Gemini speech generation,
   realtime voice agents and latency budgets, audio formats, WER and
-  diarization evaluation, and consent for recording and synthetic voices. Use
+  diarization evaluation, and recording and voice consent. Use
   when adding transcription, captions, voice input, spoken output, call
   analytics or a voice assistant.
 ---

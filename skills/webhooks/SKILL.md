@@ -1,11 +1,11 @@
 ---
 name: webhooks
 description: >-
-  Builds and consumes webhooks reliably: HMAC signatures over the raw body
-  with timestamps, constant-time verification, replay windows, fast 2xx then
-  async processing, idempotency by event ID, out-of-order handling, retries
-  with backoff and endpoint disabling, secret rotation, SSRF-safe delivery to
-  customer URLs, and local testing with tunnels and fixtures. Use when
+  Builds and consumes webhooks reliably: HMAC signatures over the raw body,
+  constant-time verification, replay windows, fast 2xx then async
+  processing, idempotency by event ID, out-of-order handling, retries with
+  backoff and endpoint disabling, secret rotation, SSRF-safe delivery to
+  customer URLs, and local testing with tunnels. Use when
   receiving webhooks from Stripe, GitHub and similar, or offering webhooks
   from your own API.
 ---
