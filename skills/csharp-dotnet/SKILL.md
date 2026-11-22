@@ -2,12 +2,11 @@
 name: csharp-dotnet
 description: >-
   Writes modern C# and .NET: nullable reference types as errors, records and
-  required members, pattern matching, LINQ pitfalls (deferred execution,
-  multiple enumeration, IQueryable versus IEnumerable), async/await rules,
-  CancellationToken flow, DI lifetimes and captive dependencies, the options
-  pattern with validation, logging, Directory.Build.props, central package
-  management and analyzers. Use when writing, reviewing or modernising C# code
-  or a .NET solution's build.
+  required members, pattern matching, LINQ pitfalls, async/await rules,
+  CancellationToken flow, DI lifetimes and captive dependencies, validated
+  options, logging, Directory.Build.props, central package management and
+  analyzers. Use when writing, reviewing or modernising C# code or a .NET
+  solution's build.
 ---
 
 # Modern C# and .NET
