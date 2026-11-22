@@ -1,11 +1,11 @@
 ---
 name: visual-identity
 description: >-
-  Creates a visual identity system: brief from brand attributes, moodboards,
-  logo concept exploration and stress tests (favicon size, one colour,
-  reversed), colour systems with tonal scales and contrast-checked pairs,
-  typography with licensing checks, supporting elements, brand guidelines,
-  design tokens and asset packages, plus trademark and originality checks.
+  Creates a visual identity system: brief and moodboards, logo concept
+  exploration and stress tests (favicon size, one colour, reversed), colour
+  systems with tonal scales and contrast-checked pairs, typography with
+  licensing checks, brand guidelines, design tokens and asset packages, and
+  trademark and originality checks.
   Use when designing or refreshing a logo, palette, type system or brand
   guidelines for a product or company.
 ---

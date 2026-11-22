@@ -4,10 +4,9 @@ description: >-
   Builds API test suites that catch real bugs: in-process HTTP tests
   (supertest, httpx with FastAPI, Go httptest, Spring MockMvc), black-box
   suites against deployed environments (Postman/Newman, Bruno, Hurl, .http
-  files), per-role auth and object-level authorization matrices, response
-  schema validation against OpenAPI, property-based fuzzing with Schemathesis,
-  and test data fixtures. Use when adding tests for REST or HTTP endpoints,
-  or smoke-testing an API in CI or after deploy.
+  files), auth and object-level authorization matrices, OpenAPI response
+  validation and Schemathesis fuzzing. Use when adding tests for REST or HTTP
+  endpoints, or smoke-testing an API in CI or after deploy.
 ---
 
 # API Testing

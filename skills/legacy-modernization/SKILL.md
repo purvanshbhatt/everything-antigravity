@@ -1,8 +1,8 @@
 ---
 name: legacy-modernization
 description: >-
-  Modernizes legacy systems incrementally: mapping hidden behaviour and
-  consumers, characterization tests, seams and branch by abstraction, the
+  Modernizes legacy systems incrementally: mapping hidden consumers,
+  characterization tests, seams and branch by abstraction, the
   strangler fig pattern behind a routing facade, anti-corruption layers,
   shadow traffic and parallel runs, data migration with CDC and
   reconciliation, and the rewrite-versus-refactor decision. Use when replacing

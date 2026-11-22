@@ -1,7 +1,7 @@
 ---
 name: dependency-upgrades
 description: >-
-  Upgrades project dependencies safely: audits outdated and vulnerable
+  Upgrades dependencies safely: audits outdated and vulnerable
   packages, batches them by risk (security fixes, patch and minor, then each
   major alone), reads changelogs and migration guides, applies codemods,
   verifies every batch with the project's gates, and sets up Renovate or

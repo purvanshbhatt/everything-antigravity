@@ -5,7 +5,7 @@ description: >-
   dry runs and maximum-bytes-billed guards, on-demand versus capacity pricing,
   SQL patterns (QUALIFY dedupe, MERGE upserts, nested STRUCT/ARRAY), loading,
   scheduled queries, row-level and column-level security, and BI integration
-  with Looker Studio, Looker and Connected Sheets. Use when creating BigQuery
+  with Looker Studio and Connected Sheets. Use when creating BigQuery
   tables, writing or reviewing BigQuery SQL, or cutting BigQuery spend.
 ---
 

@@ -5,9 +5,8 @@ description: >-
   AlloyDB, AlloyDB ScaNN indexes, Vertex AI Vector Search, BigQuery and
   Firestore vector search. Covers HNSW and IVF index parameters, distance
   metrics, metadata filtering, hybrid search, re-embedding, and measuring
-  recall and latency against exact search. Use when storing embeddings,
-  picking a vector database, tuning ANN indexes, or filtered vector queries
-  return too few or wrong results.
+  recall against exact search. Use when storing embeddings, picking a vector
+  database, tuning ANN indexes, or filtered vector queries miss results.
 ---
 
 # Vector Databases

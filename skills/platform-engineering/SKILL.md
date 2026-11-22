@@ -4,8 +4,7 @@ description: >-
   Builds internal developer platforms as products: finding developer friction,
   golden paths from repo template to production, self-service infrastructure
   through reviewed IaC modules, a service catalog (Backstage catalog-info.yaml),
-  production-readiness scorecards and adoption metrics such as DORA and time to
-  first deploy. Use when standardising how teams build and ship services,
+  production-readiness scorecards, and adoption and DORA metrics. Use when standardising how teams build and ship services,
   creating service templates, or deciding what a platform team should build.
 ---
 

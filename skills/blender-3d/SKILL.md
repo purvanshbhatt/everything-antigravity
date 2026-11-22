@@ -2,9 +2,9 @@
 name: blender-3d
 description: >-
   Runs a Blender asset pipeline from modelling to engine: units and scale,
-  applied transforms, clean topology and normals, UVs and texel density,
+  applied transforms, topology and normals, UVs and texel density,
   Principled BSDF materials that survive glTF export, baking, rig and
-  animation export, GLB export settings, validation and optimization with
+  animation export, GLB export, validation and optimization with
   glTF-Transform, headless batch export and rendering with Python, and asset
   licensing. Use when preparing 3D assets for three.js, Godot, Unity or
   Unreal, or automating Blender.

@@ -3,9 +3,8 @@ name: generative-audio
 description: >-
   Creates music and sound with generative models: writing a sonic brief,
   prompting music models (Google Lyria, open models such as MusicGen and
-  Stable Audio Open, commercial services), batching variations with a
-  provenance manifest, looping on bar boundaries, stem separation, basic
-  mixing and loudness, and checking licenses, watermarks and disclosure. Use
+  Stable Audio Open, commercial services), variations with a provenance
+  manifest, looping on bar boundaries, stem separation, mixing and loudness, and checking licenses, watermarks and disclosure. Use
   when generating background music, stingers, loops or sound effects for
   apps, games, videos or podcasts.
 ---

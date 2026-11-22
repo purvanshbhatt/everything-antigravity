@@ -3,8 +3,8 @@ name: google-apps-script
 description: >-
   Automates Google Workspace with Apps Script: local development with clasp,
   the appsscript.json manifest and least-privilege OAuth scopes, batched Sheets
-  reads and writes, simple versus installable triggers, quotas and the
-  execution time limit, checkpointed long jobs, LockService, script
+  reads and writes, simple versus installable triggers, quotas, time limits
+  and checkpointed long jobs, LockService, script
   properties, custom functions, and web app or add-on deployment. Use when
   automating Sheets, Docs, Gmail, Drive, Calendar or Forms, or when a script
   hits quotas or timeouts.

@@ -1,8 +1,8 @@
 ---
 name: secrets-management
 description: >-
-  Stores, injects and rotates secrets safely: Google Secret Manager with
-  per-secret IAM, HashiCorp Vault and dynamic credentials, runtime injection on
+  Stores, injects and rotates secrets: Google Secret Manager with
+  per-secret IAM, Vault and dynamic credentials, runtime injection on
   Cloud Run, GKE and VMs, keyless CI with Workload Identity Federation,
   rotation without downtime, BuildKit build secrets, and stopping leaks through
   env vars, logs, images and Git. Use when adding a credential to an app,

@@ -1,12 +1,11 @@
 ---
 name: memory-leaks
 description: >-
-  Finds and fixes memory leaks and runaway memory: telling leaks from caches
-  and fragmentation, the three-snapshot heap diff, retainer paths and dominator
-  trees, and tools per runtime (Chrome DevTools and heap snapshots for Node.js
-  and browsers, tracemalloc and memray for Python, pprof and goleak for Go,
-  jcmd and Eclipse MAT for the JVM, dotnet-gcdump, ASan and Valgrind for
-  native code). Use when memory grows until OOM, pods restart with OOMKilled,
+  Finds and fixes memory leaks: telling leaks from caches and fragmentation,
+  three-snapshot heap diffs, retainer paths and dominator trees, with tools per
+  runtime (DevTools heap snapshots for Node.js and browsers, tracemalloc and
+  memray for Python, pprof and goleak for Go, jcmd and Eclipse MAT for the JVM,
+  dotnet-gcdump, ASan and Valgrind). Use when memory grows until OOM, pods restart with OOMKilled,
   or RSS climbs over days.
 ---
 

@@ -5,8 +5,8 @@ description: >-
   (Flyway, Liquibase, Alembic, Django, Rails, Prisma Migrate, EF Core,
   golang-migrate, Atlas), expand/contract sequencing across deploys, batched
   resumable backfills, rollback and roll-forward plans, and CI checks for
-  drift, lint and ordering. Use when writing or reviewing a migration, planning
-  a column rename or type change, running a backfill, or wiring migrations into CI/CD.
+  drift and lint. Use when writing or reviewing a migration, planning a
+  rename or type change, running a backfill, or wiring migrations into CI/CD.
 ---
 
 # Database Migrations

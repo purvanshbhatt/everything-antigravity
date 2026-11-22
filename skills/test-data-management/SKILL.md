@@ -2,12 +2,11 @@
 name: test-data-management
 description: >-
   Manages test data so suites are fast, isolated and safe: factories
-  (factory_boy, FactoryBot, fishery, builders), minimal fixtures, idempotent
-  seed scripts, per-test isolation with transactions, truncation, per-worker
-  or template databases and Testcontainers, deterministic fakes and clocks,
-  and masked or synthetic copies of production data with privacy controls.
-  Use when tests share or leak state, fixtures are hard to maintain, or a
-  team wants production-like data in lower environments.
+  (factory_boy, FactoryBot, fishery), minimal fixtures, idempotent seeds,
+  per-test isolation with transactions, truncation, per-worker or template
+  databases and Testcontainers, deterministic fakes and clocks, and masked or
+  synthetic data. Use when tests share or leak state, fixtures are hard to
+  maintain, or a team wants production-like data in lower environments.
 ---
 
 # Test Data Management

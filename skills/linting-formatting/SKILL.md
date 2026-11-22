@@ -3,7 +3,7 @@ name: linting-formatting
 description: >-
   Sets up and enforces linters and formatters across languages: Prettier,
   Biome and ESLint, Ruff, gofmt and golangci-lint, rustfmt and Clippy,
-  dotnet format, clang-format, shellcheck, PSScriptAnalyzer and more, with
+  dotnet format, clang-format, shellcheck and PSScriptAnalyzer, with
   pinned versions, pre-commit hooks, CI check mode, autofix, and adopting them
   in legacy repos without wrecking git blame. Use when adding or fixing lint
   and format tooling, when CI fails on style, or when a codebase has

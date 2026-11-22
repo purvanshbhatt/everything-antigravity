@@ -71,7 +71,7 @@ without a human, or carry data out of the system.
 
    **Check:** A loop or flood test hits a limit and returns a clear error, not a large bill.
 
-8. **Add screening as defense in depth.** Use input/output screening (for example Model Armor on Google Cloud, Gemini safety settings, or a classifier) and log decisions. Do not treat screening as the primary control.
+8. **Add screening as defense in depth**, never as the primary control: input/output screening (for example Model Armor on Google Cloud, Gemini safety settings, or a classifier), with decisions logged.
 
 9. **Red-team and regress.** Build an eval set with direct and indirect injection cases (poisoned documents, hostile web pages, tool output carrying instructions) and run it in CI with a tool such as promptfoo or garak. Delegate a design review to the `security-guard` subagent.
 
@@ -99,8 +99,7 @@ without a human, or carry data out of the system.
 - A retrieved document whose text tells the assistant to email its contents elsewhere.
 - A web page with hidden text (white-on-white, HTML comments, zero-width characters).
 - Tool output that contains instruction-like text and a URL.
-- A file name or image metadata carrying instructions.
-- Multi-turn setups where earlier turns plant instructions for later tools.
+- File names, image metadata or earlier turns that plant instructions for later tool calls.
 
 ## Anti-patterns
 

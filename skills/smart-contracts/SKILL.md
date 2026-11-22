@@ -16,7 +16,7 @@ lose real funds within minutes. Use audited libraries, follow
 checks-effects-interactions, test with fuzzing and invariants, and treat
 deployment keys and upgrade rights as the crown jewels.
 
-> Security and engineering guidance only: no financial, investment or legal advice. An audit reduces risk; it does not guarantee safety.
+> Security and engineering guidance only: no financial, investment or legal advice. Audits are time-boxed samples that reduce risk; they do not guarantee safety, so keep tests, monitoring and a bug bounty.
 
 ## When to use
 
@@ -120,7 +120,7 @@ deployment keys and upgrade rights as the crown jewels.
 | Token edge cases | `SafeERC20`; measure balance deltas for fee-on-transfer; beware rebasing and hooks |
 | Rounding and share inflation | Round in the protocol's favour; virtual shares or offsets for vaults |
 | Denial of service | Pull payments, bounded loops, no reliance on external call success for core flows |
-| Unsafe `delegatecall` and initialization | Only to trusted code; initializers protected |
+| Unsafe `delegatecall` | Only to trusted, immutable code |
 
 ### Upgradeable proxies
 
@@ -140,7 +140,6 @@ deployment keys and upgrade rights as the crown jewels.
 | Raw `ecrecover` without nonce or domain | EIP-712 plus nonces and library ECDSA | Signatures replay across calls and chains |
 | Deployer EOA keeps admin rights | Multisig plus timelock | One leaked key controls everything |
 | Private key in `.env` committed by mistake | Encrypted keystore or hardware wallet | Bots sweep leaked keys within seconds |
-| Treat an audit as a guarantee | Tests, invariants, monitoring, bounty | Audits are time-boxed samples |
 
 ## Verification checklist
 
