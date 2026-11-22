@@ -108,10 +108,18 @@ test('secret scanner ignores placeholders and documented examples', () => {
     'password: "<PASSWORD>"',
     `AWS example: ${['AK', 'IA', 'IOSFODNN7EXAMPLE'].join('')}`,
     'token = "${GITHUB_TOKEN}"',
+    'gcloud alloydb clusters create c --password="$ALLOYDB_PASSWORD"',
+    'set password="%DB_PASSWORD_PROD%"',
+    'api_key = "$env:GEMINI_API_KEY"',
     'just some ordinary code();',
   ]) {
     assert.deepEqual(scanSecrets(text), [], `false positive on: ${text}`);
   }
+});
+
+test('secret scanner still flags a literal value that only starts with $', () => {
+  const findings = scanSecrets('password = "$uperS3cretPassw0rd"');
+  assert.ok(findings.some((f) => f.id === 'assigned-secret'), JSON.stringify(findings));
 });
 
 test('secret findings never echo the full secret', () => {

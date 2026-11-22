@@ -97,6 +97,8 @@ const SECRET_RULES = [
 ];
 
 const PLACEHOLDER = /(example|your[-_ ]?|changeme|change[-_]me|placeholder|dummy|sample|fake|test[-_]?key|xxxx|\*\*\*|<[^>]+>|\$\{[^}]+\}|\{\{[^}]+\}\}|process\.env|os\.environ|getenv|redacted)/i;
+// A value that is only an environment-variable reference: $NAME (sh), %NAME% (cmd), $env:NAME (PowerShell).
+const ENV_REFERENCE = /^(?:\$[A-Z_][A-Z0-9_]*|%[A-Za-z_]\w*%|\$env:[A-Za-z_]\w*)$/;
 
 function preview(value) {
   const v = String(value);
@@ -120,7 +122,7 @@ function scanSecrets(text) {
       const lineStart = src.lastIndexOf('\n', m.index) + 1;
       const lineEnd = src.indexOf('\n', m.index);
       const lineText = src.slice(lineStart, lineEnd === -1 ? undefined : lineEnd);
-      if (PLACEHOLDER.test(value) || (rule.id !== 'private-key' && rule.id !== 'gcp-service-account' && /EXAMPLE/.test(lineText))) {
+      if (PLACEHOLDER.test(value) || ENV_REFERENCE.test(value) || (rule.id !== 'private-key' && rule.id !== 'gcp-service-account' && /EXAMPLE/.test(lineText))) {
         if (m.index === re.lastIndex) re.lastIndex++;
         continue;
       }
