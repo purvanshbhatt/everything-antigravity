@@ -1,7 +1,7 @@
 ---
 name: design-systems
 description: >-
-  Builds and evolves a design system: UI inventory, token architecture
+  Builds and evolves a design system: token architecture
   (primitive, semantic, component) in DTCG JSON transformed with Style
   Dictionary, accessible components on headless primitives, Storybook docs and
   interaction tests, visual regression, semantic versioning with changesets,

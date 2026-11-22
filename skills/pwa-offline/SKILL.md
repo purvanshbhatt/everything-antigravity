@@ -131,7 +131,7 @@ DevTools > Application (Service workers: Offline, Update on reload, Bypass for n
 ## Anti-patterns
 
 | Don't | Do instead | Why |
-| :--- |:--- | :--- |
+| :--- | :--- | :--- |
 | Hand-write precache lists | Generate with Workbox tooling | Missed or stale files after deploys |
 | Cache `sw.js` with long max-age | `Cache-Control: no-cache` | Browsers cannot see updates promptly |
 | Prompt for push on page load | Ask after a contextual action | Users deny, and the browser may block future prompts |

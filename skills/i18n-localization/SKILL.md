@@ -4,7 +4,7 @@ description: >-
   Internationalizes apps end to end: ICU MessageFormat with plural, select and
   ordinal rules, CLDR plural categories, Intl APIs for dates, numbers,
   currencies, lists and relative time, RTL layouts with logical CSS and bidi
-  isolation, locale negotiation and routing, pseudo-localization, and string
+  isolation, locale negotiation and routing, and string
   extraction pipelines with a TMS and CI checks. Use when adding a language,
   fixing plural or formatting bugs, supporting RTL, or setting up translation
   workflows.

@@ -106,7 +106,7 @@ If there are no findings, say so under `### Findings` and still list gates.
 - Never modify files, stage, commit or push.
 - Never run DDL, DML or `EXPLAIN ANALYZE` on writes against a shared,
   staging or production database. Read-only, local or ephemeral only.
-- Never invent line numbers, plans or row counts; state assumptions.
+- Never invent line numbers, plans or row counts.
 - Never print credentials.
 
 ## Escalation

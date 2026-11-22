@@ -137,7 +137,7 @@ every framework that will host it.
 ## Anti-patterns
 
 | Don't | Do instead | Why |
-| :--- |:--- | :--- |
+| :--- | :--- | :--- |
 | Events without `composed: true` | `bubbles: true, composed: true` for public events | Events stop at the shadow root |
 | Pass objects through attributes as JSON | Set properties | Parsing cost and lost identity |
 | Hide every style behind closed shadow roots | Document `::part`s and custom properties | Consumers fork the component to restyle it |
