@@ -2,6 +2,31 @@
 
 All notable changes to Everything Antigravity (EAG) are documented in this file. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/).
 
+## [2.1.0] - 2026-11-22
+
+Coverage for every major field, not just software engineering.
+
+### Added
+
+- **248 new skills (327 in total), in 15 catalog categories.** Highlights:
+  - 32 language and runtime skills.
+  - 23 frontend and 9 mobile/desktop skills.
+  - 22 backend and API skills, and 17 data and database skills.
+  - 29 AI and ML skills.
+  - 29 cloud, DevOps and SRE skills (Google Cloud first, plus AWS and Azure essentials).
+  - 16 security and compliance skills.
+  - 10 industry verticals, 15 games skills and 14 media and design skills.
+  - 35 product, growth and business skills.
+  - 10 writing, research and education skills.
+- **15 new slash-command workflows (41 in total):** `/write-spec`, `/explain-code`, `/framework-migration`, `/dockerize`, `/perf-audit`, `/a11y-audit`, `/postmortem`, `/architecture-decision`, `/api-scaffold`, `/ui-polish`, `/research-synthesis`, `/threat-modeling`, `/issue-triage`, `/release-management` and `/dependency-upgrades`.
+- **30 new subagents (53 in total):**
+  - Language reviewers for Java, Kotlin, Rust, C++, C#, Swift, Dart, PHP, Ruby, React and SQL.
+  - Build resolvers for JVM, Rust, C++, .NET and mobile.
+  - Frontend, backend, mobile, data, ML and SRE engineers.
+  - Incident commander, product manager, UX designer, technical writer, data analyst, compliance auditor, migration specialist and deep researcher.
+- **9 new glob-scoped rules (30 in total):** Ruby, PHP, React, Elixir, Scala, Protobuf, GraphQL, notebooks and Markdown docs.
+- `scripts/categories.json` drives the catalog grouping in `docs/CATALOG.md`.
+
 ## [2.0.0] - 2026-11-20
 
 A ground-up rebuild as a native Antigravity plugin.

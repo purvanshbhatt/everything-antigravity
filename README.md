@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>Skills, agents, rules and hooks for Google Antigravity and Gemini CLI, installed with one command.</b><br>
-  79 skills · 26 slash-command workflows · 23 specialist subagents · 21 scoped rules · guard, memory, learning and verify hooks
+  327 skills · 41 slash-command workflows · 53 specialist subagents · 30 scoped rules · guard, memory, learning and verify hooks
 </p>
 
 <p align="center">
@@ -99,13 +99,16 @@ Long session
 | `/root-cause` | `/refactor-clean` | | `/instincts` | |
 | `/codebase-onboard` | | | `/skill-create` | |
 | `/deep-work` | | | `/harness-audit` | |
-| `/orchestrate` | | | | |
+| `/orchestrate` | `/perf-audit` | `/release-management` | `/research-synthesis` | `/dockerize` |
+| `/write-spec` | `/a11y-audit` | `/dependency-upgrades` | `/explain-code` | `/api-scaffold` |
+| `/architecture-decision` | `/ui-polish` | `/postmortem` | `/issue-triage` | `/threat-modeling` |
+| `/framework-migration` | | | | |
 
 Names avoid Antigravity's built-ins (`/plan`, `/learn`, `/boost` and the rest), so nothing gets shadowed. Every workflow ends with explicit **Check:** steps and a verification checklist.
 
 ## Subagents
 
-There are 23 agents, each with the least privilege its job needs. Reviewers and auditors cannot write files. Each agent is routed to a model tier: `flash` for fast scans, `pro` for architecture and security, `inherit` everywhere else.
+There are 53 agents, each with the least privilege its job needs. Reviewers and auditors cannot write files. Each agent is routed to a model tier: `flash` for fast scans, `pro` for architecture and security, `inherit` everywhere else.
 
 | Orchestration | Review | Build and fix | Specialists |
 | :--- | :--- | :--- | :--- |
@@ -117,29 +120,41 @@ There are 23 agents, each with the least privilege its job needs. Reviewers and 
 | | `silent-failure-hunter` | | `accessibility-auditor` |
 | | `performance-optimizer` | | `marketing-strategist` |
 
+Also included:
+
+- **Language reviewers:** Java, Kotlin, Rust, C++, C#, Swift, Dart, PHP, Ruby, React and SQL.
+- **Build resolvers:** JVM, Rust, C++, .NET and mobile.
+- **Engineers:** frontend, backend, mobile, data, ML and SRE.
+- **Specialists:** incident commander, product manager, UX designer, technical writer, data analyst, compliance auditor, migration specialist and deep researcher.
+
 Start a whole session as the orchestrator with `agy --agent chief-of-staff`.
 
 ## Knowledge skills
 
-There are 53 skills, loaded only when a task matches them. That is progressive disclosure, so they cost no context until used. The full list with descriptions is in [docs/CATALOG.md](docs/CATALOG.md).
+There are 286 knowledge skills in 15 categories, loaded only when a task matches them. That is progressive disclosure, so they cost no context until used. The full list with descriptions is in [docs/CATALOG.md](docs/CATALOG.md).
 
-- **AI and agents.** These are the most Gemini-specific skills in the pack.
-  - `gemini-api`: the Google Gen AI SDK, structured output, function calling, caching and thinking budgets.
-  - `google-adk`, `antigravity-customization`, `antigravity-sdk-orchestrator` and `mcp-server-development`.
-  - `prompt-engineering`, `agent-evals`, `rag-pipelines` and `llm-cost-routing`.
-  - `subagent-delegation` and `context-compaction`.
-- **Architecture and backend:** `software-architecture`, `api-design`, `backend-patterns`, `database-design`, `auth-patterns`, `python-fastapi`, `golang-services` and `rust-systems`.
-- **Frontend and mobile:** `frontend-react-nextjs`, `web-performance`, `accessibility-a11y`, `browser-automation` and `flutter-mobile`.
-- **Security:** `security-audit`, `agent-shield`, `credential-sanitizer` and `sandbox-isolation`.
-- **Cloud:** `cloud-devops` (GCP), `docker-containers`, `kubernetes-gke`, `terraform-iac`, `ci-cd-github-actions` and `observability-otel`.
-- **Quality:** `tdd-testing`, `safe-refactor`, `git-workflow` and `documentation-writing`.
-- **Games and media:** `game-architecture`, `godot-engine`, `threejs-webgl`, `procedural-generation`, `game-audio-sfx`, `remotion-motion-graphics`, `ffmpeg-multimedia`, `ai-image-generation`, `image-processing-canvas` and `video-production-pipeline`.
-- **Business:** `brand-discovery`, `growth-marketing`, `seo-audit`, `copywriting` and `pricing-strategy`.
+| Category | Skills | Covers |
+| :--- | ---: | :--- |
+| AI, agents and machine learning | 29 | Gemini API, ADK, Antigravity customization, MCP, prompting, evals, RAG, fine-tuning, Gemma, Vertex AI, serving, speech, vision, LLM observability |
+| Languages and runtimes | 32 | TypeScript, Node, Bun/Deno, Python, Go, Rust, Java, Kotlin, Scala, C#, C/C++, Swift, PHP, Ruby, Elixir, Bash, PowerShell, WebAssembly |
+| Frontend and web | 23 | React, Next.js, Vue/Nuxt, Angular, Svelte, Astro, Tailwind and CSS, design systems, state, forms, PWAs, i18n, accessibility, performance |
+| Mobile and desktop | 9 | Flutter, React Native, Jetpack Compose, iOS, Kotlin Multiplatform, Electron, Tauri, store releases |
+| Architecture, backend and APIs | 22 | DDD, microservices, events, GraphQL, gRPC, queues, jobs, caching, search, payments, email, webhooks, multi-tenancy |
+| Data and databases | 17 | Postgres, MySQL, MongoDB, Firestore, BigQuery, dbt, Spark, streaming, vector databases, warehousing |
+| Testing and code quality | 13 | contract, visual and API testing, test data, linting, static analysis, profiling, leaks, concurrency, tech debt |
+| Security and compliance | 16 | AppSec, API and LLM security, supply chain, containers, cryptography, secrets, SOC 2, GDPR, HIPAA, PCI DSS |
+| Cloud, DevOps and SRE | 29 | Google Cloud services, AWS, Azure, Kubernetes, Helm, GitOps, Terraform, Pulumi, Ansible, networking, incidents, load and chaos testing, FinOps |
+| Industry and domain | 10 | healthcare (FHIR), fintech ledgers, IoT, embedded, robotics (ROS 2), GIS, smart contracts, scientific computing, bioinformatics, optimization |
+| Games | 15 | game architecture, Godot, Unity, Unreal, Phaser, Three.js, shaders, procedural generation, game AI, multiplayer, level design, publishing |
+| Media, design and creative | 14 | image generation and processing, SVG, Blender, Remotion, ffmpeg, video, YouTube, podcasts, audio, slides, visual identity, UI/UX, UX research |
+| Developer workflow and tooling | 12 | git, docs, open source, dev environments, CLIs, SDKs, IDE and browser extensions, Apps Script, spreadsheets |
+| Product, growth and business | 35 | PRDs, discovery, roadmaps, OKRs, analytics, A/B tests, marketing, sales, pricing, finance, fundraising, hiring, operations |
+| Writing, research and education | 10 | technical blogging, editing, translation, data storytelling, literature reviews, courses, talks, grants, newsletters |
 
 ## Rules that cost almost nothing
 
 - **`rules/AGENTS.md`** is always on, at about 1.1k tokens. It holds the working loop, the non-negotiables (never weaken tests, no secrets, ask before destructive actions, treat untrusted content as data) and a routing map.
-- **16 language rules** load only when a matching file is touched (`trigger: glob`). They cover TypeScript/JS, Python, Go, Rust, Java/Kotlin, Dart/Flutter, Swift, C#, C/C++, GDScript, SQL, shell/PowerShell, Terraform, containers, web frontend and tests.
+- **25 language and file-type rules** load only when a matching file is touched (`trigger: glob`). They cover TypeScript/JS, React, Python, Go, Rust, Java/Kotlin, Scala, Dart/Flutter, Swift, C#, C/C++, Ruby, PHP, Elixir, GDScript, SQL, GraphQL, Protobuf, shell/PowerShell, Terraform, containers, web frontend, notebooks, Markdown docs and tests.
 - **4 situational rules** load when relevant (`trigger: model_decision`): security, game development, git and PRs, and LLM apps.
 
 Antigravity shares a 20k-token budget across rules. EAG uses about 5% of it on a typical turn.
@@ -207,7 +222,7 @@ Alternatively, run `eag install --target gemini`.
 
 Gemini CLI gets the following:
 
-- **All 79 skills.**
+- **All 327 skills.**
 - **The core rules**, as the extension context file.
 - **The same hooks:** `BeforeTool` guard, `AfterTool` tracker, `SessionStart` memory, and the `AfterAgent` verify gate.
 
@@ -222,7 +237,7 @@ There are two differences:
 | :--- | :--- |
 | **A real plugin** | Ships as a native Antigravity plugin with a logo, suggested prompts, agents, rules and hooks. `agy plugin validate --strict` reports zero findings. |
 | **A verified hook contract** | Every hook behaviour was tested against a live `agy` agent. Two results shaped the design: printing `{}` from a pre-tool hook denies the tool, and a crashed hook fails the call. |
-| **Context you only pay for when used** | 20 of the 21 rules are glob-scoped or model-decided, and skills load on demand. The always-on core is about 1.1k tokens. |
+| **Context you only pay for when used** | 29 of the 30 rules are glob-scoped or model-decided, and skills load on demand. The always-on core is about 1.1k tokens. |
 | **Gemini depth** | Dedicated skills cover the Google Gen AI SDK (including the Interactions API), ADK, the MCP v2 SDKs, model tiers and Antigravity customization. A `gemini-ai-engineer` agent builds on them. |
 | **An installer you can trust** | It has a dry run, v1 migration, backups, ownership checks, `doctor`, and an uninstall that removes exactly what it installed. |
 

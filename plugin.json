@@ -2,7 +2,7 @@
   "name": "everything-antigravity",
   "displayName": "Everything Antigravity",
   "version": "2.1.0",
-  "description": "The performance pack for Google Antigravity and Gemini CLI: 79 skills and slash-command workflows, 23 specialist subagents, glob-scoped language rules, and verified hooks for command guarding, secret protection, session memory, continuous learning and a verify-before-done gate.",
+  "description": "The performance pack for Google Antigravity and Gemini CLI: 327 skills (41 slash-command workflows) across every major engineering, data, cloud, security, creative and business field, 53 specialist subagents, glob-scoped language rules, and verified hooks for command guarding, secret protection, session memory, continuous learning and a verify-before-done gate.",
   "logo": "assets/logo.svg",
   "suggestedPrompts": [
     "/feature-dev add password reset to this app, test-first",

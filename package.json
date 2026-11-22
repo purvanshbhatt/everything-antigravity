@@ -1,7 +1,7 @@
 {
   "name": "everything-antigravity",
   "version": "2.1.0",
-  "description": "The one-stop performance pack for Google Antigravity and Gemini CLI: 79 skills and slash-command workflows, 23 subagents, glob-scoped rules, and verified hooks for guarding, memory, continuous learning and verify-before-done.",
+  "description": "The one-stop performance pack for Google Antigravity and Gemini CLI: 327 skills (41 slash-command workflows), 53 subagents, glob-scoped rules, and verified hooks for guarding, memory, continuous learning and verify-before-done.",
   "main": "index.js",
   "bin": {
     "eag": "bin/eag.js",
