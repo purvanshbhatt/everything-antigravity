@@ -1,5 +1,6 @@
 ---
 name: e2e
+disable-model-invocation: true
 description: >-
   Builds and maintains Playwright end-to-end tests for critical user journeys
   with page objects, role-based locators, isolated test data and trace-on-retry

@@ -1,5 +1,6 @@
 ---
 name: cloud-security-posture
+disable-model-invocation: true
 description: >-
   Finds and fixes cloud misconfigurations: public exposure, over-broad IAM,
   service-account keys, missing org policies and logging gaps, using Security

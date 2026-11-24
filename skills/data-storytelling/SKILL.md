@@ -1,5 +1,6 @@
 ---
 name: data-storytelling
+disable-model-invocation: true
 description: >-
   Turns analysis into decisions: frames the question and audience, picks the
   chart that matches the comparison, strips clutter, annotates the takeaway on

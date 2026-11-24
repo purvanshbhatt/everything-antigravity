@@ -1,5 +1,6 @@
 ---
 name: harness-audit
+disable-model-invocation: true
 description: >-
   Audits the user's Antigravity setup and scores it: installed plugins, colliding
   skill, agent and MCP names, always-on rules versus the 20k-token budget, EAG

@@ -1,5 +1,6 @@
 ---
 name: webhooks
+disable-model-invocation: true
 description: >-
   Builds and consumes webhooks reliably: HMAC signatures over the raw body,
   constant-time verification, replay windows, fast 2xx then async

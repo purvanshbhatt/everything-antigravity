@@ -1,5 +1,6 @@
 ---
 name: cloud-storage-gcs
+disable-model-invocation: true
 description: >-
   Manages Google Cloud Storage buckets: location and storage class choices,
   uniform IAM instead of ACLs, managed folders, public access prevention,

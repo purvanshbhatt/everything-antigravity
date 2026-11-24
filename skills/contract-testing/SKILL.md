@@ -1,5 +1,6 @@
 ---
 name: contract-testing
+disable-model-invocation: true
 description: >-
   Sets up contract testing between services: consumer-driven contracts with
   Pact (consumer tests, provider verification, broker, can-i-deploy),

@@ -1,12 +1,7 @@
 ---
 name: mcp-server-development
 description: >-
-  Builds Model Context Protocol servers in TypeScript (@modelcontextprotocol/server
-  v2 or legacy @modelcontextprotocol/sdk) and Python (mcp SDK MCPServer,
-  formerly FastMCP): tool, resource and prompt design, schemas, errors, stdio
-  vs Streamable HTTP, auth, MCP Inspector tests, and registration in
-  Antigravity mcp_config.json and Gemini CLI settings.json. Use when creating,
-  debugging or packaging an MCP server.
+  Builds and debugs MCP servers and clients: tool design, schemas, transports, auth, testing and safe defaults.
 ---
 
 # MCP Server Development

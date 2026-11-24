@@ -1,5 +1,6 @@
 ---
 name: scala-jvm
+disable-model-invocation: true
 description: >-
   Writes Scala 3 on the JVM: enums and ADTs with exhaustive matching, opaque
   types, given/using and type classes, extension methods, derives, an overview

@@ -1,5 +1,6 @@
 ---
 name: product-analytics
+disable-model-invocation: true
 description: >-
   Designs product analytics: question-driven tracking plans, event naming
   taxonomy, identity and consent, North Star and input metrics, activation,

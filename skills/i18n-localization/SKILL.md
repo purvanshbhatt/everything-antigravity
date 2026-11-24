@@ -1,5 +1,6 @@
 ---
 name: i18n-localization
+disable-model-invocation: true
 description: >-
   Internationalizes apps end to end: ICU MessageFormat with plural, select and
   ordinal rules, CLDR plural categories, Intl APIs for dates, numbers,

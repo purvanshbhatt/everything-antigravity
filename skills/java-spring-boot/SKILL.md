@@ -1,5 +1,6 @@
 ---
 name: java-spring-boot
+disable-model-invocation: true
 description: >-
   Builds and reviews Spring Boot 3 services: package-by-feature layering,
   typed @ConfigurationProperties, Spring Data JPA without N+1 or open-in-view,

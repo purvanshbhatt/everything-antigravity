@@ -1,5 +1,6 @@
 ---
 name: database-design
+disable-model-invocation: true
 description: >-
   Designs PostgreSQL-first schemas and data access: types and constraints,
   normalization versus denormalization, B-tree/GIN/partial/covering indexes,

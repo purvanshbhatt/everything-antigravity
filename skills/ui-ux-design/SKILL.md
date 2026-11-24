@@ -1,5 +1,6 @@
 ---
 name: ui-ux-design
+disable-model-invocation: true
 description: >-
   Designs usable interfaces from problem to handoff: framing, user flows with
   error paths, low-fidelity wireframes, complete component states, responsive

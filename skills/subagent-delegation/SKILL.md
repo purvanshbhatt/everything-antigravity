@@ -1,5 +1,6 @@
 ---
 name: subagent-delegation
+disable-model-invocation: true
 description: >-
   Decides when to delegate to a subagent and when to work inline, and how to
   delegate well: briefs, context isolation, parallel fan-out versus sequential

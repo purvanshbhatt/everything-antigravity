@@ -1,12 +1,7 @@
 ---
 name: sre-engineer
 description: >-
-  Site reliability engineer for SLOs, alerting, dashboards, runbooks,
-  capacity, load tests and resilience. Delegate to it with a service or a
-  reliability goal; it defines SLIs and SLOs, writes alert policies,
-  observability config, runbooks and load-test scripts as code, validates
-  them locally and produces a rollout plan. Plan-only for production: it
-  applies nothing without explicit approval.
+  Defines SLOs, alerts, dashboards, runbooks and load tests as code with a rollout plan. Applies nothing without approval.
 tools:
   - view_file
   - grep_search

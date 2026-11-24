@@ -1,12 +1,7 @@
 ---
 name: react-reviewer
 description: >-
-  React reviewer for components and hooks in React, Next.js and React Router
-  apps, focused on hook rules, effect discipline, state ownership, server and
-  client boundaries, rendering cost, accessibility and XSS. Delegate to it
-  with a diff or file list; it runs ESLint (react-hooks, jsx-a11y), tsc and
-  targeted tests, and returns severity-ranked findings with exact patches.
-  Read-only: it never edits files.
+  Read-only React reviewer for hooks, effects, state, server/client boundaries, render cost, a11y and XSS.
 tools:
   - view_file
   - grep_search

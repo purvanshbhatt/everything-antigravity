@@ -1,5 +1,6 @@
 ---
 name: market-research
+disable-model-invocation: true
 description: >-
   Researches and sizes markets: decision framing, secondary research with
   source grading, TAM, SAM and SOM built bottom-up and checked top-down,

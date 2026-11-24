@@ -1,5 +1,6 @@
 ---
 name: react-router-remix
+disable-model-invocation: true
 description: >-
   Builds data-driven routes with React Router v7 (framework and data modes) and
   Remix v2: route config, typed loaders and actions, Form and useFetcher,

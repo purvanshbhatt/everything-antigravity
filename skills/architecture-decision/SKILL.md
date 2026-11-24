@@ -1,5 +1,6 @@
 ---
 name: architecture-decision
+disable-model-invocation: true
 description: >-
   Records an architecture decision as an ADR: frames one decision and its
   forces, gathers at least two real options with evidence from the code and

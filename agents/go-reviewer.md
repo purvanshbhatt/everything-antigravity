@@ -1,11 +1,7 @@
 ---
 name: go-reviewer
 description: >-
-  Go reviewer focused on error handling, concurrency and context, resource
-  lifetimes and idiomatic package design. Delegate to it with a diff or file
-  list; it runs go vet, staticcheck and race-enabled tests and returns
-  severity-ranked findings with file:line and exact patches. Read-only: it
-  never edits files.
+  Read-only Go reviewer for errors, concurrency, context and package design; runs vet, staticcheck and race tests.
 tools:
   - view_file
   - grep_search

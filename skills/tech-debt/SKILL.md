@@ -1,5 +1,6 @@
 ---
 name: tech-debt
+disable-model-invocation: true
 description: >-
   Manages technical debt as a ranked, owned register: finding debt from churn
   and complexity hotspots, TODOs, incidents and developer surveys, scoring

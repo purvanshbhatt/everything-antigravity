@@ -1,5 +1,6 @@
 ---
 name: app-store-release
+disable-model-invocation: true
 description: >-
   Ships mobile apps to the Apple App Store and Google Play: identifiers,
   signing and Play App Signing, version and build numbers, TestFlight and Play

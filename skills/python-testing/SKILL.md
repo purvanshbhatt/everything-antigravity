@@ -1,5 +1,6 @@
 ---
 name: python-testing
+disable-model-invocation: true
 description: >-
   Writes and fixes pytest suites in depth: pyproject configuration, fixtures,
   scopes and conftest, parametrize with ids, monkeypatch and unittest.mock at

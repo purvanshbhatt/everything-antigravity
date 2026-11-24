@@ -1,5 +1,6 @@
 ---
 name: competitive-analysis
+disable-model-invocation: true
 description: >-
   Analyzes competitors and alternatives from sourced, ethically gathered public
   information: competitive sets (direct, indirect, do-nothing), capability and

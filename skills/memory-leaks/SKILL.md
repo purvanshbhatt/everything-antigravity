@@ -1,5 +1,6 @@
 ---
 name: memory-leaks
+disable-model-invocation: true
 description: >-
   Finds and fixes memory leaks: telling leaks from caches and fragmentation,
   three-snapshot heap diffs, retainer paths and dominator trees, with tools per

@@ -1,5 +1,6 @@
 ---
 name: conference-talks
+disable-model-invocation: true
 description: >-
   Prepares conference and meetup talks: choosing a talk-worthy idea, CFP
   abstracts reviewers accept, a narrative with one takeaway, slides readable

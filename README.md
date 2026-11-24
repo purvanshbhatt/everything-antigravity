@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>Skills, agents, rules and hooks for Google Antigravity and Gemini CLI, installed with one command.</b><br>
-  327 skills · 41 slash-command workflows · 53 specialist subagents · 30 scoped rules · guard, memory, learning and verify hooks
+  367 skills · 66 slash-command workflows · 53 specialist subagents · 30 scoped rules · 53 vetted MCP servers · guard, memory, learning and verify hooks
 </p>
 
 <p align="center">
@@ -88,6 +88,25 @@ Long session
   └─ PreInvocation hook ─ one-time nudge to /checkpoint at the next milestone
 ```
 
+## Fits Antigravity's context budget
+
+Antigravity gives all installed plugins one shared **20,000-token budget** for model-visible skills, subagents and MCP tools. Past that, it silently drops the most expensive skills from what the agent can see. A large skill pack can push out everything else, including itself.
+
+EAG is built around that limit:
+
+- **351 of its 367 skills are slash-only.** They cost nothing until used. Type `/` and the name, for example `/kubernetes-gke`.
+- **16 small `eag-*` index skills** stay visible, one per category plus one for workflows. When a task matches, the agent opens the index and reads the right playbook from disk.
+- **About a dozen core skills and all 53 subagents** have short descriptions that survive the cut.
+- **The whole footprint is about 4.7k tokens.** The validator fails the build if EAG goes over 6k, and CI regenerates the indexes on every push.
+
+See what your setup really costs, per plugin, and what Antigravity is dropping:
+
+```bash
+eag budget
+```
+
+Not sure which skill you need? Run `/skill-finder` and describe the job.
+
 ## Workflows (slash commands)
 
 | Plan and build | Quality | Ship | Session and learning | Specialty |
@@ -103,6 +122,13 @@ Long session
 | `/write-spec` | `/a11y-audit` | `/dependency-upgrades` | `/explain-code` | `/api-scaffold` |
 | `/architecture-decision` | `/ui-polish` | `/postmortem` | `/issue-triage` | `/threat-modeling` |
 | `/framework-migration` | | | | |
+| `/idea-to-design` | `/regression-bisect` | `/merge-conflict-resolution` | `/skill-finder` | `/recency-research` |
+| `/design-interrogation` | `/bug-variant-hunt` | `/post-deploy-canary` | `/terse-mode` | `/advisor-council` |
+| `/slice-into-tickets` | `/test-suite-audit` | `/human-step-wizard` | `/focus-friendly-output` | `/doc-co-writing` |
+| `/throwaway-prototype` | `/cross-model-review` | | `/yagni-minimalism` | |
+| `/context-driven-tracks` | `/review-feedback-response` | | `/socratic-tutor` | |
+| `/fresh-context-loop` | `/ci-failure-triage` | | `/docs-to-skill` | |
+| `/git-worktrees` | | | | |
 
 Names avoid Antigravity's built-ins (`/plan`, `/learn`, `/boost` and the rest), so nothing gets shadowed. Every workflow ends with explicit **Check:** steps and a verification checklist.
 
@@ -131,25 +157,25 @@ Start a whole session as the orchestrator with `agy --agent chief-of-staff`.
 
 ## Knowledge skills
 
-There are 286 knowledge skills in 15 categories, loaded only when a task matches them. That is progressive disclosure, so they cost no context until used. The full list with descriptions is in [docs/CATALOG.md](docs/CATALOG.md).
+There are 301 knowledge skills in 15 categories. They are slash-only, so they cost no context until used, and the agent finds them through the index skill named in the table. The full list with descriptions is in [docs/CATALOG.md](docs/CATALOG.md).
 
-| Category | Skills | Covers |
-| :--- | ---: | :--- |
-| AI, agents and machine learning | 29 | Gemini API, ADK, Antigravity customization, MCP, prompting, evals, RAG, fine-tuning, Gemma, Vertex AI, serving, speech, vision, LLM observability |
-| Languages and runtimes | 32 | TypeScript, Node, Bun/Deno, Python, Go, Rust, Java, Kotlin, Scala, C#, C/C++, Swift, PHP, Ruby, Elixir, Bash, PowerShell, WebAssembly |
-| Frontend and web | 23 | React, Next.js, Vue/Nuxt, Angular, Svelte, Astro, Tailwind and CSS, design systems, state, forms, PWAs, i18n, accessibility, performance |
-| Mobile and desktop | 9 | Flutter, React Native, Jetpack Compose, iOS, Kotlin Multiplatform, Electron, Tauri, store releases |
-| Architecture, backend and APIs | 22 | DDD, microservices, events, GraphQL, gRPC, queues, jobs, caching, search, payments, email, webhooks, multi-tenancy |
-| Data and databases | 17 | Postgres, MySQL, MongoDB, Firestore, BigQuery, dbt, Spark, streaming, vector databases, warehousing |
-| Testing and code quality | 13 | contract, visual and API testing, test data, linting, static analysis, profiling, leaks, concurrency, tech debt |
-| Security and compliance | 16 | AppSec, API and LLM security, supply chain, containers, cryptography, secrets, SOC 2, GDPR, HIPAA, PCI DSS |
-| Cloud, DevOps and SRE | 29 | Google Cloud services, AWS, Azure, Kubernetes, Helm, GitOps, Terraform, Pulumi, Ansible, networking, incidents, load and chaos testing, FinOps |
-| Industry and domain | 10 | healthcare (FHIR), fintech ledgers, IoT, embedded, robotics (ROS 2), GIS, smart contracts, scientific computing, bioinformatics, optimization |
-| Games | 15 | game architecture, Godot, Unity, Unreal, Phaser, Three.js, shaders, procedural generation, game AI, multiplayer, level design, publishing |
-| Media, design and creative | 14 | image generation and processing, SVG, Blender, Remotion, ffmpeg, video, YouTube, podcasts, audio, slides, visual identity, UI/UX, UX research |
-| Developer workflow and tooling | 12 | git, docs, open source, dev environments, CLIs, SDKs, IDE and browser extensions, Apps Script, spreadsheets |
-| Product, growth and business | 35 | PRDs, discovery, roadmaps, OKRs, analytics, A/B tests, marketing, sales, pricing, finance, fundraising, hiring, operations |
-| Writing, research and education | 10 | technical blogging, editing, translation, data storytelling, literature reviews, courses, talks, grants, newsletters |
+| Category | Index | Skills | Covers |
+| :--- | :--- | ---: | :--- |
+| AI, agents and machine learning | `eag-ai-ml` | 29 | Gemini API, ADK, Antigravity customization, MCP, prompting, evals, RAG, fine-tuning, Gemma, Vertex AI, serving, speech, vision, LLM observability |
+| Languages and runtimes | `eag-languages` | 32 | TypeScript, Node, Bun/Deno, Python, Go, Rust, Java, Kotlin, Scala, C#, C/C++, Swift, PHP, Ruby, Elixir, Bash, PowerShell, WebAssembly |
+| Frontend and web | `eag-frontend-web` | 23 | React, Next.js, Vue/Nuxt, Angular, Svelte, Astro, Tailwind and CSS, design systems, state, forms, PWAs, i18n, accessibility, performance |
+| Mobile and desktop | `eag-mobile-desktop` | 9 | Flutter, React Native, Jetpack Compose, iOS, Kotlin Multiplatform, Electron, Tauri, store releases |
+| Architecture, backend and APIs | `eag-backend-apis` | 23 | DDD, microservices, events, GraphQL, gRPC, queues, jobs, caching, search, payments, email, webhooks, multi-tenancy, deep modules |
+| Data and databases | `eag-data` | 17 | Postgres, MySQL, MongoDB, Firestore, BigQuery, dbt, Spark, streaming, vector databases, warehousing |
+| Testing and code quality | `eag-testing-quality` | 16 | contract, visual and API testing, test data, linting, static analysis, profiling, leaks, concurrency, tech debt, flaky tests, property-based and mutation testing |
+| Security and compliance | `eag-security` | 17 | AppSec, API and LLM security, supply chain, containers, cryptography, secrets, SOC 2, GDPR, HIPAA, PCI DSS, defense in depth |
+| Cloud, DevOps and SRE | `eag-cloud-devops` | 29 | Google Cloud services, AWS, Azure, Kubernetes, Helm, GitOps, Terraform, Pulumi, Ansible, networking, incidents, load and chaos testing, FinOps |
+| Industry and domain | `eag-industry` | 10 | healthcare (FHIR), fintech ledgers, IoT, embedded, robotics (ROS 2), GIS, smart contracts, scientific computing, bioinformatics, optimization |
+| Games | `eag-games` | 15 | game architecture, Godot, Unity, Unreal, Phaser, Three.js, shaders, procedural generation, game AI, multiplayer, level design, publishing |
+| Media, design and creative | `eag-media-design` | 15 | image generation and processing, SVG, Blender, Remotion, ffmpeg, video, YouTube, podcasts, audio, slides, visual identity, UI/UX, UX research, generative art |
+| Developer workflow and tooling | `eag-dev-tooling` | 18 | git, docs, open source, dev environments, CLIs, SDKs, IDE and browser extensions, Apps Script, spreadsheets, current-docs lookup, file-backed planning, PDFs, Word documents, diagrams as code, interactive CLIs |
+| Product, growth and business | `eag-business` | 36 | PRDs, discovery, roadmaps, OKRs, analytics, A/B tests, marketing, sales, pricing, finance, fundraising, hiring, operations, AI search visibility |
+| Writing, research and education | `eag-writing-research` | 12 | technical blogging, editing, translation, data storytelling, literature reviews, courses, talks, grants, newsletters, de-slopping AI prose, internal comms |
 
 ## Rules that cost almost nothing
 
@@ -201,13 +227,14 @@ Everything is stored in `~/.gemini/eag/` (or `EAG_HOME`), and Antigravity and Ge
 
 ```text
 eag install | uninstall | doctor | status | update | validate
+eag budget                                                      # live context budget per plugin, and what Antigravity drops
 eag list [skills|workflows|agents|rules]
 eag profile get | set <minimal|standard|strict>
 eag sessions list | latest | save
 eag instincts list | add | reinforce | weaken | remove | promote | prune | export | import
 eag shield --cmd "<command>" | --text "<s>" | --file <path>     # exit 1 on findings; use in CI or pre-commit
 eag compact --file build.log                                   # strip ANSI, collapse repeated lines
-eag mcp list | show <name> | add <name> --yes                  # vetted MCP servers, with a backup of your config
+eag mcp list | show <name> | add <name> --yes                  # 53 vetted MCP servers, with a backup of your config
 ```
 
 ## Gemini CLI (beta)
@@ -222,7 +249,7 @@ Alternatively, run `eag install --target gemini`.
 
 Gemini CLI gets the following:
 
-- **All 327 skills.**
+- **All 367 skills.**
 - **The core rules**, as the extension context file.
 - **The same hooks:** `BeforeTool` guard, `AfterTool` tracker, `SessionStart` memory, and the `AfterAgent` verify gate.
 
@@ -237,7 +264,7 @@ There are two differences:
 | :--- | :--- |
 | **A real plugin** | Ships as a native Antigravity plugin with a logo, suggested prompts, agents, rules and hooks. `agy plugin validate --strict` reports zero findings. |
 | **A verified hook contract** | Every hook behaviour was tested against a live `agy` agent. Two results shaped the design: printing `{}` from a pre-tool hook denies the tool, and a crashed hook fails the call. |
-| **Context you only pay for when used** | 29 of the 30 rules are glob-scoped or model-decided, and skills load on demand. The always-on core is about 1.1k tokens. |
+| **Context you only pay for when used** | 29 of the 30 rules are glob-scoped or model-decided. 351 of 367 skills are slash-only and reached through 16 small index skills, so EAG uses about 4.7k of the shared 20k-token budget. The always-on core is about 1.1k tokens. |
 | **Gemini depth** | Dedicated skills cover the Google Gen AI SDK (including the Interactions API), ADK, the MCP v2 SDKs, model tiers and Antigravity customization. A `gemini-ai-engineer` agent builds on them. |
 | **An installer you can trust** | It has a dry run, v1 migration, backups, ownership checks, `doctor`, and an uninstall that removes exactly what it installed. |
 

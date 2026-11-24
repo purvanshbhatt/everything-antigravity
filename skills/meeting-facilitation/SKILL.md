@@ -1,5 +1,6 @@
 ---
 name: meeting-facilitation
+disable-model-invocation: true
 description: >-
   Plans and runs meetings that end in decisions: the meet-or-async test,
   outcome-based agendas, roles, facilitation techniques, decision records

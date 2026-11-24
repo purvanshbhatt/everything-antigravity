@@ -1,12 +1,7 @@
 ---
 name: antigravity-customization
 description: >-
-  Authors Antigravity customizations that load correctly: skills, agents,
-  rules, plugins, hooks and MCP servers, with discovery roots, precedence,
-  size budgets, allowed plugin.json fields and empirically verified hook
-  behaviour. Use when creating or debugging anything under .agents/ or
-  ~/.gemini/config/, writing plugin.json, hooks.json or mcp_config.json, or
-  when a customization silently fails to load.
+  Writes Antigravity skills, rules, workflows, subagents, hooks, MCP config and plugins that load correctly and fit the context budget.
 ---
 
 # Antigravity Customization

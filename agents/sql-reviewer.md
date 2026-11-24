@@ -1,12 +1,7 @@
 ---
 name: sql-reviewer
 description: >-
-  SQL and schema migration reviewer for PostgreSQL, MySQL, SQLite and
-  BigQuery, focused on query correctness, NULL semantics, injection, index use,
-  locking and zero-downtime migrations. Delegate to it with migrations, query
-  files or application code that builds SQL; it runs sqlfluff, squawk and
-  EXPLAIN on a local database, and returns severity-ranked findings with
-  exact patches. Read-only: it never edits files or changes data.
+  Read-only SQL and migration reviewer for correctness, NULLs, injection, indexes and locking; runs EXPLAIN locally.
 tools:
   - view_file
   - grep_search

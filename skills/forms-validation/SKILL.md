@@ -1,5 +1,6 @@
 ---
 name: forms-validation
+disable-model-invocation: true
 description: >-
   Builds robust web forms: one zod (or Standard Schema) schema shared by client
   and server, progressive enhancement that works without JavaScript, accessible

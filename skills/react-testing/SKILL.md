@@ -1,5 +1,6 @@
 ---
 name: react-testing
+disable-model-invocation: true
 description: >-
   Tests React components the way users use them with React Testing Library,
   Vitest or Jest, user-event and MSW: role-based queries, async UI, network

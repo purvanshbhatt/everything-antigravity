@@ -1,5 +1,6 @@
 ---
 name: postmortem
+disable-model-invocation: true
 description: >-
   Writes a blameless postmortem from an incident: gathers evidence (alerts,
   logs, deploys, chat), builds a UTC timeline, quantifies impact, separates

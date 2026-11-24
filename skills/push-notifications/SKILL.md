@@ -1,5 +1,6 @@
 ---
 name: push-notifications
+disable-model-invocation: true
 description: >-
   Implements push notifications with Firebase Cloud Messaging and APNs:
   permission prompt timing, token registration, refresh and cleanup,

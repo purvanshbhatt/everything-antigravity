@@ -1,5 +1,6 @@
 ---
 name: google-apps-script
+disable-model-invocation: true
 description: >-
   Automates Google Workspace with Apps Script: local development with clasp,
   the appsscript.json manifest and least-privilege OAuth scopes, batched Sheets

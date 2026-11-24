@@ -1,5 +1,6 @@
 ---
 name: roadmap-prioritization
+disable-model-invocation: true
 description: >-
   Builds and communicates product roadmaps and ranks backlogs: one intake list,
   capacity allocation, RICE, ICE, cost of delay and WSJF scoring in a sheet,

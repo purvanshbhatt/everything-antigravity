@@ -1,5 +1,6 @@
 ---
 name: sql-optimization
+disable-model-invocation: true
 description: >-
   Diagnoses and fixes slow SQL across PostgreSQL and MySQL: finding the
   expensive statements, reading execution plans, index design, sargability and

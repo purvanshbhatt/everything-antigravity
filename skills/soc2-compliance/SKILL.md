@@ -1,5 +1,6 @@
 ---
 name: soc2-compliance
+disable-model-invocation: true
 description: >-
   Guides SOC 2 readiness for engineering teams: choosing Trust Services
   Criteria, scoping the system, gap assessment, policies, implementing and

@@ -1,11 +1,7 @@
 ---
 name: code-architect
 description: >-
-  Software architect for system design questions. Delegate to it with a design
-  problem, a proposed change or a module that has outgrown its shape; it maps
-  the current structure, compares options against explicit forces and returns
-  boundaries, contracts, an ADR and a migration path. Read-only: it never edits
-  files or runs commands.
+  Read-only system designer: maps structure, weighs options, returns boundaries, contracts, an ADR and a migration path.
 tools:
   - view_file
   - grep_search

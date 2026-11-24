@@ -1,5 +1,6 @@
 ---
 name: elixir-phoenix
+disable-model-invocation: true
 description: >-
   Builds and reviews Elixir and Phoenix systems: OTP supervision trees,
   GenServer design and bottlenecks, Registry and DynamicSupervisor, Phoenix

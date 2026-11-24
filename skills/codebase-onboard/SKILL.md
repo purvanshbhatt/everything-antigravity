@@ -1,5 +1,6 @@
 ---
 name: codebase-onboard
+disable-model-invocation: true
 description: >-
   Maps an unfamiliar repository fast: entry points, build and test commands,
   architecture layers, data flow, key modules and conventions, delegating

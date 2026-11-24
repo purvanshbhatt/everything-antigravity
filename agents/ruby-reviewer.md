@@ -1,11 +1,7 @@
 ---
 name: ruby-reviewer
 description: >-
-  Ruby and Rails reviewer focused on Active Record query safety and cost,
-  strong parameters, output escaping, migrations, background jobs and idioms.
-  Delegate to it with a diff or file list; it runs RuboCop, Brakeman,
-  bundler-audit and targeted RSpec or Minitest, and returns severity-ranked
-  findings with file:line and exact patches. Read-only: it never edits files.
+  Read-only Ruby/Rails reviewer for Active Record safety, params, escaping and jobs; runs RuboCop and Brakeman.
 tools:
   - view_file
   - grep_search

@@ -1,11 +1,7 @@
 ---
 name: typescript-reviewer
 description: >-
-  TypeScript and JavaScript reviewer focused on type safety, async
-  correctness, error handling, module hygiene and framework idioms. Delegate
-  to it with a diff or file list; it runs tsc and ESLint and returns
-  severity-ranked findings with file:line and exact patches. Read-only: it
-  never edits files.
+  Read-only TypeScript/JavaScript reviewer for types, async, errors and module hygiene; runs tsc and ESLint.
 tools:
   - view_file
   - grep_search

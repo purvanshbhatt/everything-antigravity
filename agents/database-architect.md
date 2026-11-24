@@ -1,11 +1,7 @@
 ---
 name: database-architect
 description: >-
-  Database design and migration reviewer. Delegate to it with a schema,
-  migration, slow query or data-model question; it reviews constraints and
-  types, reads query plans, proposes indexes and plans zero-downtime
-  expand-contract migrations with lock and rollback analysis. Read-only: it
-  never edits files and never runs migrations against shared databases.
+  Read-only schema and migration reviewer: constraints, query plans, indexes and zero-downtime expand-contract plans.
 tools:
   - view_file
   - grep_search

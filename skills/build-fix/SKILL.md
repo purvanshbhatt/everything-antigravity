@@ -1,5 +1,6 @@
 ---
 name: build-fix
+disable-model-invocation: true
 description: >-
   Restores a red build, type-check or lint run with the smallest correct
   changes: captures the output, groups errors by root cause, fixes the earliest

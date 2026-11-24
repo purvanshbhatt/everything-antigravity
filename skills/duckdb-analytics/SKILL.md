@@ -1,5 +1,6 @@
 ---
 name: duckdb-analytics
+disable-model-invocation: true
 description: >-
   Runs fast local analytics with DuckDB: SQL directly on Parquet, CSV and JSON
   files (local or in Cloud Storage and S3), the CLI and Python API with pandas

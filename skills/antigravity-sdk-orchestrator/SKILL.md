@@ -1,5 +1,6 @@
 ---
 name: antigravity-sdk-orchestrator
+disable-model-invocation: true
 description: >-
   Builds and orchestrates agents in code with the Google Antigravity Python
   SDK (google-antigravity): Agent and LocalAgentConfig, streaming, custom

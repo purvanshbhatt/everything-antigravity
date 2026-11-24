@@ -1,5 +1,6 @@
 ---
 name: ab-testing
+disable-model-invocation: true
 description: >-
   Designs, runs and analyzes A/B tests and online experiments: hypotheses,
   primary and guardrail metrics, minimum detectable effect, sample size and

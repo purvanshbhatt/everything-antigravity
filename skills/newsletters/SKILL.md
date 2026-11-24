@@ -1,5 +1,6 @@
 ---
 name: newsletters
+disable-model-invocation: true
 description: >-
   Runs newsletters that keep readers: positioning and a reader promise, a
   cadence the team can sustain, a repeatable issue structure, subject lines

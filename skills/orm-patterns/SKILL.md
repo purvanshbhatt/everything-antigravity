@@ -1,5 +1,6 @@
 ---
 name: orm-patterns
+disable-model-invocation: true
 description: >-
   Uses ORMs and query builders well: Prisma, Drizzle, SQLAlchemy 2.0 and
   TypeORM. Covers detecting and fixing N+1 queries with eager loading,

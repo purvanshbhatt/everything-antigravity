@@ -1,5 +1,6 @@
 ---
 name: unity
+disable-model-invocation: true
 description: >-
   Builds Unity games in C#: small composable MonoBehaviours, ScriptableObject
   data and event channels, prefabs and variants, the Input System package,

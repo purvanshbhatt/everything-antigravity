@@ -1,5 +1,6 @@
 ---
 name: gdpr-privacy
+disable-model-invocation: true
 description: >-
   Privacy engineering for GDPR and CCPA/CPRA basics: data mapping and records
   of processing, lawful basis and consent capture, data subject requests

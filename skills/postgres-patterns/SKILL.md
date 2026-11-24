@@ -1,5 +1,6 @@
 ---
 name: postgres-patterns
+disable-model-invocation: true
 description: >-
   Applies PostgreSQL features in depth: JSONB modelling and GIN indexes, CTEs
   and recursive queries, window functions, upserts and SKIP LOCKED queues,

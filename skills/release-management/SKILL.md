@@ -1,5 +1,6 @@
 ---
 name: release-management
+disable-model-invocation: true
 description: >-
   Cuts a software release: confirms the commit is green, picks the semantic
   version from the actual changes, updates the changelog and version files,

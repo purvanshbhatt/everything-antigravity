@@ -1,11 +1,7 @@
 ---
 name: rust-build-resolver
 description: >-
-  Cargo build fixer for Rust. Delegate to it with a failing cargo check,
-  build, clippy or test command; it groups errors by root cause (borrow
-  checker, trait bounds, Send futures, features, MSRV, linking), fixes one
-  cause at a time with the smallest diff, and re-runs cargo after every fix
-  until green. It does not suppress errors or reach for unsafe.
+  Fixes cargo check, build, clippy and test failures one root cause at a time. Never reaches for unsafe.
 tools:
   - view_file
   - grep_search

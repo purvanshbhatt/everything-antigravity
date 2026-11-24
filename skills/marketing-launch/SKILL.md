@@ -1,5 +1,6 @@
 ---
 name: marketing-launch
+disable-model-invocation: true
 description: >-
   Runs a multi-channel launch for a product, major release or open-source
   project: positioning check, asset list (landing copy, OG image, demo GIF or

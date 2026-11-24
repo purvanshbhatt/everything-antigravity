@@ -25,6 +25,42 @@ It checks the following:
 3. Look for name collisions. Workspace (`.agents/skills`) and global loose skills (`~/.gemini/config/skills`) take precedence over plugin skills, and two plugins with the same name collide silently. `eag doctor` reports loose duplicates.
 4. Upgrading from v1: `eag install` removes the old v1 symlinks. If you created copies by hand, delete them.
 
+## The plugin is installed but the agent never uses its skills
+
+Antigravity has a shared 20,000-token budget for every plugin's model-visible
+skills, subagents and MCP tools. Past that, it quietly drops the most expensive
+skills from what the agent sees. Plugins with many long skill descriptions use
+it up fast. Check the live numbers:
+
+```bash
+eag budget
+```
+
+It lists each plugin's cost and how many of its skills are being dropped. To
+recover room, disable plugins you don't use on the **Customizations** page.
+EAG itself keeps its footprint under about 5,000 tokens: most of its skills
+are slash-only and the agent reaches them through the small `eag-*` index skills.
+
+You can always run any EAG skill directly by typing `/` and its name, for
+example `/kubernetes-gke` or `/feature-dev`. If you don't know the name, run
+`/skill-finder` and describe the job.
+
+## Antigravity keeps reloading and stops the agent mid-task
+
+The window reloads when Antigravity's language server exits and is
+restarted. `main.log` then shows `Language server crashed: exited with code 2`
+followed by `[Auto-Restart] Port changed! Reloading all windows`. The log is in
+`%APPDATA%\Antigravity\logs` on Windows and `~/Library/Application Support/Antigravity/logs` on macOS.
+
+1. Run `eag budget`. If the total is far over budget, disable plugins you don't
+   use. Fewer customizations mean less work every time Antigravity rescans plugins.
+2. The crash reason is written to `language_server.log` in the same folder, but
+   that file is replaced each time the server restarts. Copy it straight after a
+   reload, before the next crash, and include it in a bug report to the
+   Antigravity team.
+3. If the reloads started right after a plugin was installed or updated, disable
+   that plugin on the **Customizations** page and see whether they stop.
+
 ## A command was blocked or asked for confirmation unexpectedly
 
 The guard denies only catastrophic commands. Everything else in the rule list asks first. To see what the guard decides:

@@ -1,5 +1,6 @@
 ---
 name: data-warehouse-modeling
+disable-model-invocation: true
 description: >-
   Models analytical data for warehouses such as BigQuery: Kimball star
   schemas, choosing the grain, fact table types, conformed and role-playing

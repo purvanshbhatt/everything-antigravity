@@ -1,5 +1,6 @@
 ---
 name: technical-blogging
+disable-model-invocation: true
 description: >-
   Writes technical blog posts engineers finish and trust: a sharp angle, a
   reader-first structure, runnable code samples, measured proof instead of

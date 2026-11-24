@@ -1,5 +1,6 @@
 ---
 name: python-fastapi
+disable-model-invocation: true
 description: >-
   Builds and reviews modern Python services with FastAPI: project layout, uv
   or pip-tools dependencies, pydantic v2 models and settings, dependencies,

@@ -1,5 +1,6 @@
 ---
 name: shaders-glsl
+disable-model-invocation: true
 description: >-
   Writes and debugs GPU shaders in GLSL, HLSL and WGSL: pipeline stages and
   coordinate spaces, uniforms and varyings, linear-space lighting from Lambert

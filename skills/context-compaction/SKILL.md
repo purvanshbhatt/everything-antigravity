@@ -1,12 +1,7 @@
 ---
 name: context-compaction
 description: >-
-  Keeps long agent sessions sharp by managing context: what to keep and drop,
-  compaction at milestones paired with /checkpoint, summarizing logs,
-  stripping ANSI codes and repeated lines with the EAG compactor, progressive
-  disclosure via references/, rules-budget awareness, and fresh sessions from
-  a handoff summary. Use when a session is long, slow or forgetful, before
-  switching tasks, or when tool output floods the context.
+  Keeps long sessions sharp: when and how to compact, what to keep, handoff notes and session save and resume.
 ---
 
 # Context Compaction

@@ -1,11 +1,7 @@
 ---
 name: ux-designer
 description: >-
-  UX designer for user flows, screen and state inventories, wireframe specs,
-  interface copy and heuristic reviews of existing UI code. Delegate to it
-  with a feature, a flow or a set of screens; it maps tasks and states,
-  evaluates against usability heuristics and WCAG, and returns a handoff spec
-  engineers can build from. Read-only: it never edits files.
+  Read-only UX designer: flows, state inventories, wireframe specs, copy and heuristic reviews as a build-ready spec.
 tools:
   - view_file
   - grep_search

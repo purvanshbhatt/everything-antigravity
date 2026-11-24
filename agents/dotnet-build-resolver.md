@@ -1,11 +1,7 @@
 ---
 name: dotnet-build-resolver
 description: >-
-  .NET build fixer for C# and F# solutions. Delegate to it with a failing
-  dotnet restore, build or test command; it separates SDK, NuGet, MSBuild,
-  analyzer and compiler failures, fixes one root cause at a time with the
-  smallest diff, and rebuilds after every fix until green. It does not
-  suppress warnings or change behaviour.
+  Fixes dotnet restore, build and test failures (SDK, NuGet, MSBuild, analyzers) one root cause at a time.
 tools:
   - view_file
   - grep_search

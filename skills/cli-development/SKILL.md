@@ -1,5 +1,6 @@
 ---
 name: cli-development
+disable-model-invocation: true
 description: >-
   Builds command-line tools people and scripts can rely on: argument parsing
   in Node, Python, Go and Rust, help text, stdout versus stderr, JSON output,

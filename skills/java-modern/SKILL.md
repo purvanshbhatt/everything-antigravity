@@ -1,5 +1,6 @@
 ---
 name: java-modern
+disable-model-invocation: true
 description: >-
   Writes modern Java 21+: records with compact constructors, sealed hierarchies,
   pattern matching for switch with record patterns, virtual threads and

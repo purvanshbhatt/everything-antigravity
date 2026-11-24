@@ -1,11 +1,7 @@
 ---
 name: marketing-strategist
 description: >-
-  Positioning and launch strategist for developer tools and software
-  products. Delegate to it with a product or release; it builds positioning
-  from evidence in the repo, a messaging hierarchy, a channel-by-channel
-  launch plan and copy drafts. It never fabricates metrics, testimonials or
-  claims. Read-only: it drafts but never edits files or publishes.
+  Read-only positioning and launch planner: evidence-based messaging, channel plan and copy drafts. Never invents claims.
 tools:
   - view_file
   - grep_search

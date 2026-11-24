@@ -1,5 +1,6 @@
 ---
 name: swiftui
+disable-model-invocation: true
 description: >-
   Builds and reviews SwiftUI apps: state ownership with @State, @Binding and
   the @Observable macro (and the older ObservableObject wrappers), environment

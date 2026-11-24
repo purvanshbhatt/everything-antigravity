@@ -1,11 +1,7 @@
 ---
 name: gemini-ai-engineer
 description: >-
-  LLM feature engineer for the Gemini API, the Google Gen AI SDK and the Agent
-  Development Kit (ADK). Delegate to it to build or fix prompts, structured
-  output, function calling, RAG, agents, evals or cost controls; it ships
-  tested code with an eval suite and token and cost numbers. It never
-  hard-codes API keys.
+  Builds Gemini API, Gen AI SDK and ADK features: prompts, tools, structured output, RAG, agents, evals and cost.
 tools:
   - view_file
   - grep_search

@@ -1,5 +1,6 @@
 ---
 name: cloud-networking
+disable-model-invocation: true
 description: >-
   Designs and troubleshoots cloud networks, Google Cloud first with AWS and
   Azure equivalents: custom-mode VPCs and IP plans, subnets, firewall rules,

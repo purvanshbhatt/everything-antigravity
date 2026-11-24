@@ -1,5 +1,6 @@
 ---
 name: developer-relations
+disable-model-invocation: true
 description: >-
   Plans and measures developer relations: the developer journey and time to
   first success, friction logs, docs-first advocacy, tested sample apps,

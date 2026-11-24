@@ -1,5 +1,6 @@
 ---
 name: cpp-testing
+disable-model-invocation: true
 description: >-
   Sets up and writes C and C++ tests with GoogleTest/gMock or Catch2 under
   CMake and CTest: fixtures, parameterized tests, mocking seams, death tests,

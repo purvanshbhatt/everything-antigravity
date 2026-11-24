@@ -1,5 +1,6 @@
 ---
 name: research-synthesis
+disable-model-invocation: true
 description: >-
   Answers a research question with real, checked sources: frames the question,
   searches broadly including for disconfirming evidence, grades credibility,

@@ -1,5 +1,6 @@
 ---
 name: product-requirements
+disable-model-invocation: true
 description: >-
   Writes and reviews product requirements documents (PRDs): problem statement,
   target users and evidence, goals and success metrics with guardrails, scope

@@ -1,5 +1,6 @@
 ---
 name: ide-extensions
+disable-model-invocation: true
 description: >-
   Builds extensions for VS Code-compatible editors, including the Antigravity
   IDE: scaffolding, package.json contributions, lazy activation events,

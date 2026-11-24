@@ -1,5 +1,6 @@
 ---
 name: game-architecture
+disable-model-invocation: true
 description: >-
   Designs the runtime architecture of a game: fixed-timestep loops with
   interpolation, ECS versus scene-graph versus component models, state

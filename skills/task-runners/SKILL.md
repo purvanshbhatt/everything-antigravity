@@ -1,5 +1,6 @@
 ---
 name: task-runners
+disable-model-invocation: true
 description: >-
   Designs a project's command surface with Make, just, npm/pnpm scripts,
   Taskfile or mise tasks: standard task names, one entry point shared by

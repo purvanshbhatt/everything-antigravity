@@ -1,5 +1,6 @@
 ---
 name: vue-nuxt
+disable-model-invocation: true
 description: >-
   Builds Vue 3 and Nuxt apps with the Composition API and script setup,
   composables, Pinia stores, Nuxt file-based routing, useFetch and useAsyncData,

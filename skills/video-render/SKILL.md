@@ -1,5 +1,6 @@
 ---
 name: video-render
+disable-model-invocation: true
 description: >-
   Produces a rendered video from a brief: chooses Remotion or ffmpeg, builds
   the composition, previews key frames, renders a master, verifies duration,

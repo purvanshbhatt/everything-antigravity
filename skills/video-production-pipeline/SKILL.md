@@ -1,5 +1,6 @@
 ---
 name: video-production-pipeline
+disable-model-invocation: true
 description: >-
   Runs end-to-end video production from brief to delivered files: script,
   storyboard, asset list, TTS voice-over with Google Cloud Text-to-Speech or

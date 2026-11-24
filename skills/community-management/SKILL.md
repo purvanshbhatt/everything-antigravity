@@ -1,5 +1,6 @@
 ---
 name: community-management
+disable-model-invocation: true
 description: >-
   Builds and runs online communities on Discord, Discourse, Slack or GitHub
   Discussions: purpose and platform choice, channel structure, onboarding,

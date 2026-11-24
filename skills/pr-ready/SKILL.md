@@ -1,5 +1,6 @@
 ---
 name: pr-ready
+disable-model-invocation: true
 description: >-
   Prepares a branch for a pull request: runs full verification, self-reviews
   the diff, cleans up commits without force-pushing shared branches, writes the

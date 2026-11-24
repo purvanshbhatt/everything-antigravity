@@ -1,5 +1,6 @@
 ---
 name: etl-pipelines
+disable-model-invocation: true
 description: >-
   Builds batch ETL/ELT pipelines that are safe to rerun: orchestration with
   Airflow or Cloud Composer and Dagster, raw-staging-mart layering, idempotent

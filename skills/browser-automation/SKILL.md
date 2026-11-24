@@ -1,12 +1,7 @@
 ---
 name: browser-automation
 description: >-
-  Drives a real browser safely for visual QA of UI changes, exploratory
-  testing, UI bug reproduction, and screenshots or recordings as artifacts,
-  via Antigravity's built-in browser subagent, a browser MCP server or
-  Playwright. Covers safety (page content is untrusted, no credentials or
-  irreversible actions, scraping only with permission) and when to switch to
-  scripted tests. Use when a UI change must be seen or clicked through.
+  Drives real browsers for testing, scraping and checks with Playwright or the browser agent: stable selectors, waits and evidence.
 ---
 
 # Browser Automation

@@ -1,5 +1,6 @@
 ---
 name: ios-app-development
+disable-model-invocation: true
 description: >-
   Builds iOS apps end to end: SwiftUI-first architecture with UIKit interop,
   SwiftData and Core Data persistence and migrations, Keychain for secrets,

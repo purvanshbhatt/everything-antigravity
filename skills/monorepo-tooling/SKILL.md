@@ -1,5 +1,6 @@
 ---
 name: monorepo-tooling
+disable-model-invocation: true
 description: >-
   Sets up and runs JavaScript and TypeScript monorepos: pnpm, npm or Yarn
   workspaces, internal packages and the workspace protocol, Turborepo or Nx

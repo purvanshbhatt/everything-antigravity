@@ -1,11 +1,7 @@
 ---
 name: data-analyst
 description: >-
-  Data analyst for answering business and product questions from data files,
-  warehouses and analytics exports. Delegate to it with a question and the
-  data location; it profiles the data, runs read-only SQL or pandas, checks
-  results for sanity, and returns the answer with the exact queries, caveats
-  and chart suggestions. Read-only: it never modifies data or files.
+  Read-only analyst: answers questions from files or warehouses with checked SQL or pandas, caveats and chart ideas.
 tools:
   - view_file
   - grep_search

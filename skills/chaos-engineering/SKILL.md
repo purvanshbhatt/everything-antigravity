@@ -1,5 +1,6 @@
 ---
 name: chaos-engineering
+disable-model-invocation: true
 description: >-
   Designs and runs controlled chaos experiments: steady-state hypotheses on
   SLIs, blast radius and abort conditions, fault injection with Chaos Mesh,

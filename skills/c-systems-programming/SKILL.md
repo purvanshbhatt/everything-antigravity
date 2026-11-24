@@ -1,5 +1,6 @@
 ---
 name: c-systems-programming
+disable-model-invocation: true
 description: >-
   Writes and reviews C for systems work with a memory-safety discipline:
   ownership conventions, bounds and size-overflow checks, the common undefined

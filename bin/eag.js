@@ -64,6 +64,7 @@ Setup
           [--link] [--dry-run] [--force] [--yes] [--home <dir>]
   uninstall [--dry-run] [--purge] [--yes]
   doctor [--json]                     Health check of the installation
+  budget [--json]                     Live context budget per plugin, and which skills Antigravity is dropping
   status                              Version, profile and component counts
   update                              How to update for your install method
   validate [--json] [--strict]        Validate this repository (contributors)
@@ -145,6 +146,33 @@ const commands = {
     if (!args['dry-run'] && !confirm(`Remove Everything Antigravity${args.purge ? ' AND all learned data' : ''}?`)) return 1;
     install.uninstall({ home: HOME, eagHome: EAG_HOME, dryRun: !!args['dry-run'], purge: !!args.purge });
     return 0;
+  },
+
+  budget() {
+    // Async: sets process.exitCode itself so main() stays synchronous for every other command.
+    const { readBudget } = require('../scripts/lib/budget');
+    readBudget(HOME).then((b) => {
+      if (args.json) {
+        console.log(JSON.stringify(b, null, 2));
+      } else {
+        const pct = Math.round((b.used / b.budget) * 100);
+        console.log(`Antigravity customization budget: ${b.used.toLocaleString()} / ${b.budget.toLocaleString()} tokens (${pct}%)  ${b.overBudget ? bad(`OVER by ${(-b.remaining).toLocaleString()}`) : ok(`${b.remaining.toLocaleString()} left`)}\n`);
+        for (const g of b.groups.filter((x) => x.name !== 'Rules')) {
+          console.log(`  ${g.name.padEnd(10)} ${String(g.tokens).padStart(7)} tokens  ${String(g.items).padStart(4)} items${g.cutItems ? bad(`  ${g.cutItems} dropped (${g.cutTokens} tokens)`) : ''}`);
+        }
+        console.log('\n  Skills by plugin (most expensive first):');
+        for (const p of b.byPlugin.slice(0, 12)) console.log(`    ${String(p.tokens).padStart(7)}  ${p.plugin.padEnd(34)} ${String(p.skills).padStart(4)} skills${p.cut ? warn(`  ${p.cut} dropped`) : ''}`);
+        if (b.overBudget) {
+          console.log(`\n  ${warn('Antigravity silently drops the most expensive skills when over budget.')}`);
+          console.log('  Disable plugins you do not use on the Customizations page, or shorten skill descriptions.');
+        }
+      }
+      process.exitCode = b.overBudget ? 1 : 0;
+    }).catch((err) => {
+      console.error(`eag budget: ${err.message}`);
+      process.exitCode = 1;
+    });
+    return undefined;
   },
 
   doctor() {
@@ -372,7 +400,12 @@ const commands = {
     const cat = JSON.parse(fs.readFileSync(path.join(ROOT, 'mcp-configs', 'catalog.json'), 'utf8'));
     const sub = args._[1] || 'list';
     if (sub === 'list') {
-      for (const [name, s] of Object.entries(cat.servers)) console.log(`  ${name.padEnd(20)} ${dim(s.description)}`);
+      let last = '';
+      for (const [name, s] of Object.entries(cat.servers)) {
+        if (s.category && s.category !== last) console.log(`\n${s.category}`);
+        last = s.category || last;
+        console.log(`  ${name.padEnd(28)} ${s.official === false ? warn('community ') : ''}${dim(s.description)}`);
+      }
       console.log(`\n${dim(cat.note)}`);
       return 0;
     }

@@ -1,5 +1,6 @@
 ---
 name: responsible-ai
+disable-model-invocation: true
 description: >-
   Applies responsible AI practice to ML and generative AI features: use-case
   and harm review, fairness evaluation across groups, layered safety controls

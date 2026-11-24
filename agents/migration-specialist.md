@@ -1,11 +1,7 @@
 ---
 name: migration-specialist
 description: >-
-  Migration engineer for framework and major version upgrades, language and
-  runtime moves, library replacements and legacy modernization. Delegate to
-  it with the source and target plus constraints; it inventories usage,
-  writes a staged plan, applies codemods and manual changes one stage at a
-  time with the build and tests green after each, and keeps a rollback path.
+  Runs framework, version and runtime migrations in stages with codemods, green tests after each stage and a rollback path.
 tools:
   - view_file
   - grep_search

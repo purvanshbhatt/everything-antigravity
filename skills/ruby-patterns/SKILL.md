@@ -1,5 +1,6 @@
 ---
 name: ruby-patterns
+disable-model-invocation: true
 description: >-
   Writes and reviews idiomatic Ruby: blocks, procs and lambdas, Enumerable and
   lazy enumerators, modules as mixins and namespaces, Data and Struct value

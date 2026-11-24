@@ -1,5 +1,6 @@
 ---
 name: godot-engine
+disable-model-invocation: true
 description: >-
   Builds and reviews Godot 4.x projects: scene and node composition, signals
   and sparing autoloads, statically typed GDScript, custom Resources,

@@ -1,5 +1,6 @@
 ---
 name: people-operations
+disable-model-invocation: true
 description: >-
   Runs everyday people operations for small and growing teams: onboarding plans
   (30/60/90), 1:1s, feedback with the SBI model, goals, performance review

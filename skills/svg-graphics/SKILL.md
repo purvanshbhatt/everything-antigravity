@@ -1,5 +1,6 @@
 ---
 name: svg-graphics
+disable-model-invocation: true
 description: >-
   Authors and ships SVG: hand-written icons on a viewBox grid with
   currentColor, path command basics, SVGO optimization that keeps viewBox and

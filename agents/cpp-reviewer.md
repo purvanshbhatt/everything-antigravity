@@ -1,11 +1,7 @@
 ---
 name: cpp-reviewer
 description: >-
-  C and C++ reviewer focused on memory safety, undefined behaviour, ownership,
-  exception safety and concurrency. Delegate to it with a diff or file list;
-  it runs clang-tidy, cppcheck, clang-format checks and sanitizer builds of the
-  affected tests, and returns severity-ranked findings with file:line and
-  exact patches. Read-only: it never edits files.
+  Read-only C/C++ reviewer for memory safety, UB, ownership and concurrency; runs clang-tidy, cppcheck and sanitizers.
 tools:
   - view_file
   - grep_search

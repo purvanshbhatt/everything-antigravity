@@ -1,5 +1,6 @@
 ---
 name: orchestrate
+disable-model-invocation: true
 description: >-
   Designs and runs multi-agent pipelines with EAG subagents: sequential
   planner-implementer-reviewer chains, parallel fan-out of independent shards

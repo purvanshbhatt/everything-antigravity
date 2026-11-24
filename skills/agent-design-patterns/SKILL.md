@@ -1,5 +1,6 @@
 ---
 name: agent-design-patterns
+disable-model-invocation: true
 description: >-
   Designs AI agents that behave reliably: choosing between a workflow and an
   agent, tool design (names, schemas, errors, idempotency), loop patterns such

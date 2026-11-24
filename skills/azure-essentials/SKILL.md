@@ -1,5 +1,6 @@
 ---
 name: azure-essentials
+disable-model-invocation: true
 description: >-
   Covers Azure core services for application teams: Entra ID and managed
   identities, subscriptions and resource groups, App Service, Container Apps

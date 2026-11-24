@@ -1,5 +1,6 @@
 ---
 name: android-jetpack-compose
+disable-model-invocation: true
 description: >-
   Builds Android apps with Kotlin and Jetpack Compose: unidirectional state
   with ViewModel and StateFlow, state hoisting, recomposition and stability,

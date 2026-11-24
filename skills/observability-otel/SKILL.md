@@ -1,5 +1,6 @@
 ---
 name: observability-otel
+disable-model-invocation: true
 description: >-
   Instruments services with OpenTelemetry traces, metrics and logs: semantic
   conventions, structured JSON logs with trace correlation, sampling, RED and

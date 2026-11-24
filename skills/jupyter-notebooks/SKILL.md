@@ -1,5 +1,6 @@
 ---
 name: jupyter-notebooks
+disable-model-invocation: true
 description: >-
   Keeps Jupyter notebooks reproducible and reviewable: structure, pinned
   kernels, restart-and-run-all checks, clean git diffs with nbstripout,

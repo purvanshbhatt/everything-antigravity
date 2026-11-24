@@ -1,5 +1,6 @@
 ---
 name: game-audio-sfx
+disable-model-invocation: true
 description: >-
   Designs and implements game audio: Web Audio API mixer graphs, audio sprites,
   latency, spatial audio with PannerNode, adaptive and layered music, ducking,

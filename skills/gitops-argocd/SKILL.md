@@ -1,5 +1,6 @@
 ---
 name: gitops-argocd
+disable-model-invocation: true
 description: >-
   Runs Kubernetes delivery through GitOps with Argo CD or Flux: repository
   layout, Applications, AppProjects, app-of-apps and ApplicationSets, sync

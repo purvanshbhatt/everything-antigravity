@@ -1,5 +1,6 @@
 ---
 name: game-economy-balancing
+disable-model-invocation: true
 description: >-
   Balances game progression and economies: XP and power curves,
   time-to-reward targets, currency faucets and sinks, inflation checks, drop

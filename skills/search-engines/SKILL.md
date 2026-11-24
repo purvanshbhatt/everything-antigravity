@@ -1,5 +1,6 @@
 ---
 name: search-engines
+disable-model-invocation: true
 description: >-
   Builds product and site search with Elasticsearch, OpenSearch, Meilisearch,
   Typesense, Postgres full-text or Vertex AI Search: engine choice, mappings

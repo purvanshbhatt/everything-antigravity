@@ -1,5 +1,6 @@
 ---
 name: regex-text-processing
+disable-model-invocation: true
 description: >-
   Writes correct, safe regular expressions and text pipelines: engine
   differences (PCRE2, JavaScript, Python, RE2/Go/Rust, POSIX), ReDoS

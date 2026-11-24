@@ -2,6 +2,48 @@
 
 All notable changes to Everything Antigravity (EAG) are documented in this file. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/).
 
+## [2.2.0] - 2026-11-23
+
+Fits Antigravity's context budget, plus 40 new skills and 46 new MCP servers.
+
+### Fixed
+
+- **EAG no longer pushes skills out of the agent's view.** Antigravity shares a 20,000-token budget across every plugin's model-visible skills, subagents and MCP tools, and drops the most expensive skills when it overflows. EAG 2.1 alone used about 64k tokens, so on a typical install most of its skills, and many from other plugins, were silently dropped. EAG now uses about 4.7k.
+
+### Added
+
+- **Index skills.** 16 generated `eag-*` skills, one per category plus `eag-workflows`. Each one lists its slash-only skills with paths, so the agent reads the right playbook on demand.
+- **Slash-only skills.** 351 skills now carry `disable-model-invocation: true`. They still run as `/<name>` commands.
+- **`eag budget`.** Reads the live budget from Antigravity's local language server. It shows the cost per plugin and which skills are being dropped. It talks only to 127.0.0.1 and never prints the session token.
+- **40 new skills (367 in total, 66 workflows).** New workflows:
+  - `/skill-finder`, `/idea-to-design`, `/design-interrogation`, `/slice-into-tickets`, `/throwaway-prototype`, `/context-driven-tracks` and `/fresh-context-loop`.
+  - `/git-worktrees`, `/merge-conflict-resolution`, `/review-feedback-response`, `/regression-bisect`, `/bug-variant-hunt`, `/test-suite-audit` and `/cross-model-review`.
+  - `/ci-failure-triage`, `/post-deploy-canary`, `/human-step-wizard`, `/recency-research`, `/advisor-council`, `/doc-co-writing` and `/docs-to-skill`.
+  - Session modes: `/terse-mode`, `/focus-friendly-output`, `/yagni-minimalism` and `/socratic-tutor`.
+- **15 new knowledge skills:**
+  - Current-docs lookup, file-backed planning, PDF and Word documents, diagrams as code and interactive CLI driving.
+  - Flaky-test triage, property-based testing and mutation testing.
+  - Deep module design and defense-in-depth validation.
+  - De-slopping AI prose, internal comms, generative art and AI search visibility.
+- **MCP catalog: 7 → 53 servers**, grouped by category, with 50 official and 3 community servers.
+  - Reference servers: filesystem, git, fetch and time.
+  - Search, docs lookup, project management, observability and databases.
+  - Cloud, design, payments and coding tools.
+  - Remote servers use the `url` key, and community servers are marked in `eag mcp list`.
+- **Validator budget gate.** The build fails when:
+  - a visible skill's description is over 220 characters;
+  - a subagent description is over 160 characters;
+  - a slash-only skill is in no index;
+  - EAG's visible footprint passes 6,000 tokens.
+
+### Changed
+
+- Subagent and core-skill descriptions are shorter, at most 160 and 220 characters.
+- CI now also checks that the generated index skills are up to date.
+- `docs/AUTHORING.md` documents the visibility rules, and `docs/TROUBLESHOOTING.md` covers two new problems:
+  - skills that never get used;
+  - Antigravity reloading mid-task.
+
 ## [2.1.0] - 2026-11-22
 
 Coverage for every major field, not just software engineering.

@@ -1,5 +1,6 @@
 ---
 name: mobile-performance
+disable-model-invocation: true
 description: >-
   Diagnoses and fixes mobile app performance on Android and iOS, including
   Flutter and React Native: cold and warm startup, jank and dropped frames,

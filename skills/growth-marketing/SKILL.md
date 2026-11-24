@@ -1,5 +1,6 @@
 ---
 name: growth-marketing
+disable-model-invocation: true
 description: >-
   Plans and measures developer-tool growth: activation metric and aha moment,
   AARRR funnel, product-led growth loops, content and SEO engine, Discord and

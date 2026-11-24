@@ -1,5 +1,6 @@
 ---
 name: spreadsheet-modeling
+disable-model-invocation: true
 description: >-
   Builds robust spreadsheet models and dashboards in Excel and Google Sheets:
   inputs-calcs-outputs layout, named inputs with data validation, consistent

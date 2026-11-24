@@ -1,5 +1,6 @@
 ---
 name: google-adk
+disable-model-invocation: true
 description: >-
   Builds agents with Google's Agent Development Kit (google-adk): LLM agents
   with function tools, coordinator and workflow multi-agent designs, sessions,

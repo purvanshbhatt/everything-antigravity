@@ -1,5 +1,6 @@
 ---
 name: database-migrations
+disable-model-invocation: true
 description: >-
   Runs schema migrations safely at scale: choosing and using migration tools
   (Flyway, Liquibase, Alembic, Django, Rails, Prisma Migrate, EF Core,

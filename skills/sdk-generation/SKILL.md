@@ -1,5 +1,6 @@
 ---
 name: sdk-generation
+disable-model-invocation: true
 description: >-
   Produces client SDKs from API contracts: OpenAPI and protobuf linting,
   generator choice (openapi-typescript, OpenAPI Generator, oapi-codegen, Kiota,

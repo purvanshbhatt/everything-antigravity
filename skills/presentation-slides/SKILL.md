@@ -1,5 +1,6 @@
 ---
 name: presentation-slides
+disable-model-invocation: true
 description: >-
   Builds presentation decks that land: audience and goal framing, storyline
   written as action titles before any slide exists, slide layout and type

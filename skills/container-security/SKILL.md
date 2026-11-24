@@ -1,5 +1,6 @@
 ---
 name: container-security
+disable-model-invocation: true
 description: >-
   Hardens containers from Dockerfile to cluster: minimal and distroless base
   images, non-root users, build secrets, image scanning and signing, Pod

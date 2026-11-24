@@ -1,5 +1,6 @@
 ---
 name: data-quality
+disable-model-invocation: true
 description: >-
   Puts data quality controls into pipelines and warehouses: quality
   dimensions, validation with pandera, Great Expectations, Soda and dbt tests,

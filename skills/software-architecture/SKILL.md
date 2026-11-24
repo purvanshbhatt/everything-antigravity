@@ -1,5 +1,6 @@
 ---
 name: software-architecture
+disable-model-invocation: true
 description: >-
   Guides structural design decisions: Clean and Hexagonal architecture, DDD
   tactical patterns, modular monolith versus microservices, machine-enforced

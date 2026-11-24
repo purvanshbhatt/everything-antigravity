@@ -1,5 +1,6 @@
 ---
 name: game-ai
+disable-model-invocation: true
 description: >-
   Builds game AI that is fun, readable and cheap: finite and hierarchical
   state machines, behaviour trees with blackboards, utility scoring, A* on

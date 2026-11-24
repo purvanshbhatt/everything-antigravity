@@ -1,5 +1,6 @@
 ---
 name: auth-patterns
+disable-model-invocation: true
 description: >-
   Designs and reviews authentication and authorization: OAuth 2.1 and OIDC
   authorization code with PKCE, session cookies versus JWTs, cookie flags,

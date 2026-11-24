@@ -1,5 +1,6 @@
 ---
 name: vite-bundlers
+disable-model-invocation: true
 description: >-
   Configures and troubleshoots Vite and related bundlers: vite.config
   structure, plugins, aliases, dev proxy, env variables and modes, code

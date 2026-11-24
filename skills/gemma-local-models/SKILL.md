@@ -1,5 +1,6 @@
 ---
 name: gemma-local-models
+disable-model-invocation: true
 description: >-
   Runs open models such as Gemma locally or on-premises with Ollama,
   llama.cpp, LM Studio, MLX or Transformers: sizing model and GGUF

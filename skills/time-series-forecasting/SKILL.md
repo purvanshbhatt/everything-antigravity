@@ -1,5 +1,6 @@
 ---
 name: time-series-forecasting
+disable-model-invocation: true
 description: >-
   Builds forecasts that beat honest baselines: framing horizon and
   granularity, data preparation, naive and seasonal-naive baselines, ETS and

@@ -1,5 +1,6 @@
 ---
 name: vertex-ai
+disable-model-invocation: true
 description: >-
   Uses Google Cloud's Vertex AI platform (parts now branded Gemini Enterprise
   Agent Platform): project setup, service accounts and IAM, Gemini through

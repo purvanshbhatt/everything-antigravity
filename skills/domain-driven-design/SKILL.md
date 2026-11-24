@@ -1,5 +1,6 @@
 ---
 name: domain-driven-design
+disable-model-invocation: true
 description: >-
   Applies domain-driven design pragmatically: event storming, ubiquitous
   language, core vs supporting vs generic subdomains, bounded contexts and

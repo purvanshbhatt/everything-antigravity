@@ -1,5 +1,6 @@
 ---
 name: literature-review
+disable-model-invocation: true
 description: >-
   Runs academic literature reviews: question framing (PICO and similar),
   reproducible search strings across databases, PRISMA-style screening against

@@ -1,10 +1,7 @@
 ---
 name: game-engine-specialist
 description: >-
-  Game systems engineer for Godot 4, Three.js/WebGL and canvas games.
-  Delegate to it to build or fix game loops, physics, input, entity systems,
-  procedural content or rendering performance; it ships playable slices with
-  fixed-timestep simulation, pooled objects and measured frame times.
+  Builds and fixes Godot 4, Three.js and canvas game systems with fixed timesteps, pooling and measured frame times.
 tools:
   - view_file
   - grep_search

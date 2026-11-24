@@ -1,5 +1,6 @@
 ---
 name: hiring
+disable-model-invocation: true
 description: >-
   Runs fair, structured hiring: role scorecards, inclusive job posts with pay
   ranges, interview loops, question kits with anchored rubrics, work samples and

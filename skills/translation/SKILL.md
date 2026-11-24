@@ -1,5 +1,6 @@
 ---
 name: translation
+disable-model-invocation: true
 description: >-
   Translates and localizes content with quality controls: source preparation,
   termbases and do-not-translate lists, tone and formality per locale, locale

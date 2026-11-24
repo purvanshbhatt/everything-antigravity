@@ -1,5 +1,6 @@
 ---
 name: runbooks-oncall
+disable-model-invocation: true
 description: >-
   Designs on-call that people can sustain: symptom-based alerts with SLO
   burn-rate thresholds, page versus ticket routing, runbooks with diagnosis and

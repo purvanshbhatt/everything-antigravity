@@ -1,5 +1,6 @@
 ---
 name: background-jobs
+disable-model-invocation: true
 description: >-
   Designs background job systems: durable queues (Cloud Tasks, Pub/Sub,
   BullMQ, Celery, Sidekiq, Postgres-backed queues), transactional enqueue,

@@ -1,5 +1,6 @@
 ---
 name: cloud-devops
+disable-model-invocation: true
 description: >-
   Google Cloud overview and router: Cloud Run deploys, Artifact Registry,
   Cloud Build, IAM least privilege and per-service service accounts,

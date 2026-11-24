@@ -1,5 +1,6 @@
 ---
 name: knowledge-management
+disable-model-invocation: true
 description: >-
   Builds team knowledge bases people actually use: content inventory,
   information architecture by audience and task, Diataxis doc types,

@@ -1,11 +1,7 @@
 ---
 name: kotlin-reviewer
 description: >-
-  Kotlin reviewer for JVM, Android and Multiplatform code, focused on null
-  safety, coroutine and Flow correctness, Compose state and idioms. Delegate
-  to it with a diff or file list; it runs ktlint, detekt, Android Lint and
-  targeted tests, and returns severity-ranked findings with file:line and
-  exact patches. Read-only: it never edits files.
+  Read-only Kotlin reviewer for null safety, coroutines, Flow, Compose state and idioms; runs ktlint and detekt.
 tools:
   - view_file
   - grep_search

@@ -1,5 +1,6 @@
 ---
 name: tdd
+disable-model-invocation: true
 description: >-
   Drives red-green-refactor: writes a failing test from the requirement, proves
   it fails for the right reason, adds the minimal code to pass, refactors under

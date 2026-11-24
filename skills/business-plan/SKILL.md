@@ -1,5 +1,6 @@
 ---
 name: business-plan
+disable-model-invocation: true
 description: >-
   Writes business plans and strategy documents: audience and format, Business
   Model or Lean Canvas, problem and customer evidence, market and competition,

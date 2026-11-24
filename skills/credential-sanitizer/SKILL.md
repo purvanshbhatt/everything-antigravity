@@ -1,5 +1,6 @@
 ---
 name: credential-sanitizer
+disable-model-invocation: true
 description: >-
   Finds and removes leaked credentials: detection patterns for GCP
   service-account keys, Gemini and Google API keys, AWS, GitHub, Stripe,

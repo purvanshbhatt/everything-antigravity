@@ -1,5 +1,6 @@
 ---
 name: golang-services
+disable-model-invocation: true
 description: >-
   Builds and reviews idiomatic Go services: project layout, context
   propagation and cancellation, error wrapping with errors.Is and errors.As,

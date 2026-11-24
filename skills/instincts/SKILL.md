@@ -1,5 +1,6 @@
 ---
 name: instincts
+disable-model-invocation: true
 description: >-
   Reviews and evolves learned EAG instincts: lists them by confidence,
   reinforces or weakens each based on real outcomes, prunes those below 0.3

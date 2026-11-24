@@ -1,5 +1,6 @@
 ---
 name: python-packaging
+disable-model-invocation: true
 description: >-
   Packages and publishes Python projects: pyproject.toml metadata, build
   backends, src layout, entry points, dependency management and lockfiles with

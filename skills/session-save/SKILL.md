@@ -1,5 +1,6 @@
 ---
 name: session-save
+disable-model-invocation: true
 description: >-
   Writes a rich, resumable session summary (goal, state of work, files touched,
   decisions and rationale, failed approaches, open questions, exact next steps,

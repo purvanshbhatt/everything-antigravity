@@ -1,10 +1,7 @@
 ---
 name: code-reviewer
 description: >-
-  Adversarial principal-level code reviewer. Delegate to it with a diff, branch
-  or file list plus the acceptance criteria; it returns severity-ranked findings
-  with file:line, a concrete trigger and an exact patch. Read-only: it runs
-  checks but never edits files.
+  Read-only adversarial reviewer for a diff or branch: severity-ranked findings with file:line, trigger and exact patch.
 tools:
   - view_file
   - grep_search

@@ -1,5 +1,6 @@
 ---
 name: issue-triage
+disable-model-invocation: true
 description: >-
   Triages bug reports and issues: collects the backlog, reproduces each
   report, classifies type and area, finds duplicates, assigns a justified

@@ -1,5 +1,6 @@
 ---
 name: deep-work
+disable-model-invocation: true
 description: >-
   Runs a high-rigor mode for hard problems: restates the problem with testable
   acceptance criteria, enumerates competing hypotheses, plans with a verification

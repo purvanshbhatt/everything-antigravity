@@ -1,5 +1,6 @@
 ---
 name: threat-modeling
+disable-model-invocation: true
 description: >-
   Runs a threat model for a feature or system change: scope, data-flow diagram
   with trust boundaries, STRIDE per element, abuse cases, risk rating,

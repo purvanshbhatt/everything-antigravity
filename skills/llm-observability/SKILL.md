@@ -1,5 +1,6 @@
 ---
 name: llm-observability
+disable-model-invocation: true
 description: >-
   Instruments LLM and agent applications: OpenTelemetry GenAI spans for model,
   tool and agent steps, token, cost and latency metrics, prompt and model

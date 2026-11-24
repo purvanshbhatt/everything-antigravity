@@ -1,5 +1,6 @@
 ---
 name: angular
+disable-model-invocation: true
 description: >-
   Builds modern Angular apps with standalone components, signals (signal,
   computed, effect, input, output, model), built-in control flow and @defer,

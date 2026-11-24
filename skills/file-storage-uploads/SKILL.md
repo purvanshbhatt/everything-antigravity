@@ -1,5 +1,6 @@
 ---
 name: file-storage-uploads
+disable-model-invocation: true
 description: >-
   Handles user file uploads and storage safely: direct-to-bucket uploads with
   V4 signed URLs, resumable and multipart uploads, size and content-type

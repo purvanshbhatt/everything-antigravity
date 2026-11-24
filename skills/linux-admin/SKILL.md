@@ -1,5 +1,6 @@
 ---
 name: linux-admin
+disable-model-invocation: true
 description: >-
   Administers and troubleshoots Linux hosts: systemd units and hardening,
   journald logs, users, groups, permissions and sudo, SSH access (including OS

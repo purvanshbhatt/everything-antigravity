@@ -1,5 +1,6 @@
 ---
 name: verify
+disable-model-invocation: true
 description: >-
   Runs the project's verification gates and prints a VERIFICATION REPORT with
   PASS, FAIL or SKIP per gate. Its quick mode is a pre-commit gate (format, lint,

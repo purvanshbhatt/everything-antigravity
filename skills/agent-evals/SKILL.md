@@ -1,5 +1,6 @@
 ---
 name: agent-evals
+disable-model-invocation: true
 description: >-
   Evaluates LLM features and agents: golden datasets, programmatic graders,
   rubric and LLM-as-judge scoring with human calibration, pass@k and pass^k,

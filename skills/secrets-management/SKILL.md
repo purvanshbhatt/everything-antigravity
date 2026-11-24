@@ -1,5 +1,6 @@
 ---
 name: secrets-management
+disable-model-invocation: true
 description: >-
   Stores, injects and rotates secrets: Google Secret Manager with
   per-secret IAM, Vault and dynamic credentials, runtime injection on

@@ -1,5 +1,6 @@
 ---
 name: root-cause
+disable-model-invocation: true
 description: >-
   Debugs systematically instead of guessing: reproduces the failure, minimizes
   it, ranks falsifiable hypotheses, bisects regressions with git bisect run,

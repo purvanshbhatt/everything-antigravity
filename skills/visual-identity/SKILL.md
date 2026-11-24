@@ -1,5 +1,6 @@
 ---
 name: visual-identity
+disable-model-invocation: true
 description: >-
   Creates a visual identity system: brief and moodboards, logo concept
   exploration and stress tests (favicon size, one colour, reversed), colour

@@ -1,5 +1,6 @@
 ---
 name: paid-advertising
+disable-model-invocation: true
 description: >-
   Plans, launches and optimizes paid campaigns on Google Ads, Meta and
   LinkedIn: target CPA from unit economics, conversion tracking and consent,

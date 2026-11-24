@@ -1,5 +1,6 @@
 ---
 name: css-architecture
+disable-model-invocation: true
 description: >-
   Structures modern CSS for maintainability: cascade layers for predictable
   precedence, custom-property tokens, container queries, :has() and :where(),

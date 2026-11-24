@@ -1,5 +1,6 @@
 ---
 name: helm-charts
+disable-model-invocation: true
 description: >-
   Authors and operates Helm charts: chart layout, values design with a JSON
   schema, template helpers and common pitfalls, lint, render and schema

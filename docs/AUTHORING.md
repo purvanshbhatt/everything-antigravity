@@ -19,11 +19,12 @@ skills/<name>/
 └── scripts/*         # optional, zero-dependency helpers (Node or bash+PowerShell pairs)
 ```
 
-### Frontmatter (exactly these two keys)
+### Frontmatter
 
 ```markdown
 ---
 name: code-review
+disable-model-invocation: true
 description: >-
   Reviews a diff, branch or set of files for correctness, security and
   maintainability bugs and returns ranked findings with concrete patches. Use
@@ -31,6 +32,33 @@ description: >-
   Invoke with /code-review.
 ---
 ```
+
+### Context budget and visibility (read this before adding a skill)
+
+Antigravity gives every installed plugin's model-visible skills, subagents and
+MCP tools **one shared 20,000-token budget**. When the total goes over, it
+silently drops the most expensive skills from the agent's view, so a long
+description is the first thing to disappear. `eag budget` shows the live numbers.
+
+EAG therefore ships three kinds of skill:
+
+| Kind | Frontmatter | Cost | How the agent finds it |
+| :--- | :--- | :--- | :--- |
+| Slash-only (almost every skill) | `disable-model-invocation: true` | none | the user types `/<name>`, or the agent reads it from an `eag-*` index |
+| Core (about a dozen) | no flag, description ≤ 220 characters | ~100 tokens | always in the agent's skill list |
+| Index (`eag-*`, generated) | no flag, description ≤ 220 characters | ~100 tokens | always visible; lists the slash-only skills of one category with paths |
+
+Rules the validator enforces:
+
+- A new skill is slash-only unless there is a strong reason to make it core.
+- Add every new knowledge skill to a category in `scripts/categories.json`, then
+  run `npm run catalog` to regenerate the `eag-*` indexes and `docs/CATALOG.md`.
+  Workflows (descriptions ending in `Invoke with /<name>.`) are indexed
+  automatically in `eag-workflows`.
+- Every slash-only skill must appear in an index, or validation fails.
+- Model-visible descriptions are at most 220 characters, subagent descriptions
+  at most 160, and EAG's whole visible footprint stays under 6,000 tokens.
+- Never edit `skills/eag-*` by hand. CI regenerates them and fails on drift.
 
 - `name` is kebab-case, identical to the directory name, and must not collide
   with Antigravity built-in commands: `plan`, `learn`, `goal`, `boost`, `swarm`,

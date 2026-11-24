@@ -1,5 +1,6 @@
 ---
 name: product-discovery
+disable-model-invocation: true
 description: >-
   Runs product discovery to decide what is worth building: outcome framing,
   opportunity mapping, customer interviews about past behaviour, synthesis

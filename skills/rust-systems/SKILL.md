@@ -1,5 +1,6 @@
 ---
 name: rust-systems
+disable-model-invocation: true
 description: >-
   Builds and reviews Rust services and CLIs: ownership patterns that avoid
   fighting the borrow checker, thiserror versus anyhow, tokio async (spawn,

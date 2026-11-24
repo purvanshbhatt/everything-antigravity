@@ -1,5 +1,6 @@
 ---
 name: safe-refactor
+disable-model-invocation: true
 description: >-
   Changes code structure without changing behaviour: characterization and
   approval tests, a refactoring catalogue with safety ratings, strangler fig,

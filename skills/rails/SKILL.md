@@ -1,5 +1,6 @@
 ---
 name: rails
+disable-model-invocation: true
 description: >-
   Builds and reviews Ruby on Rails applications: Active Record models,
   validations and N+1 prevention, safe migrations on live tables, strong

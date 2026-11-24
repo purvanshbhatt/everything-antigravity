@@ -1,11 +1,7 @@
 ---
 name: frontend-engineer
 description: >-
-  Frontend implementer for React, Next.js, Vue, Svelte and Angular apps.
-  Delegate to it with a UI feature or bug plus acceptance criteria; it follows
-  the project's existing patterns, builds every UI state (loading, empty,
-  error, success) accessibly and responsively, writes component tests, and
-  returns the diff summary with gate results. It does not deploy.
+  Builds React, Next.js, Vue, Svelte or Angular UI with every state, accessibility and component tests. Does not deploy.
 tools:
   - view_file
   - grep_search

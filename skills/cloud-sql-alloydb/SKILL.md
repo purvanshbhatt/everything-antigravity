@@ -1,5 +1,6 @@
 ---
 name: cloud-sql-alloydb
+disable-model-invocation: true
 description: >-
   Runs managed PostgreSQL and MySQL on Google Cloud: choosing Cloud SQL
   editions or AlloyDB, sizing, high availability, private IP, connecting via

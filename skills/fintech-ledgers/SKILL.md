@@ -1,5 +1,6 @@
 ---
 name: fintech-ledgers
+disable-model-invocation: true
 description: >-
   Builds money-handling systems correctly: double-entry ledgers with
   immutable postings, integer minor units and explicit rounding, idempotent

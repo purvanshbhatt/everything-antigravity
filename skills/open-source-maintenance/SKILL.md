@@ -1,5 +1,6 @@
 ---
 name: open-source-maintenance
+disable-model-invocation: true
 description: >-
   Sets up and runs an open-source project: license choice and dependency
   license checks, community health files, issue forms and PR templates,

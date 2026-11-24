@@ -1,5 +1,6 @@
 ---
 name: api-testing
+disable-model-invocation: true
 description: >-
   Builds API test suites that catch real bugs: in-process HTTP tests
   (supertest, httpx with FastAPI, Go httptest, Spring MockMvc), black-box

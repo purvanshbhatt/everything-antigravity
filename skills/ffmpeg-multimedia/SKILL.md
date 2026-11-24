@@ -1,5 +1,6 @@
 ---
 name: ffmpeg-multimedia
+disable-model-invocation: true
 description: >-
   Provides ffmpeg and ffprobe recipes: H.264, H.265 and AV1 encoding
   with CRF guidance, trimming without re-encode, concat, scale/pad/crop,

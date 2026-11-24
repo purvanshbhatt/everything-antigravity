@@ -1,5 +1,6 @@
 ---
 name: kotlin-patterns
+disable-model-invocation: true
 description: >-
   Writes idiomatic Kotlin: null safety without !!, data, sealed and value
   classes, exhaustive when, extension functions with restraint, scope

@@ -1,5 +1,6 @@
 ---
 name: nodejs-patterns
+disable-model-invocation: true
 description: >-
   Applies Node.js runtime patterns: keeping the event loop free, streams with
   pipeline and backpressure, worker threads for CPU work, ESM and CommonJS

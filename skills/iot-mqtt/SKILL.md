@@ -1,5 +1,6 @@
 ---
 name: iot-mqtt
+disable-model-invocation: true
 description: >-
   Builds IoT backends on MQTT: topic and payload design, QoS, retained
   messages and last will, MQTT 5 features, broker choice, per-device X.509

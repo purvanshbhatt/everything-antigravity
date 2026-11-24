@@ -1,5 +1,6 @@
 ---
 name: realtime-websockets
+disable-model-invocation: true
 description: >-
   Builds realtime features with WebSockets and Server-Sent Events: choosing
   WebSockets vs SSE vs polling, connection authentication and Origin checks,

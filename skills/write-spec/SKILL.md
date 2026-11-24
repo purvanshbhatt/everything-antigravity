@@ -1,5 +1,6 @@
 ---
 name: write-spec
+disable-model-invocation: true
 description: >-
   Writes a technical spec or design doc for a change: problem, goals and
   non-goals, current state grounded in the code, a proposed design with

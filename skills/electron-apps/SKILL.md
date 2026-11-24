@@ -1,5 +1,6 @@
 ---
 name: electron-apps
+disable-model-invocation: true
 description: >-
   Builds secure, fast Electron desktop apps: main, renderer, preload and
   utility process roles, context isolation and validated IPC through

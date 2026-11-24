@@ -1,5 +1,6 @@
 ---
 name: email-marketing
+disable-model-invocation: true
 description: >-
   Plans and runs consent-based email marketing: list building and double
   opt-in, segmentation, lifecycle flows (welcome, onboarding, re-engagement,

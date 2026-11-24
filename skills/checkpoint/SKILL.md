@@ -1,5 +1,6 @@
 ---
 name: checkpoint
+disable-model-invocation: true
 description: >-
   Marks a logical milestone in a long task: runs a quick verification, writes a
   compact progress summary (done, in progress, next, decisions, gotchas), saves

@@ -1,5 +1,6 @@
 ---
 name: react-patterns
+disable-model-invocation: true
 description: >-
   Applies React 19 component patterns: composition over boolean props, rules of
   hooks, effect discipline (derive instead of sync), Suspense and error

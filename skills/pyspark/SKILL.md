@@ -1,5 +1,6 @@
 ---
 name: pyspark
+disable-model-invocation: true
 description: >-
   Writes and tunes PySpark jobs on Dataproc, Serverless for Apache Spark or
   any Spark cluster: DataFrame API idioms, lazy evaluation, partitioning and

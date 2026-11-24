@@ -1,5 +1,6 @@
 ---
 name: ui-polish
+disable-model-invocation: true
 description: >-
   Visually QAs and polishes a UI in a real browser: screenshots across
   breakpoints, themes and states, then checks spacing, alignment, typography,

@@ -1,5 +1,6 @@
 ---
 name: event-driven-architecture
+disable-model-invocation: true
 description: >-
   Designs event-driven systems: commands vs events vs queries, notification vs
   state-transfer payloads, CloudEvents envelopes and schema evolution,

@@ -1,12 +1,7 @@
 ---
 name: security-audit
 description: >-
-  Security review knowledge: OWASP Top 10 (2021 and 2025) and OWASP Top 10
-  for LLM applications checklists, a quick STRIDE threat model, authn and
-  authz review, dependency and supply-chain checks (SBOM, pinning,
-  provenance), secrets, headers and CSP, SSRF, deserialization, logging
-  hygiene and a severity rubric. Use when auditing an app, endpoint, LLM
-  feature or dependency set, threat-modelling a design, or rating findings.
+  Audits code and config for OWASP Top 10, secrets, authz gaps, injection and dependency risk, with ranked fixes.
 ---
 
 # Security Audit

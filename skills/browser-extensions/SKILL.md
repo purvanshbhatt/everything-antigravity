@@ -1,5 +1,6 @@
 ---
 name: browser-extensions
+disable-model-invocation: true
 description: >-
   Builds Manifest V3 browser extensions for Chrome, Edge and Firefox: minimal
   permissions, service worker lifecycle, content scripts and isolated worlds,

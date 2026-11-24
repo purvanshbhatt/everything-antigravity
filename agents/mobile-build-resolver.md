@@ -1,11 +1,7 @@
 ---
 name: mobile-build-resolver
 description: >-
-  Mobile build fixer for iOS (Xcode, SwiftPM, CocoaPods), Android (Gradle,
-  AGP), React Native and Expo, Flutter and Kotlin Multiplatform. Delegate to
-  it with a failing build command; it isolates toolchain, dependency, native
-  module and configuration failures, fixes one root cause at a time and
-  rebuilds after every fix. It never touches signing assets or uploads builds.
+  Fixes iOS, Android, React Native, Flutter and KMP build failures one root cause at a time. Never touches signing.
 tools:
   - view_file
   - grep_search

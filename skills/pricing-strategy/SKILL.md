@@ -1,5 +1,6 @@
 ---
 name: pricing-strategy
+disable-model-invocation: true
 description: >-
   Designs pricing and packaging for SaaS, open-core, API and LLM-powered
   products: value metric selection, good/better/best tiers, freemium vs free

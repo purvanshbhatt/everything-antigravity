@@ -1,5 +1,6 @@
 ---
 name: scientific-computing
+disable-model-invocation: true
 description: >-
   Scientific computing in Python: NumPy vectorization and broadcasting,
   dtypes and memory layout, numerical stability (cancellation, log-sum-exp,

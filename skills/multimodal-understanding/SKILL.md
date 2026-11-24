@@ -1,5 +1,6 @@
 ---
 name: multimodal-understanding
+disable-model-invocation: true
 description: >-
   Builds features that understand images, video, audio and PDFs with Gemini:
   inline data versus Files API or URLs, media resolution and token cost,

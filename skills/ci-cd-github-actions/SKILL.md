@@ -1,5 +1,6 @@
 ---
 name: ci-cd-github-actions
+disable-model-invocation: true
 description: >-
   Designs fast, secure GitHub Actions pipelines: triggers, dependency and
   Docker caching, matrix builds, concurrency groups, least-privilege

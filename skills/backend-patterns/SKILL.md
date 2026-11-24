@@ -1,5 +1,6 @@
 ---
 name: backend-patterns
+disable-model-invocation: true
 description: >-
   Applies proven server-side patterns: layering, transactions and unit of
   work, transactional outbox, idempotent consumers, retries with backoff and

@@ -1,5 +1,6 @@
 ---
 name: feature-flags
+disable-model-invocation: true
 description: >-
   Uses feature flags safely: release, experiment, ops kill-switch and
   entitlement flag types, targeting and percentage rollouts with sticky

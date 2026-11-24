@@ -1,5 +1,6 @@
 ---
 name: linting-formatting
+disable-model-invocation: true
 description: >-
   Sets up and enforces linters and formatters across languages: Prettier,
   Biome and ESLint, Ruff, gofmt and golangci-lint, rustfmt and Clippy,

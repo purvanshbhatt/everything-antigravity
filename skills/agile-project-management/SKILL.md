@@ -1,5 +1,6 @@
 ---
 name: agile-project-management
+disable-model-invocation: true
 description: >-
   Plans and runs delivery with Scrum or Kanban: backlog shaping and slicing,
   definitions of ready and done, estimation and Monte Carlo throughput

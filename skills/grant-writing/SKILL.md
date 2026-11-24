@@ -1,5 +1,6 @@
 ---
 name: grant-writing
+disable-model-invocation: true
 description: >-
   Writes grant proposals that map to reviewer criteria: funder-fit analysis,
   a compliance checklist from the call, specific aims, significance and

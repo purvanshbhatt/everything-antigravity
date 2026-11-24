@@ -1,5 +1,6 @@
 ---
 name: update-docs
+disable-model-invocation: true
 description: >-
   Syncs documentation with code: detects drift from the diff (changed public
   APIs, CLI flags, env vars, scripts, config keys), updates README, CHANGELOG,

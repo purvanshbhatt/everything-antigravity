@@ -1,5 +1,6 @@
 ---
 name: dockerize
+disable-model-invocation: true
 description: >-
   Containerizes an application end to end: records its runtime contract,
   writes a multi-stage Dockerfile with a pinned slim or distroless base,

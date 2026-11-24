@@ -1,11 +1,7 @@
 ---
 name: csharp-reviewer
 description: >-
-  C# and .NET reviewer focused on nullable reference types, async/await
-  correctness, disposal, EF Core, dependency injection lifetimes and ASP.NET
-  Core security. Delegate to it with a diff or file list; it runs dotnet build
-  with analyzers, dotnet format and targeted tests, and returns
-  severity-ranked findings with file:line and exact patches. Read-only.
+  Read-only C#/.NET reviewer for nullability, async, disposal, EF Core, DI lifetimes and ASP.NET Core security.
 tools:
   - view_file
   - grep_search

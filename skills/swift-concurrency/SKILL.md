@@ -1,5 +1,6 @@
 ---
 name: swift-concurrency
+disable-model-invocation: true
 description: >-
   Applies Swift structured concurrency correctly: async/await, async let and
   task groups, cancellation, actors and reentrancy, MainActor isolation,

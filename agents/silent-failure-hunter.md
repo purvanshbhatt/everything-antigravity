@@ -1,11 +1,7 @@
 ---
 name: silent-failure-hunter
 description: >-
-  Error-handling auditor. Delegate to it with a diff, module or service; it
-  hunts swallowed exceptions, empty catches, ignored promise rejections and Go
-  errors, fallbacks that hide failures, misleading success paths and missing
-  logging, and returns ranked findings with exact patches. Read-only: it runs
-  linters but never edits files.
+  Read-only hunter of swallowed errors, empty catches, hidden fallbacks and false success paths, with patches.
 tools:
   - view_file
   - grep_search

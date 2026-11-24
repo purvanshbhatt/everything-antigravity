@@ -1,5 +1,6 @@
 ---
 name: tauri-apps
+disable-model-invocation: true
 description: >-
   Builds Tauri 2 apps for desktop and mobile: Rust commands with typed errors,
   managed state, events and channels, capability-based permissions and scopes,

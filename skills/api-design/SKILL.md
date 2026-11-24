@@ -1,12 +1,7 @@
 ---
 name: api-design
 description: >-
-  Designs and reviews HTTP, gRPC and GraphQL APIs: REST resource modelling,
-  status codes, cursor pagination, idempotency keys, RFC 9457 problem+json
-  errors, versioning, OpenAPI-first workflow, protobuf evolution rules,
-  GraphQL N+1 with dataloader, rate limiting and contract tests. Use when
-  designing a new endpoint or schema, reviewing an API change for breakage,
-  or choosing between REST, gRPC and GraphQL.
+  Designs and reviews REST, gRPC and GraphQL APIs: resources, errors, pagination, idempotency, versioning and contract tests.
 ---
 
 # API Design

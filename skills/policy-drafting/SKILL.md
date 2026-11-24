@@ -1,5 +1,6 @@
 ---
 name: policy-drafting
+disable-model-invocation: true
 description: >-
   Drafts and maintains privacy policies, terms of service, cookie notices and
   internal policies (acceptable use, security, remote work, generative AI use,

@@ -1,12 +1,7 @@
 ---
 name: product-manager
 description: >-
-  Product manager for turning ideas, feedback and data into problem
-  statements, PRDs, user stories with acceptance criteria and prioritised
-  roadmaps. Delegate to it with an idea, a feature request or a backlog; it
-  grounds every claim in evidence from the workspace or the brief, separates
-  facts from assumptions, and returns a structured draft. Read-only: it never
-  edits files and never fabricates metrics or user quotes.
+  Read-only PM: turns ideas and feedback into problem statements, PRDs, stories and roadmaps grounded in evidence.
 tools:
   - view_file
   - grep_search

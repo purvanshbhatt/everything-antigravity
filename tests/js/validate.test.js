@@ -17,6 +17,43 @@ test('the repository itself validates with zero errors', () => {
   assert.ok(r.stats.alwaysOnTokens < 3000, `always-on rules cost ${r.stats.alwaysOnTokens} tokens`);
 });
 
+test('the repository fits inside the Antigravity customization budget', () => {
+  // Antigravity shares a 20,000-token budget across every plugin's model-visible skills,
+  // subagents and MCP tools, and cuts the most expensive skills first when it overflows.
+  const r = validateRepo(ROOT);
+  assert.ok(r.stats.budgetTokens <= 6000, `EAG costs ~${r.stats.budgetTokens} tokens of the 20,000-token budget`);
+  assert.ok(r.stats.visibleSkills <= 30, `${r.stats.visibleSkills} model-visible skills`);
+  for (const s of r.skills.filter((x) => x.visible)) assert.ok(s.description.length <= 220, `${s.name}: ${s.description.length} chars`);
+  for (const a of r.agents) assert.ok(a.description.length <= 160, `${a.name}: ${a.description.length} chars`);
+});
+
+function tinyRepo(files) {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'eag-budget-'));
+  for (const [rel, text] of Object.entries({ 'plugin.json': '{"name":"tiny","version":"1.0.0"}', ...files })) {
+    fs.mkdirSync(path.dirname(path.join(dir, rel)), { recursive: true });
+    fs.writeFileSync(path.join(dir, rel), text);
+  }
+  return dir;
+}
+
+test('validator rejects model-visible skills that Antigravity would cut first', () => {
+  const long = 'Explains a topic in depth. '.repeat(12);
+  const { errors } = validateRepo(tinyRepo({ 'skills/wordy/SKILL.md': `---\nname: wordy\ndescription: ${long}\n---\n# W\n` }));
+  assert.ok(errors.some((e) => /skills\/wordy: model-visible description is \d+ chars/.test(e)), errors.join('\n'));
+});
+
+test('slash-only skills must be reachable from an eag index skill', () => {
+  const hidden = '---\nname: deep-topic\ndisable-model-invocation: true\ndescription: A long playbook.\n---\n# D\n';
+  const orphan = validateRepo(tinyRepo({ 'skills/deep-topic/SKILL.md': hidden }));
+  assert.ok(orphan.errors.some((e) => /skills\/deep-topic: slash-only skill is not listed in any eag-\* index/.test(e)), orphan.errors.join('\n'));
+  assert.ok(!orphan.warnings.some((w) => /extra frontmatter key "disable-model-invocation"/.test(w)), orphan.warnings.join('\n'));
+
+  const index = '---\nname: eag-topics\ndescription: Index of topic playbooks.\n---\n# Index\n\n| [deep-topic](../deep-topic/SKILL.md) |\n';
+  const ok = validateRepo(tinyRepo({ 'skills/deep-topic/SKILL.md': hidden, 'skills/eag-topics/SKILL.md': index }));
+  assert.ok(!ok.errors.some((e) => /not listed in any eag-/.test(e)), ok.errors.join('\n'));
+  assert.equal(ok.stats.visibleSkills, 1);
+});
+
 test('frontmatter parser handles folded blocks, lists and booleans', () => {
   const { data, errors } = parseFrontmatter('---\nname: x\ndescription: >-\n  line one\n  line two\ntools:\n  - view_file\n  - run_command\nsubagent: true\n---\nbody');
   assert.deepEqual(errors, []);

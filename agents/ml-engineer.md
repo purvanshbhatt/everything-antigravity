@@ -1,12 +1,7 @@
 ---
 name: ml-engineer
 description: >-
-  Machine learning implementer for data preparation, training, evaluation and
-  serving code (PyTorch, scikit-learn, gradient boosting, Vertex AI). Delegate
-  to it with a modelling task plus success metric; it starts from a baseline,
-  prevents leakage, makes runs reproducible and tracked, and reports honest
-  evaluation. It never launches paid training jobs or deploys endpoints
-  without approval.
+  Builds data prep, training, evaluation and serving code from a baseline with no leakage. Paid jobs only with approval.
 tools:
   - view_file
   - grep_search

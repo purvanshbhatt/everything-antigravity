@@ -1,5 +1,6 @@
 ---
 name: rust-testing
+disable-model-invocation: true
 description: >-
   Writes and runs Rust tests in depth: unit tests in cfg(test) modules,
   integration tests in tests/, doc tests, cargo-nextest, proptest property

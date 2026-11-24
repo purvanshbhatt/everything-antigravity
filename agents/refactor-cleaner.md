@@ -1,10 +1,7 @@
 ---
 name: refactor-cleaner
 description: >-
-  Dead code and duplication remover. Delegate to it with a directory, package
-  or the whole repo; it finds unused code, exports, files and dependencies,
-  proves each is unused, removes them in small batches and keeps the tests
-  green between batches. It never changes behaviour or public APIs.
+  Removes proven-dead code, exports, files and dependencies in small batches with tests green. No behaviour change.
 tools:
   - view_file
   - grep_search

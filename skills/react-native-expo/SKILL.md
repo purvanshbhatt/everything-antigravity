@@ -1,5 +1,6 @@
 ---
 name: react-native-expo
+disable-model-invocation: true
 description: >-
   Builds and ships React Native apps with Expo: project setup, Expo Router
   navigation and deep links, development builds, config plugins and native

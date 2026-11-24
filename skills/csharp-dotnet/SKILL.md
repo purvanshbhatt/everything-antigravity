@@ -1,5 +1,6 @@
 ---
 name: csharp-dotnet
+disable-model-invocation: true
 description: >-
   Writes modern C# and .NET: nullable reference types as errors, records and
   required members, pattern matching, LINQ pitfalls, async/await rules,

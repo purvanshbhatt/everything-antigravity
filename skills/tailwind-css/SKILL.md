@@ -1,5 +1,6 @@
 ---
 name: tailwind-css
+disable-model-invocation: true
 description: >-
   Sets up and maintains Tailwind CSS (v4 CSS-first and v3 config): design
   tokens in @theme, dark mode strategies, custom utilities and variants,

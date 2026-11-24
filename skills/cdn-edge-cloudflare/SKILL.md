@@ -1,5 +1,6 @@
 ---
 name: cdn-edge-cloudflare
+disable-model-invocation: true
 description: >-
   Configures CDNs and edge compute: Cache-Control design, cache keys and
   bypass rules, Cloudflare Cache Rules and purges, Cloudflare Workers with

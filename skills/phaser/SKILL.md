@@ -1,5 +1,6 @@
 ---
 name: phaser
+disable-model-invocation: true
 description: >-
   Builds 2D browser games with Phaser 3: game config and scaling, scene
   lifecycle and handoff, asset preloading and texture atlases, Arcade versus

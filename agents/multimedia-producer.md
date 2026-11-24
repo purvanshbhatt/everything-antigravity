@@ -1,11 +1,7 @@
 ---
 name: multimedia-producer
 description: >-
-  Programmatic media producer for Remotion video, FFmpeg pipelines and image
-  generation or processing. Delegate to it with a deliverable spec (format,
-  resolution, duration, platform); it builds the composition or pipeline,
-  renders to an output folder and verifies every file with ffprobe and a
-  decode check before reporting.
+  Builds Remotion, FFmpeg and image pipelines to a spec and verifies every output with ffprobe before reporting.
 tools:
   - view_file
   - grep_search

@@ -1,5 +1,6 @@
 ---
 name: curriculum-design
+disable-model-invocation: true
 description: >-
   Designs courses, workshops and training with backward design: audience
   analysis, measurable learning objectives using Bloom's verbs, assessments

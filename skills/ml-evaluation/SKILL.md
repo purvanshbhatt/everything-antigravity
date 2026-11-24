@@ -1,5 +1,6 @@
 ---
 name: ml-evaluation
+disable-model-invocation: true
 description: >-
   Evaluates predictive ML models rigorously: metrics matched to the decision
   for classification, regression and ranking, split design with group and time

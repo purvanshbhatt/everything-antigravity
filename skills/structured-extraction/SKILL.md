@@ -1,5 +1,6 @@
 ---
 name: structured-extraction
+disable-model-invocation: true
 description: >-
   Extracts structured data from text, PDFs, images and long documents with
   Gemini: a labeled golden set, schemas with null and evidence fields,

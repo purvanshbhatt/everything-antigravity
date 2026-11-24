@@ -1,5 +1,6 @@
 ---
 name: finops-cost
+disable-model-invocation: true
 description: >-
   Controls cloud spend with FinOps practice, Google Cloud first: billing export
   to BigQuery, label-based cost allocation, budgets and alerts, idle and

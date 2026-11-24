@@ -1,5 +1,6 @@
 ---
 name: sales-outreach
+disable-model-invocation: true
 description: >-
   Plans and drafts outbound sales outreach: ideal customer profile and
   personas, trigger-based account lists, tiered research and personalization,

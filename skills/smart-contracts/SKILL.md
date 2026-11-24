@@ -1,5 +1,6 @@
 ---
 name: smart-contracts
+disable-model-invocation: true
 description: >-
   Smart contract security and testing for Solidity: checks-effects-
   interactions and reentrancy, access control, signature replay, oracle and

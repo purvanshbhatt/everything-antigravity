@@ -1,5 +1,6 @@
 ---
 name: gcp-iam
+disable-model-invocation: true
 description: >-
   Designs and audits Google Cloud IAM: resource hierarchy, predefined and
   custom roles, conditional and time-bound grants, service accounts without

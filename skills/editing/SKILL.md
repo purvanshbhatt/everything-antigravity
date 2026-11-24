@@ -1,5 +1,6 @@
 ---
 name: editing
+disable-model-invocation: true
 description: >-
   Edits and proofreads prose in separate passes: structural edit (purpose,
   audience, order), line edit (clarity, concision, active voice, plain

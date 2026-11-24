@@ -1,5 +1,6 @@
 ---
 name: payments-stripe
+disable-model-invocation: true
 description: >-
   Integrates Stripe payments in test mode: Checkout vs Payment Element with
   PaymentIntents, products and prices, subscriptions and the customer portal,

@@ -1,5 +1,6 @@
 ---
 name: unreal-engine
+disable-model-invocation: true
 description: >-
   Builds Unreal Engine 5 games: splitting work between C++ and Blueprints, the
   gameplay framework (GameMode, GameState, PlayerController, Pawn, PlayerState,

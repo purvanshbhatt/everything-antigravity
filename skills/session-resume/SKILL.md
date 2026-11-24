@@ -1,5 +1,6 @@
 ---
 name: session-resume
+disable-model-invocation: true
 description: >-
   Loads the latest (or a chosen) EAG session summary, re-validates its claims
   against the current repository (commits, working tree, branch, gates since the

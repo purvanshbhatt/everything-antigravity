@@ -1,5 +1,6 @@
 ---
 name: grpc-services
+disable-model-invocation: true
 description: >-
   Designs and operates gRPC services: proto3 API design, backward-compatible
   evolution checked with buf, unary and streaming RPCs, deadlines and

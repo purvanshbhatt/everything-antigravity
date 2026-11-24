@@ -1,5 +1,6 @@
 ---
 name: ktor-server
+disable-model-invocation: true
 description: >-
   Builds Ktor server applications in Kotlin: engine and module setup,
   configuration from files and environment, routing, plugins (content

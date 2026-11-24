@@ -1,5 +1,6 @@
 ---
 name: robotics-ros2
+disable-model-invocation: true
 description: >-
   Builds robot software with ROS 2: workspaces and colcon, nodes, topics,
   services, actions and parameters, QoS profiles, launch files, tf2 frames,

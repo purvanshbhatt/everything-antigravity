@@ -1,5 +1,6 @@
 ---
 name: pulumi
+disable-model-invocation: true
 description: >-
   Builds and reviews infrastructure with Pulumi in TypeScript, Python or Go:
   stacks per environment, state backends (including GCS), config and encrypted

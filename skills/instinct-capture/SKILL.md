@@ -1,5 +1,6 @@
 ---
 name: instinct-capture
+disable-model-invocation: true
 description: >-
   Distills a correction, a solved non-obvious bug, or a confirmed preference
   into an instinct (trigger "when X", action "do Y", evidence, scope, starting

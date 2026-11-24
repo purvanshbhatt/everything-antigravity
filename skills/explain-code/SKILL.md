@@ -1,5 +1,6 @@
 ---
 name: explain-code
+disable-model-invocation: true
 description: >-
   Explains unfamiliar code at the requested depth: a short summary, an
   annotated walkthrough of the execution path, call graph and data flow,

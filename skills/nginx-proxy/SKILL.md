@@ -1,5 +1,6 @@
 ---
 name: nginx-proxy
+disable-model-invocation: true
 description: >-
   Configures and debugs Nginx and Caddy as reverse proxies: upstreams and
   forwarded headers, TLS with ACME certificates and HSTS, HTTP/2, WebSocket and

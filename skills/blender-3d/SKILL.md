@@ -1,5 +1,6 @@
 ---
 name: blender-3d
+disable-model-invocation: true
 description: >-
   Runs a Blender asset pipeline from modelling to engine: units and scale,
   applied transforms, topology and normals, UVs and texel density,

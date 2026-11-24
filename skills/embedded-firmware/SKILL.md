@@ -1,5 +1,6 @@
 ---
 name: embedded-firmware
+disable-model-invocation: true
 description: >-
   Embedded firmware for microcontrollers: MCU memory and startup, interrupts
   and concurrency, RTOS basics (FreeRTOS, Zephyr), HAL and SDK toolchains

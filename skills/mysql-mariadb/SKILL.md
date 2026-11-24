@@ -1,5 +1,6 @@
 ---
 name: mysql-mariadb
+disable-model-invocation: true
 description: >-
   Designs and tunes MySQL and MariaDB on InnoDB: clustered primary keys,
   secondary and covering indexes, EXPLAIN ANALYZE, slow-log and

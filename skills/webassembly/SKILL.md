@@ -1,5 +1,6 @@
 ---
 name: webassembly
+disable-model-invocation: true
 description: >-
   Builds and integrates WebAssembly: deciding when wasm beats JavaScript,
   compiling Rust with wasm-bindgen or wasm-pack and C/C++ with Emscripten or

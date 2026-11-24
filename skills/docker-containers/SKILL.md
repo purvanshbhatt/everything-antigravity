@@ -1,5 +1,6 @@
 ---
 name: docker-containers
+disable-model-invocation: true
 description: >-
   Builds small, secure, reproducible container images: multi-stage Dockerfiles,
   distroless or slim bases pinned by digest, non-root users, cache-friendly layer

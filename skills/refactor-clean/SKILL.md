@@ -1,5 +1,6 @@
 ---
 name: refactor-clean
+disable-model-invocation: true
 description: >-
   Removes dead code, unused dependencies and duplication in tool-backed,
   test-guarded batches. Finds candidates with knip, ts-prune, depcheck,

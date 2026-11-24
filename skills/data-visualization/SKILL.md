@@ -1,5 +1,6 @@
 ---
 name: data-visualization
+disable-model-invocation: true
 description: >-
   Designs and builds charts and dashboards: choosing the chart for the
   question, honest scales, colour and labelling rules, library choice among

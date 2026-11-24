@@ -1,12 +1,7 @@
 ---
 name: gemini-api
 description: >-
-  Builds features on the Gemini API with the official Google Gen AI SDKs
-  (google-genai for Python, @google/genai for JS/TS): auth, model selection,
-  Interactions API vs legacy generateContent, structured output, function
-  calling, streaming, multimodal and File API input, caching, thinking,
-  safety, Search grounding, embeddings, retries, token costs and fixture
-  tests. Use when writing or debugging code that calls Gemini.
+  Builds with the Gemini API and Gen AI SDK: model choice, structured output, function calling, caching, files, streaming and cost.
 ---
 
 # Gemini API

@@ -31,11 +31,12 @@ jobs:
         run: node bin/eag.js validate
       - name: Unit and integration tests (hooks, installer, CLI)
         run: npm test
-      - name: Catalog is up to date
+      - name: Catalog and index skills are up to date
         if: matrix.os == 'ubuntu-latest' && matrix.node == 20
         run: |
           node scripts/catalog.js
-          git diff --exit-code -- docs/CATALOG.md
+          git diff --exit-code -- docs/CATALOG.md skills
+          test -z "$(git status --porcelain -- skills)"
       - name: Install into a throwaway home and run doctor
         shell: bash
         run: |

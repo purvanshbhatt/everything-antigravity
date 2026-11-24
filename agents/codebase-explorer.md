@@ -1,10 +1,7 @@
 ---
 name: codebase-explorer
 description: >-
-  Fast breadth scanner for unfamiliar code. Delegate to it at the start of a
-  task or when onboarding a repo; it maps entry points, modules, dependencies,
-  commands and conventions and returns a compact CODEMAP so the parent never
-  has to read the tree itself. Read-only: it cannot run commands or edit files.
+  Read-only fast scanner for unfamiliar repos: returns a compact CODEMAP of entry points, modules, commands and conventions.
 tools:
   - view_file
   - grep_search

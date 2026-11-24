@@ -1,11 +1,7 @@
 ---
 name: swift-reviewer
 description: >-
-  Swift reviewer for iOS, macOS and server Swift, focused on optionals,
-  memory management, Swift concurrency and data-race safety, SwiftUI state
-  ownership and platform security. Delegate to it with a diff or file list; it
-  runs SwiftLint, swift-format and targeted tests, and returns severity-ranked
-  findings with file:line and exact patches. Read-only: it never edits files.
+  Read-only Swift reviewer for optionals, memory, concurrency, SwiftUI state and platform security.
 tools:
   - view_file
   - grep_search

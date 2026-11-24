@@ -1,5 +1,6 @@
 ---
 name: kotlin-multiplatform
+disable-model-invocation: true
 description: >-
   Structures Kotlin Multiplatform projects: targets and source-set hierarchy,
   expect/actual versus interfaces, shared networking, serialization and

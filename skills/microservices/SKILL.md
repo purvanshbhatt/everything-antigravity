@@ -1,5 +1,6 @@
 ---
 name: microservices
+disable-model-invocation: true
 description: >-
   Decides whether and how to split a system into microservices: modular
   monolith first, boundaries from bounded contexts, per-service data

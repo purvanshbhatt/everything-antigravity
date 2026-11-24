@@ -1,5 +1,6 @@
 ---
 name: transactional-email
+disable-model-invocation: true
 description: >-
   Sends transactional email that arrives: provider choice (Postmark,
   SendGrid, Mailgun, Amazon SES, Resend), SPF, DKIM and DMARC alignment on a

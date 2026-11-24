@@ -1,5 +1,6 @@
 ---
 name: game-publishing
+disable-model-invocation: true
 description: >-
   Prepares and ships PC and web games on Steam and itch.io: release timeline
   and wishlists, Steamworks store pages and required disclosures, SteamPipe

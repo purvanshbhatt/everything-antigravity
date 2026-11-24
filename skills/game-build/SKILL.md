@@ -1,5 +1,6 @@
 ---
 name: game-build
+disable-model-invocation: true
 description: >-
   Scaffolds a playable game prototype fast: picks the engine (Canvas, Phaser,
   Three.js or Godot) from constraints, builds the core loop on a fixed

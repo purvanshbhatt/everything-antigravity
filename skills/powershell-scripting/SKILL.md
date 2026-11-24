@@ -1,5 +1,6 @@
 ---
 name: powershell-scripting
+disable-model-invocation: true
 description: >-
   Writes and reviews PowerShell 7 scripts and modules: advanced functions with
   parameter validation, pipeline input and object output, terminating versus

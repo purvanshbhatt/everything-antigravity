@@ -1,5 +1,6 @@
 ---
 name: financial-modeling
+disable-model-invocation: true
 description: >-
   Builds startup and small-business financial models in Google Sheets or
   Excel: driver-based revenue builds, cohort and funnel models, headcount and

@@ -1,11 +1,7 @@
 ---
 name: dart-reviewer
 description: >-
-  Dart and Flutter reviewer focused on null safety, async correctness,
-  widget lifecycle, rebuild cost, state management and platform integration.
-  Delegate to it with a diff or file list; it runs dart analyze or flutter
-  analyze, dart format and targeted tests, and returns severity-ranked
-  findings with file:line and exact patches. Read-only: it never edits files.
+  Read-only Dart/Flutter reviewer for null safety, async, widget lifecycle, rebuild cost and state management.
 tools:
   - view_file
   - grep_search

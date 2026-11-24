@@ -1,12 +1,7 @@
 ---
 name: documentation-writing
 description: >-
-  Writes and maintains developer documentation: READMEs with a 60-second
-  quickstart, Diátaxis-structured docs, architecture decision records,
-  generated API reference (TypeDoc, Sphinx, mkdocstrings, godoc), docs-as-code
-  with link checking, and Keep a Changelog plus SemVer release notes. Use when
-  writing or restructuring docs, recording a decision or release, or when docs
-  have drifted from the code.
+  Writes READMEs, guides, API references, ADRs and changelogs that are task-first, accurate and tested.
 ---
 
 # Documentation Writing

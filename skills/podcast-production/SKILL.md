@@ -1,5 +1,6 @@
 ---
 name: podcast-production
+disable-model-invocation: true
 description: >-
   Produces podcasts end to end: show format and run-of-show, recording setup
   and gain staging, remote double-ender recording, editing, a voice processing

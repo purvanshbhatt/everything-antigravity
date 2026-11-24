@@ -1,5 +1,6 @@
 ---
 name: cryptography
+disable-model-invocation: true
 description: >-
   Applied cryptography for application engineers: choosing primitives (AEAD,
   hashes, MACs, signatures, key exchange), password hashing parameters,

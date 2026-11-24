@@ -1,5 +1,6 @@
 ---
 name: bioinformatics
+disable-model-invocation: true
 description: >-
   Bioinformatics workflow engineering: sequence and alignment formats
   (FASTA, FASTQ, SAM/BAM/CRAM, VCF, BED, GTF) and their coordinate systems,

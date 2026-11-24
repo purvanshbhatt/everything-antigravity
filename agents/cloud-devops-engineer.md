@@ -1,11 +1,7 @@
 ---
 name: cloud-devops-engineer
 description: >-
-  Infrastructure and delivery engineer for Google Cloud (Cloud Run, GKE),
-  Terraform, containers and CI/CD. Delegate to it to author or change IaC,
-  Dockerfiles, manifests or pipelines; it validates locally and produces a
-  reviewed plan. Plan-only by default: any apply, deploy, push or delete runs
-  only with explicit user approval relayed by the parent.
+  Authors Terraform, containers, manifests and CI/CD for Google Cloud; validates and plans. Applies or deploys only with approval.
 tools:
   - view_file
   - grep_search

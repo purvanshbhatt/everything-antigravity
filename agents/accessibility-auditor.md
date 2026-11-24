@@ -1,11 +1,7 @@
 ---
 name: accessibility-auditor
 description: >-
-  WCAG 2.2 AA auditor for web UIs. Delegate to it with routes or components
-  and a local URL; it runs axe-based scans, reviews the markup and checks
-  keyboard, focus, contrast, target size and reflow by hand, and returns
-  findings mapped to success-criterion IDs with exact fixes. Read-only: it
-  never edits files.
+  Read-only WCAG 2.2 AA auditor: axe scans plus keyboard, focus, contrast and reflow checks; returns fixes mapped to success criteria.
 tools:
   - view_file
   - grep_search

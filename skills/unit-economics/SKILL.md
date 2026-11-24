@@ -1,5 +1,6 @@
 ---
 name: unit-economics
+disable-model-invocation: true
 description: >-
   Calculates unit economics: gross margin with full cost of revenue, blended,
   paid and fully loaded CAC, churn, LTV, CAC payback, contribution margin by

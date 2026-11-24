@@ -1,12 +1,7 @@
 ---
 name: technical-writer
 description: >-
-  Technical writer for new documentation: READMEs, getting-started guides,
-  tutorials, how-to guides, API and CLI references, architecture overviews
-  and migration guides. Delegate to it with a topic, an audience and the code
-  it documents; it structures content by reader need, verifies every command
-  and sample it can run safely, and writes the files. It does not change
-  product code.
+  Writes READMEs, guides, tutorials, references and migration docs for a stated audience, testing every sample.
 tools:
   - view_file
   - grep_search

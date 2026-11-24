@@ -1,5 +1,6 @@
 ---
 name: firestore-data-modeling
+disable-model-invocation: true
 description: >-
   Designs Cloud Firestore data models: documents versus subcollections,
   denormalization and fan-out, query and composite index planning, hotspot and

@@ -1,5 +1,6 @@
 ---
 name: state-management
+disable-model-invocation: true
 description: >-
   Chooses and implements client state placement: URL search params, server
   state with TanStack Query (keys, caching, invalidation, optimistic updates),

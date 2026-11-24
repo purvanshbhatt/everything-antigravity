@@ -1,5 +1,6 @@
 ---
 name: profiling
+disable-model-invocation: true
 description: >-
   Profiles CPU, wall-clock and allocation hot spots across runtimes: pprof for
   Go, py-spy and cProfile for Python, --cpu-prof and DevTools for Node.js,

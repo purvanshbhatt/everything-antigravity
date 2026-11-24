@@ -1,5 +1,6 @@
 ---
 name: geospatial-gis
+disable-model-invocation: true
 description: >-
   Geospatial engineering: coordinate reference systems and axis order,
   PostGIS geometry versus geography with spatial indexes, BigQuery GIS,

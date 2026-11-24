@@ -1,5 +1,6 @@
 ---
 name: game-ui
+disable-model-invocation: true
 description: >-
   Designs and implements game UI and UX: HUD information hierarchy and safe
   areas, menu flows, controller and keyboard focus navigation, input-glyph

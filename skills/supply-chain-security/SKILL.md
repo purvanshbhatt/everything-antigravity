@@ -1,5 +1,6 @@
 ---
 name: supply-chain-security
+disable-model-invocation: true
 description: >-
   Secures the software supply chain: lockfiles and hash pinning, dependency
   review and admission rules, SBOM generation and scanning, SLSA build

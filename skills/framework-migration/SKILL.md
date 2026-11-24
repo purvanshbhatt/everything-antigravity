@@ -1,5 +1,6 @@
 ---
 name: framework-migration
+disable-model-invocation: true
 description: >-
   Migrates a framework, runtime or major library version in stages: baseline,
   blast-radius inventory, the official migration guide, a staged plan with

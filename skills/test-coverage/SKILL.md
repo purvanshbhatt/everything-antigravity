@@ -1,5 +1,6 @@
 ---
 name: test-coverage
+disable-model-invocation: true
 description: >-
   Measures test coverage, then finds the untested code that matters most
   (critical paths, error handling, recent churn) instead of chasing a

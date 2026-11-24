@@ -1,5 +1,6 @@
 ---
 name: threejs-webgl
+disable-model-invocation: true
 description: >-
   Builds and optimizes 3D web scenes with Three.js and React Three Fiber:
   renderer setup, color management and tone mapping, PBR materials and

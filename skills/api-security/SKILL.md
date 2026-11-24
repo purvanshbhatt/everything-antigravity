@@ -1,5 +1,6 @@
 ---
 name: api-security
+disable-model-invocation: true
 description: >-
   Secures HTTP, GraphQL and gRPC APIs against the OWASP API Security Top 10:
   object- and property-level authorization, authentication and token checks,

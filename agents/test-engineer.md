@@ -1,10 +1,7 @@
 ---
 name: test-engineer
 description: >-
-  Test author working TDD-style. Delegate to it with behaviours, acceptance
-  criteria or a coverage gap; it matches the project's test conventions, writes
-  tests that fail for the right reason first, and reports any product defects
-  they expose. It never weakens, skips or deletes existing assertions.
+  Writes failing-first tests for behaviours or coverage gaps in the project style. Never weakens existing tests.
 tools:
   - view_file
   - grep_search

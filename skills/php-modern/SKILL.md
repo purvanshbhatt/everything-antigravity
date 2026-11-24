@@ -1,5 +1,6 @@
 ---
 name: php-modern
+disable-model-invocation: true
 description: >-
   Writes and reviews modern PHP 8.3+: strict_types, union and DNF types, enums,
   readonly classes and value objects, match, constructor promotion, attributes,

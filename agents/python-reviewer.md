@@ -1,10 +1,7 @@
 ---
 name: python-reviewer
 description: >-
-  Python reviewer focused on typing, exception handling, asyncio correctness,
-  idioms and packaging. Delegate to it with a diff or file list; it runs ruff,
-  mypy or pyright and targeted pytest, and returns severity-ranked findings
-  with file:line and exact patches. Read-only: it never edits files.
+  Read-only Python reviewer for typing, exceptions, asyncio and packaging; runs ruff, mypy or pyright and pytest.
 tools:
   - view_file
   - grep_search

@@ -1,5 +1,6 @@
 ---
 name: ml-experiment-tracking
+disable-model-invocation: true
 description: >-
   Sets up experiment tracking for ML and LLM work with MLflow, Vertex AI
   Experiments or Weights & Biases: a run contract (params, step metrics,

@@ -1,5 +1,6 @@
 ---
 name: vector-databases
+disable-model-invocation: true
 description: >-
   Chooses, configures and evaluates vector stores: pgvector on Cloud SQL or
   AlloyDB, AlloyDB ScaNN indexes, Vertex AI Vector Search, BigQuery and

@@ -1,5 +1,6 @@
 ---
 name: pci-dss
+disable-model-invocation: true
 description: >-
   PCI DSS scope reduction for engineers: what counts as account data,
   keeping card data off your systems with hosted fields and tokenization,

@@ -1,5 +1,6 @@
 ---
 name: redis-caching
+disable-model-invocation: true
 description: >-
   Uses Redis, Valkey or Memorystore correctly: cache-aside with jittered TTLs,
   key design and versioning, eviction policies, stampede protection, rate

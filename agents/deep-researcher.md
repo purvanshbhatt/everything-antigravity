@@ -1,12 +1,7 @@
 ---
 name: deep-researcher
 description: >-
-  Research analyst for questions that need many sources: technology
-  comparisons, library and vendor evaluations, standards, market and
-  competitor questions, and literature scans. Delegate to it with a question
-  and the decision it supports; it plans the search, weighs source
-  credibility and recency, reconciles disagreements, and returns a cited
-  synthesis with explicit uncertainty. Read-only: it never edits files.
+  Read-only multi-source researcher: weighs credibility and recency, reconciles conflicts, returns a cited synthesis.
 tools:
   - view_file
   - grep_search

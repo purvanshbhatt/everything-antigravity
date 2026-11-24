@@ -1,44 +1,782 @@
 {
-  "version": 1,
-  "note": "Every MCP server adds tool definitions to the agent's context. Add only the servers you use. `eag mcp add <name>` previews by default and writes only with --yes, after backing up your mcp_config.json.",
+  "version": 2,
+  "note": "Every MCP server adds tool definitions to the agent context, and they count against Antigravity's 20,000-token customization budget (check with eag budget). Add only the servers you use. eag mcp add <name> previews by default and writes only with --yes, after backing up your mcp_config.json. Remote servers use the url key; community servers are marked and reviewed for scope, but read their security note first.",
   "servers": {
-    "context7": {
-      "description": "Up-to-date library and framework documentation lookup (resolve a library, then query its docs).",
-      "when": "You work with fast-moving libraries and want current APIs instead of training-data guesses.",
-      "config": { "command": "npx", "args": ["-y", "@upstash/context7-mcp"] }
-    },
-    "sequential-thinking": {
-      "description": "Structured step-by-step reasoning scratchpad tool.",
-      "when": "Long multi-step design or debugging sessions where explicit thought revision helps.",
-      "config": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"] }
-    },
-    "memory": {
-      "description": "Local knowledge-graph memory (entities, relations, observations) persisted to a JSON file.",
-      "when": "You want structured long-term memory in addition to EAG instincts and session summaries.",
-      "config": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-memory"] }
-    },
-    "playwright": {
-      "description": "Browser automation through Playwright with accessibility-tree snapshots.",
-      "when": "Scripted E2E exploration outside Antigravity's built-in browser, or in Gemini CLI.",
-      "config": { "command": "npx", "args": ["-y", "@playwright/mcp@latest"] }
-    },
     "chrome-devtools": {
+      "category": "browser",
       "description": "Chrome DevTools for agents: performance traces, network, console, Lighthouse-style insights.",
       "when": "Diagnosing web performance (LCP/INP/CLS), network errors and console failures.",
-      "config": { "command": "npx", "args": ["-y", "chrome-devtools-mcp@latest"] }
+      "official": true,
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "chrome-devtools-mcp@latest"
+        ]
+      }
+    },
+    "playwright": {
+      "category": "browser",
+      "description": "Browser automation through Playwright with accessibility-tree snapshots.",
+      "when": "Scripted E2E exploration outside Antigravity's built-in browser, or in Gemini CLI.",
+      "official": true,
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@playwright/mcp@latest"
+        ]
+      }
+    },
+    "aws": {
+      "category": "cloud",
+      "description": "AWS MCP Server (managed) via the SigV4 proxy: call AWS APIs, run guided agent workflows, search AWS docs.",
+      "when": "Operate or inspect AWS resources from the agent using your AWS profile.",
+      "requiresSecret": "AWS_PROFILE, AWS_REGION",
+      "official": true,
+      "security": "Can call any API the profile allows; use a read-only IAM role (proxy supports --read-only) and never root credentials.",
+      "source": "https://github.com/aws/mcp-proxy-for-aws",
+      "config": {
+        "command": "uvx",
+        "args": [
+          "mcp-proxy-for-aws-cli@latest",
+          "https://aws-mcp.us-east-1.api.aws/mcp"
+        ],
+        "env": {
+          "AWS_PROFILE": "<AWS_PROFILE>",
+          "AWS_REGION": "<AWS_REGION>"
+        }
+      }
+    },
+    "azure": {
+      "category": "cloud",
+      "description": "Azure MCP Server: storage, Cosmos DB, Key Vault, AKS, App Service, Monitor, resource groups and more.",
+      "when": "Inspect or manage Azure resources.",
+      "official": true,
+      "security": "Uses your signed-in Azure identity, including Key Vault secret reads; sign in with a least-privilege account.",
+      "source": "https://github.com/microsoft/mcp",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@azure/mcp@latest",
+          "server",
+          "start"
+        ]
+      }
+    },
+    "cloudflare": {
+      "category": "cloud",
+      "description": "Cloudflare Workers Bindings MCP: manage Workers, KV, R2, D1 and Hyperdrive. Sibling hosted servers: docs.mcp.cloudflare.com (no auth) and observability.mcp.cloudflare.com.",
+      "when": "Build or debug on Cloudflare's developer platform.",
+      "official": true,
+      "security": "OAuth can delete KV namespaces, R2 buckets and D1 databases; pick a non-production account.",
+      "source": "https://github.com/cloudflare/mcp-server-cloudflare",
+      "config": {
+        "url": "https://bindings.mcp.cloudflare.com/mcp"
+      }
+    },
+    "docker": {
+      "category": "cloud",
+      "description": "Docker MCP Gateway: one stdio endpoint that runs containerized servers enabled in Docker Desktop's MCP Toolkit catalog.",
+      "when": "Run many MCP servers isolated in containers with centrally managed secrets.",
+      "official": true,
+      "security": "Exposes every server enabled in your profile; use --profile to limit; containers reduce but do not remove host risk.",
+      "source": "https://github.com/docker/mcp-gateway",
+      "config": {
+        "command": "docker",
+        "args": [
+          "mcp",
+          "gateway",
+          "run"
+        ]
+      }
     },
     "firebase": {
+      "category": "cloud",
       "description": "Firebase CLI MCP server (projects, apps, rules, deploy status). Antigravity also has an official Firebase plugin.",
       "when": "Firebase work from Gemini CLI, or when you prefer the CLI server over the plugin.",
-      "config": { "command": "npx", "args": ["-y", "firebase-tools@latest", "mcp"] }
+      "official": true,
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "firebase-tools@latest",
+          "mcp"
+        ]
+      }
+    },
+    "gcloud": {
+      "category": "cloud",
+      "description": "Google gcloud MCP: run gcloud CLI commands through natural language across Google Cloud services.",
+      "when": "Broad Google Cloud administration from the agent.",
+      "official": true,
+      "security": "Runs gcloud as your account, which can delete resources; use a restricted configuration or service account.",
+      "source": "https://github.com/googleapis/gcloud-mcp",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@google-cloud/gcloud-mcp"
+        ]
+      }
+    },
+    "kubernetes": {
+      "category": "cloud",
+      "description": "Kubernetes/OpenShift MCP (native Go, no kubectl needed): pods, logs, exec, resources, events, Helm.",
+      "when": "Inspect or debug clusters from the agent.",
+      "requiresSecret": "KUBECONFIG_PATH",
+      "official": false,
+      "security": "Acts with your current kube context; set read_only = true / disable_destructive = true in a TOML file passed via --config, and rely on RBAC.",
+      "source": "https://github.com/containers/kubernetes-mcp-server",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "kubernetes-mcp-server@latest"
+        ],
+        "env": {
+          "KUBECONFIG": "<KUBECONFIG_PATH>"
+        }
+      }
+    },
+    "terraform": {
+      "category": "cloud",
+      "description": "HashiCorp Terraform MCP: Registry provider, module and policy docs, plus HCP Terraform/TFE workspace operations.",
+      "when": "Write correct Terraform using current provider docs; manage HCP Terraform runs.",
+      "requiresSecret": "TFE_TOKEN",
+      "official": true,
+      "security": "TFE_TOKEN is optional (registry tools work without it) and can trigger runs; use a team token scoped to non-prod workspaces.",
+      "source": "https://github.com/hashicorp/terraform-mcp-server",
+      "config": {
+        "command": "docker",
+        "args": [
+          "run",
+          "-i",
+          "--rm",
+          "-e",
+          "TFE_TOKEN",
+          "hashicorp/terraform-mcp-server:1.4.1"
+        ],
+        "env": {
+          "TFE_TOKEN": "<TFE_TOKEN>"
+        }
+      }
+    },
+    "vercel": {
+      "category": "cloud",
+      "description": "Vercel hosted MCP: projects, deployments, build and runtime logs, domains and docs search.",
+      "when": "Diagnose failed deployments or inspect Vercel projects.",
+      "official": true,
+      "security": "OAuth inherits team permissions; logs may contain secrets or PII.",
+      "source": "https://vercel.com/docs/mcp/vercel-mcp",
+      "config": {
+        "url": "https://mcp.vercel.com"
+      }
+    },
+    "serena": {
+      "category": "coding",
+      "description": "Serena: LSP-backed semantic code navigation and symbol-level editing for 30+ languages.",
+      "when": "Large codebases where symbol search and references beat grep. Install first: uv tool install -p 3.13 serena-agent.",
+      "official": false,
+      "security": "Edits files and can run shell commands; its docs warn against marketplace installs. Activate only the intended project.",
+      "source": "https://github.com/oraios/serena",
+      "config": {
+        "command": "serena",
+        "args": [
+          "start-mcp-server",
+          "--context=antigravity"
+        ]
+      }
+    },
+    "snyk": {
+      "category": "coding",
+      "description": "Snyk MCP (part of the Snyk CLI): SAST, open-source dependency, IaC and container scans from the agent.",
+      "when": "Security-scan generated code and dependencies before commit.",
+      "official": true,
+      "security": "Uploads code snippets or manifests to Snyk for analysis; check org data policies.",
+      "source": "https://docs.snyk.io/agent-security/agentic-security-with-snyk-studio/getting-started-with-snyk-studio",
+      "config": {
+        "command": "snyk",
+        "args": [
+          "mcp",
+          "-t",
+          "stdio"
+        ]
+      }
+    },
+    "bigquery": {
+      "category": "database",
+      "description": "Google-managed BigQuery remote MCP: list datasets and tables, read schemas, run SQL queries.",
+      "when": "Analytics on BigQuery from the agent without running a local server.",
+      "requiresSecret": "GCP_PROJECT_ID",
+      "official": true,
+      "security": "Needs roles/mcp.toolUser, bigquery.jobUser, bigquery.dataViewer; queries bill the project; use a dedicated agent identity.",
+      "source": "https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp",
+      "config": {
+        "authProviderType": "google_credentials",
+        "headers": {
+          "X-goog-user-project": "<GCP_PROJECT_ID>"
+        },
+        "url": "https://bigquery.googleapis.com/mcp"
+      }
+    },
+    "mongodb": {
+      "category": "database",
+      "description": "MongoDB MCP: query, aggregate, inspect schemas and indexes; optional Atlas cluster management.",
+      "when": "Apps on MongoDB or Atlas.",
+      "requiresSecret": "MONGODB_CONNECTION_STRING",
+      "official": true,
+      "security": "Connection string is a secret; --readOnly blocks writes; Atlas API credentials can create clusters and users.",
+      "source": "https://github.com/mongodb-js/mongodb-mcp-server",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "mongodb-mcp-server@latest",
+          "--readOnly"
+        ],
+        "env": {
+          "MDB_MCP_CONNECTION_STRING": "<MONGODB_CONNECTION_STRING>"
+        }
+      }
+    },
+    "neon": {
+      "category": "database",
+      "description": "Neon hosted MCP: projects, branches, SQL, schema migrations on branches, query tuning.",
+      "when": "Serverless Postgres on Neon, especially branch-per-change migration workflows.",
+      "official": true,
+      "security": "OAuth can create or delete projects and branches; review migrations before applying to main.",
+      "source": "https://neon.com/docs/ai/neon-mcp-server",
+      "config": {
+        "url": "https://mcp.neon.tech/mcp"
+      }
+    },
+    "postgres": {
+      "category": "database",
+      "description": "PostgreSQL via Google MCP Toolbox prebuilt tools: list schemas and tables, run SQL, explain queries.",
+      "when": "Any Postgres database; replaces the archived @modelcontextprotocol/server-postgres.",
+      "requiresSecret": "POSTGRES_HOST, POSTGRES_PORT, POSTGRES_DATABASE, POSTGRES_USER, POSTGRES_PASSWORD",
+      "official": true,
+      "security": "execute_sql runs any statement; connect with a read-only role or use --prebuilt=postgres/<toolset> to limit tools.",
+      "source": "https://github.com/googleapis/mcp-toolbox",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@toolbox-sdk/server",
+          "--prebuilt=postgres",
+          "--stdio"
+        ],
+        "env": {
+          "POSTGRES_HOST": "<POSTGRES_HOST>",
+          "POSTGRES_PORT": "<POSTGRES_PORT>",
+          "POSTGRES_DATABASE": "<POSTGRES_DATABASE>",
+          "POSTGRES_USER": "<POSTGRES_USER>",
+          "POSTGRES_PASSWORD": "<POSTGRES_PASSWORD>"
+        }
+      }
+    },
+    "prisma": {
+      "category": "database",
+      "description": "Prisma hosted MCP: create and manage Prisma Postgres databases, run migrations, manage Prisma Compute apps.",
+      "when": "Projects on Prisma Postgres. The local `npx prisma mcp` was removed in Prisma 8.",
+      "official": true,
+      "security": "OAuth account can create and delete databases; confirm destructive migrations.",
+      "source": "https://github.com/prisma/mcp",
+      "config": {
+        "url": "https://mcp.prisma.io/mcp"
+      }
+    },
+    "redis": {
+      "category": "database",
+      "description": "Redis MCP: read and write strings, hashes, lists, sets, streams, JSON and vector search indexes.",
+      "when": "Inspect caches, queues or vector indexes in Redis.",
+      "official": true,
+      "security": "No read-only mode: tools can delete keys. A password inside --url shows in process lists; prefer the REDIS_PWD env var.",
+      "source": "https://github.com/redis/mcp-redis",
+      "config": {
+        "command": "uvx",
+        "args": [
+          "--from",
+          "redis-mcp-server@latest",
+          "redis-mcp-server",
+          "--url",
+          "<REDIS_URL>"
+        ]
+      }
+    },
+    "sqlite": {
+      "category": "database",
+      "description": "SQLite via Google MCP Toolbox prebuilt tools: list tables and run SQL on a local database file.",
+      "when": "Local SQLite files; replaces the archived reference mcp-server-sqlite.",
+      "requiresSecret": "SQLITE_DB_PATH",
+      "official": true,
+      "security": "SQL tools can modify or drop tables; work on a copy of important database files.",
+      "source": "https://github.com/googleapis/mcp-toolbox",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@toolbox-sdk/server",
+          "--prebuilt=sqlite",
+          "--stdio"
+        ],
+        "env": {
+          "SQLITE_DATABASE": "<SQLITE_DB_PATH>"
+        }
+      }
+    },
+    "supabase": {
+      "category": "database",
+      "description": "Supabase hosted MCP: tables, SQL, migrations, edge functions, logs, branches and docs search.",
+      "when": "Apps backed by Supabase Postgres, auth and storage.",
+      "official": true,
+      "security": "Without read_only=true the agent can run DDL/DML; scope to a dev project via project_ref, never production.",
+      "source": "https://github.com/supabase/mcp",
+      "config": {
+        "url": "https://mcp.supabase.com/mcp?project_ref=<SUPABASE_PROJECT_REF>&read_only=true"
+      }
+    },
+    "figma": {
+      "category": "design",
+      "description": "Figma hosted MCP: design context, variables, components, screenshots and Code Connect for selected frames.",
+      "when": "Implement UI from Figma designs with accurate tokens and layout.",
+      "official": true,
+      "security": "OAuth reads every file you can access; rate limits depend on Figma seat type.",
+      "source": "https://github.com/figma/mcp-server-guide",
+      "config": {
+        "url": "https://mcp.figma.com/mcp"
+      }
+    },
+    "next-devtools": {
+      "category": "design",
+      "description": "Next.js DevTools MCP: connects to a running Next.js 16+ dev server for runtime errors, routes, logs and version-matched docs.",
+      "when": "Debug or upgrade Next.js apps.",
+      "official": true,
+      "security": "Talks to local dev servers only; low risk.",
+      "source": "https://github.com/vercel/next-devtools-mcp",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "next-devtools-mcp@latest"
+        ]
+      }
+    },
+    "shadcn": {
+      "category": "design",
+      "description": "shadcn/ui MCP: browse, search and install components and blocks from shadcn and other configured registries.",
+      "when": "React/Tailwind projects using shadcn/ui.",
+      "official": true,
+      "security": "Installs code from registries in components.json; review third-party registries before adding them.",
+      "source": "https://ui.shadcn.com/docs/mcp",
+      "config": {
+        "command": "npx",
+        "args": [
+          "shadcn@latest",
+          "mcp"
+        ]
+      }
+    },
+    "aws-knowledge": {
+      "category": "docs",
+      "description": "AWS Knowledge: AWS docs search, API references, What's New, regional availability and best-practice guidance.",
+      "when": "Grounding AWS architecture or SDK answers; no AWS account needed.",
+      "official": true,
+      "security": "Public docs only, no credentials; rate limited.",
+      "source": "https://awslabs.github.io/mcp/servers/aws-knowledge-mcp-server",
+      "config": {
+        "url": "https://knowledge-mcp.global.api.aws"
+      }
+    },
+    "context7": {
+      "category": "docs",
+      "description": "Up-to-date library and framework documentation lookup (resolve a library, then query its docs).",
+      "when": "You work with fast-moving libraries and want current APIs instead of training-data guesses.",
+      "official": true,
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@upstash/context7-mcp"
+        ]
+      }
+    },
+    "deepwiki": {
+      "category": "docs",
+      "description": "DeepWiki (Cognition): AI-generated docs and Q&A for any public GitHub repository.",
+      "when": "Understand an unfamiliar open-source dependency's architecture or API without cloning it.",
+      "official": true,
+      "security": "Public repos only; questions are sent to a third party, so keep private code out of prompts.",
+      "source": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
+      "config": {
+        "url": "https://mcp.deepwiki.com/mcp"
+      }
+    },
+    "google-developer-knowledge": {
+      "category": "docs",
+      "description": "Google Developer Knowledge: search and retrieve official docs for Firebase, Google Cloud, Android, Maps and more.",
+      "when": "Current Google product docs; the firebase entry may already expose these tools, so add only if missing.",
+      "requiresSecret": "GOOGLE_API_KEY",
+      "official": true,
+      "security": "Restrict the API key to the Developer Knowledge API; never pass the key as a URL query parameter.",
+      "source": "https://developers.google.com/knowledge/mcp",
+      "config": {
+        "headers": {
+          "X-Goog-Api-Key": "<GOOGLE_API_KEY>"
+        },
+        "url": "https://developerknowledge.googleapis.com/mcp"
+      }
+    },
+    "huggingface": {
+      "category": "docs",
+      "description": "Hugging Face Hub: search models, datasets, Spaces and papers, read docs, and call Gradio Spaces as tools.",
+      "when": "Choosing models or datasets, or reading HF library docs.",
+      "requiresSecret": "HF_TOKEN",
+      "official": true,
+      "security": "Use a read-only HF token; Space tools run third-party code remotely.",
+      "source": "https://github.com/huggingface/hf-mcp-server",
+      "config": {
+        "headers": {
+          "Authorization": "Bearer <HF_TOKEN>"
+        },
+        "url": "https://huggingface.co/mcp"
+      }
+    },
+    "microsoft-learn": {
+      "category": "docs",
+      "description": "Microsoft Learn docs search, fetch and official code samples for Azure, .NET, M365 and Windows.",
+      "when": "Grounding answers about Microsoft and Azure APIs in current official documentation.",
+      "official": true,
+      "security": "Read-only public docs; no credentials; low risk.",
+      "source": "https://github.com/MicrosoftDocs/mcp",
+      "config": {
+        "url": "https://learn.microsoft.com/api/mcp"
+      }
+    },
+    "datadog": {
+      "category": "observability",
+      "description": "Datadog hosted MCP: logs, metrics, traces, monitors, incidents, dashboards and notebooks.",
+      "when": "Teams on Datadog investigating errors or performance. Endpoint is per site (US1 shown).",
+      "official": true,
+      "security": "OAuth recommended; for headers use a scoped service-account app key. Not supported on GovCloud sites.",
+      "source": "https://docs.datadoghq.com/mcp_server/setup.md",
+      "config": {
+        "url": "https://mcp.datadoghq.com/v1/mcp"
+      }
+    },
+    "grafana": {
+      "category": "observability",
+      "description": "Grafana MCP: search dashboards, query Prometheus/Loki/datasources, alerts, incidents and OnCall.",
+      "when": "Investigate metrics and logs during debugging or incident response.",
+      "requiresSecret": "GRAFANA_URL, GRAFANA_SERVICE_ACCOUNT_TOKEN",
+      "official": true,
+      "security": "Use a Viewer-role service account; --disable-write blocks dashboard/alert edits; drop it only when writes are needed.",
+      "source": "https://github.com/grafana/mcp-grafana",
+      "config": {
+        "command": "uvx",
+        "args": [
+          "mcp-grafana",
+          "--disable-write"
+        ],
+        "env": {
+          "GRAFANA_URL": "<GRAFANA_URL>",
+          "GRAFANA_SERVICE_ACCOUNT_TOKEN": "<GRAFANA_SERVICE_ACCOUNT_TOKEN>"
+        }
+      }
+    },
+    "posthog": {
+      "category": "observability",
+      "description": "PostHog hosted MCP: product analytics queries, feature flags, experiments, error tracking and insights.",
+      "when": "Check flag state, query usage data or error tracking while building features.",
+      "official": true,
+      "security": "Can create or flip feature flags in production; use a scoped personal API key or read-only scopes.",
+      "source": "https://posthog.com/docs/model-context-protocol",
+      "config": {
+        "url": "https://mcp.posthog.com/mcp"
+      }
+    },
+    "sentry": {
+      "category": "observability",
+      "description": "Sentry hosted MCP: issues, events, stack traces, releases, traces and Seer root-cause analysis.",
+      "when": "Debug production errors: fetch the issue and stack trace, then fix the code.",
+      "official": true,
+      "security": "OAuth spans all orgs you belong to; error payloads may contain PII and untrusted user input.",
+      "source": "https://github.com/getsentry/sentry-mcp",
+      "config": {
+        "url": "https://mcp.sentry.dev/mcp"
+      }
+    },
+    "paypal": {
+      "category": "payments",
+      "description": "PayPal hosted MCP: invoices, orders, payments, subscriptions, disputes, shipment tracking and reporting.",
+      "when": "Integrate or operate PayPal commerce flows.",
+      "official": true,
+      "security": "Live accounts can send invoices and issue refunds; use the sandbox environment for development.",
+      "source": "https://github.com/paypal/agent-toolkit",
+      "config": {
+        "url": "https://mcp.paypal.com/mcp"
+      }
+    },
+    "stripe": {
+      "category": "payments",
+      "description": "Stripe hosted MCP: search the Stripe API, read and write objects (customers, prices, invoices, refunds) and search docs.",
+      "when": "Build or debug Stripe integrations; prefer a sandbox account.",
+      "official": true,
+      "security": "Can create refunds and move money; use OAuth on a sandbox or an agent API key (Bearer header). Full secret keys are rejected from 2027-01-11.",
+      "source": "https://docs.stripe.com/mcp",
+      "config": {
+        "url": "https://mcp.stripe.com"
+      }
+    },
+    "atlassian": {
+      "category": "project-management",
+      "description": "Atlassian Rovo hosted MCP for Jira, Confluence and Compass: search, create and update issues and pages.",
+      "when": "Teams tracking work in Jira or specs in Confluence.",
+      "official": true,
+      "security": "OAuth inherits your Jira/Confluence permissions incl. writes; site admins can restrict access. Ticket text is untrusted input.",
+      "source": "https://github.com/atlassian/atlassian-mcp-server",
+      "config": {
+        "url": "https://mcp.atlassian.com/v2/mcp"
+      }
     },
     "github": {
+      "category": "project-management",
       "description": "GitHub's remote MCP server (issues, PRs, repos, actions).",
       "when": "Repository automation beyond what the `gh` CLI covers.",
       "requiresSecret": "GITHUB_PERSONAL_ACCESS_TOKEN",
+      "official": true,
       "config": {
         "url": "https://api.githubcopilot.com/mcp/",
-        "headers": { "Authorization": "Bearer ${GITHUB_PERSONAL_ACCESS_TOKEN}" }
+        "headers": {
+          "Authorization": "Bearer ${GITHUB_PERSONAL_ACCESS_TOKEN}"
+        }
+      }
+    },
+    "gitlab": {
+      "category": "project-management",
+      "description": "GitLab built-in MCP server: issues, merge requests, pipelines, search and project data.",
+      "when": "Repos hosted on GitLab.com or self-managed GitLab (replace host).",
+      "official": true,
+      "security": "OAuth token with mcp scope or fine-grained PAT; legacy PATs are rejected. Admins must allow MCP for the group or instance.",
+      "source": "https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/",
+      "config": {
+        "url": "https://gitlab.com/api/v4/mcp"
+      }
+    },
+    "linear": {
+      "category": "project-management",
+      "description": "Linear hosted MCP: find, create and update issues, projects, cycles and comments.",
+      "when": "Agent works tickets end to end: read an issue, implement, update status.",
+      "official": true,
+      "security": "OAuth grants your full workspace write access; use https://mcp.linear.app/mcp/readonly for read-only agents.",
+      "source": "https://linear.app/docs/mcp",
+      "config": {
+        "url": "https://mcp.linear.app/mcp"
+      }
+    },
+    "notion": {
+      "category": "project-management",
+      "description": "Notion hosted MCP: search, read, create and update pages and databases.",
+      "when": "Pull specs or notes from Notion, or write status and docs back.",
+      "official": true,
+      "security": "OAuth covers every page you can see; for the local server, share only needed pages with the integration.",
+      "source": "https://developers.notion.com/docs/mcp",
+      "config": {
+        "url": "https://mcp.notion.com/mcp"
+      }
+    },
+    "slack": {
+      "category": "project-management",
+      "description": "Community Slack MCP: read channels, threads and DMs, search messages; posting is opt-in.",
+      "when": "Pull discussion context from Slack. Slack's official https://mcp.slack.com/mcp needs a registered Slack app (no dynamic client registration).",
+      "requiresSecret": "SLACK_USER_TOKEN",
+      "official": false,
+      "security": "User token reads everything you can; keep SLACK_MCP_ADD_MESSAGE_TOOL off; avoid its xoxc/xoxd browser-cookie mode (may breach workspace policy).",
+      "source": "https://github.com/korotovsky/slack-mcp-server",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "slack-mcp-server@latest",
+          "--transport",
+          "stdio"
+        ],
+        "env": {
+          "SLACK_MCP_XOXP_TOKEN": "<SLACK_USER_TOKEN>"
+        }
+      }
+    },
+    "memory": {
+      "category": "reasoning",
+      "description": "Local knowledge-graph memory (entities, relations, observations) persisted to a JSON file.",
+      "when": "You want structured long-term memory in addition to EAG instincts and session summaries.",
+      "official": true,
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-memory"
+        ]
+      }
+    },
+    "sequential-thinking": {
+      "category": "reasoning",
+      "description": "Structured step-by-step reasoning scratchpad tool.",
+      "when": "Long multi-step design or debugging sessions where explicit thought revision helps.",
+      "official": true,
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-sequential-thinking"
+        ]
+      }
+    },
+    "fetch": {
+      "category": "reference",
+      "description": "Fetch a URL and convert HTML to markdown, with chunked reads for long pages (MCP reference server, Python).",
+      "when": "Read docs, changelogs or API pages by URL when the client has no web-fetch tool.",
+      "official": true,
+      "security": "Can reach localhost and internal hosts (SSRF); restrict with --allowed-hosts and treat fetched pages as untrusted (prompt injection).",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+      "config": {
+        "command": "uvx",
+        "args": [
+          "mcp-server-fetch"
+        ]
+      }
+    },
+    "filesystem": {
+      "category": "reference",
+      "description": "Read, write, search, move and list files inside explicitly allowed directories (MCP reference server).",
+      "when": "Agent needs file access outside its built-in workspace tools, or a client has no native file tools.",
+      "official": true,
+      "security": "Write/move/edit tools can overwrite anything under the allowed dirs; list only project dirs, never home or drive root.",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-filesystem",
+          "<ALLOWED_DIR>"
+        ]
+      }
+    },
+    "git": {
+      "category": "reference",
+      "description": "Git status, diff, log, branch, checkout, add, commit and reset on a local repository (MCP reference server, Python).",
+      "when": "Structured git operations for clients without a shell tool, or to scope git access to one repo.",
+      "official": true,
+      "security": "Can commit, reset and switch branches; scope --repository to one repo and review commits before pushing.",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+      "config": {
+        "command": "uvx",
+        "args": [
+          "mcp-server-git",
+          "--repository",
+          "<REPO_PATH>"
+        ]
+      }
+    },
+    "time": {
+      "category": "reference",
+      "description": "Current time and timezone conversion using IANA zones (MCP reference server, Python).",
+      "when": "Scheduling, log correlation or date math where the model must not guess the current time.",
+      "official": true,
+      "security": "Read-only, no network or credentials; low risk.",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/time",
+      "config": {
+        "command": "uvx",
+        "args": [
+          "mcp-server-time"
+        ]
+      }
+    },
+    "apify": {
+      "category": "search",
+      "description": "Apify hosted MCP: run thousands of Apify Store Actors for scraping, extraction and browser automation.",
+      "when": "Site-specific scrapers (maps, social, e-commerce) that a generic fetch cannot handle.",
+      "requiresSecret": "APIFY_TOKEN",
+      "official": true,
+      "security": "Token grants full Apify account access and Actors run on paid compute; pick a minimal tool set and check scraping terms.",
+      "source": "https://github.com/apify/apify-mcp-server",
+      "config": {
+        "headers": {
+          "Authorization": "Bearer <APIFY_TOKEN>"
+        },
+        "url": "https://mcp.apify.com"
+      }
+    },
+    "brave-search": {
+      "category": "search",
+      "description": "Brave Search API: web, news, image, video and local search plus AI summaries.",
+      "when": "General web search with an independent index; replaces the archived @modelcontextprotocol/server-brave-search.",
+      "requiresSecret": "BRAVE_API_KEY",
+      "official": true,
+      "security": "API key is billable; search results are untrusted web content (prompt injection).",
+      "source": "https://github.com/brave/brave-search-mcp-server",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@brave/brave-search-mcp-server",
+          "--transport",
+          "stdio"
+        ],
+        "env": {
+          "BRAVE_API_KEY": "<BRAVE_API_KEY>"
+        }
+      }
+    },
+    "exa": {
+      "category": "search",
+      "description": "Exa neural web search, code-context search, page contents and deep research (hosted).",
+      "when": "Semantic web or code-example search; works without a key on a rate-limited free tier.",
+      "official": true,
+      "security": "Queries go to Exa; do not put an API key in the URL query string; results are untrusted content.",
+      "source": "https://github.com/exa-labs/exa-mcp-server",
+      "config": {
+        "url": "https://mcp.exa.ai/mcp"
+      }
+    },
+    "firecrawl": {
+      "category": "search",
+      "description": "Firecrawl scrape, crawl, map, search and structured extraction from websites.",
+      "when": "Turn whole sites or JS-heavy pages into markdown or JSON for the agent.",
+      "requiresSecret": "FIRECRAWL_API_KEY",
+      "official": true,
+      "security": "Crawls consume credits fast; set crawl limits; scraped content is untrusted (prompt injection).",
+      "source": "https://github.com/firecrawl/firecrawl-mcp-server",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "firecrawl-mcp"
+        ],
+        "env": {
+          "FIRECRAWL_API_KEY": "<FIRECRAWL_API_KEY>"
+        }
+      }
+    },
+    "tavily": {
+      "category": "search",
+      "description": "Tavily search, extract, map and crawl tuned for LLM agents.",
+      "when": "Agentic research needing search plus clean page extraction in one tool set.",
+      "requiresSecret": "TAVILY_API_KEY",
+      "official": true,
+      "security": "Billable API key; avoid the documented ?tavilyApiKey= URL form, which leaks the key into logs.",
+      "source": "https://github.com/tavily-ai/tavily-mcp",
+      "config": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "tavily-mcp@latest"
+        ],
+        "env": {
+          "TAVILY_API_KEY": "<TAVILY_API_KEY>"
+        }
       }
     }
   }

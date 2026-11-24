@@ -1,5 +1,6 @@
 ---
 name: speech-ai
+disable-model-invocation: true
 description: >-
   Builds speech features: transcription with Cloud Speech-to-Text or Gemini
   audio understanding, speaker diarization, streaming recognition,

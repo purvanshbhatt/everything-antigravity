@@ -1,5 +1,6 @@
 ---
 name: mongodb
+disable-model-invocation: true
 description: >-
   Models and operates MongoDB: embed-versus-reference decisions, schema design
   patterns, compound indexes with the ESR rule, explain plans, aggregation

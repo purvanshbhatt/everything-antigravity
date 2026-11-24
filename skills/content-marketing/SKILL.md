@@ -1,5 +1,6 @@
 ---
 name: content-marketing
+disable-model-invocation: true
 description: >-
   Builds a content marketing engine: audience and awareness stage, topic
   research by search intent, pillars and clusters, content briefs, editorial

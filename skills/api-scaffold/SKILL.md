@@ -1,5 +1,6 @@
 ---
 name: api-scaffold
+disable-model-invocation: true
 description: >-
   Scaffolds a new API endpoint or service contract-first: learns the
   project's layering from an existing endpoint, writes the OpenAPI, protobuf

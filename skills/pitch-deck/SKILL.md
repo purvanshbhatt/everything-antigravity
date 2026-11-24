@@ -1,5 +1,6 @@
 ---
 name: pitch-deck
+disable-model-invocation: true
 description: >-
   Builds and critiques fundraising pitch decks: the one-line ask, a headline
   narrative, slide order from pre-seed to Series A, bottom-up market sizing,

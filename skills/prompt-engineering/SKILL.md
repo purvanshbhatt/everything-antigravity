@@ -1,12 +1,7 @@
 ---
 name: prompt-engineering
 description: >-
-  Designs production prompts for Gemini models: system instruction structure,
-  few-shot examples, JSON-schema output contracts, decomposition and prompt
-  chaining, long-context placement, multimodal prompts, self-critique,
-  injection-resistant templates for untrusted data, prompt versioning and A/B
-  tests backed by evals. Use when writing, debugging or hardening a prompt or
-  system instruction for an LLM feature or agent.
+  Writes and debugs prompts and system instructions for Gemini: structure, examples, output schemas and eval-driven iteration.
 ---
 
 # Prompt Engineering

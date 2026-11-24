@@ -1,5 +1,6 @@
 ---
 name: visual-regression
+disable-model-invocation: true
 description: >-
   Sets up visual regression testing that catches real UI changes without
   flaking: Playwright toHaveScreenshot baselines, thresholds and masks,

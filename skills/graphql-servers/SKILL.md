@@ -1,5 +1,6 @@
 ---
 name: graphql-servers
+disable-model-invocation: true
 description: >-
   Builds and reviews GraphQL servers: client-driven schema design,
   nullability, cursor connections, mutation payloads, per-request DataLoader

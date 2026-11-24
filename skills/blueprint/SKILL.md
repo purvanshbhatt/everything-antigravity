@@ -1,5 +1,6 @@
 ---
 name: blueprint
+disable-model-invocation: true
 description: >-
   Produces a reviewable implementation plan before any code is written: scope,
   constraints, affected modules found by search, contracts first, risks, and

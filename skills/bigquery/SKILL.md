@@ -1,5 +1,6 @@
 ---
 name: bigquery
+disable-model-invocation: true
 description: >-
   Builds cost-aware BigQuery datasets and queries: partitioning and clustering,
   dry runs and maximum-bytes-billed guards, on-demand versus capacity pricing,

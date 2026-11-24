@@ -1,5 +1,6 @@
 ---
 name: image-processing-canvas
+disable-model-invocation: true
 description: >-
   Builds image pipelines with Sharp (Node) and Pillow (Python): resizing and
   cropping, AVIF/WebP/JPEG conversion, responsive srcset sets, Open Graph and

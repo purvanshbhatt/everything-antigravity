@@ -1,5 +1,6 @@
 ---
 name: llm-cost-routing
+disable-model-invocation: true
 description: >-
   Cuts LLM spend without losing quality: cost per successful task, routing by
   difficulty across Gemini tiers, cascades with verifiable confidence checks,

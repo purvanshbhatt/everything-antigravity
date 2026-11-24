@@ -1,5 +1,6 @@
 ---
 name: incident-response
+disable-model-invocation: true
 description: >-
   Runs a live production incident: declaring and grading severity, assigning
   commander, operations, communications and scribe roles, mitigating before

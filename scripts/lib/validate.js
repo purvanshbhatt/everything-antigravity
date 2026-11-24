@@ -18,6 +18,15 @@ const RULE_TRIGGERS = ['always_on', 'glob', 'model_decision', 'manual'];
 const AG_EVENTS = ['SessionStart', 'PreToolUse', 'PostToolUse', 'PreInvocation', 'PostInvocation', 'Stop'];
 const GEMINI_EVENTS = ['SessionStart', 'SessionEnd', 'BeforeAgent', 'AfterAgent', 'BeforeModel', 'AfterModel', 'BeforeToolSelection', 'BeforeTool', 'AfterTool', 'PreCompress', 'Notification'];
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+const SKILL_KEYS = ['name', 'description', 'disable-model-invocation', 'disable-slash-command'];
+
+// Antigravity shares one 20,000-token customization budget across every plugin's model-visible
+// skills, subagents and MCP tools, and cuts the most expensive skills first when it overflows.
+// Costs below are fitted from GetTokenBase on a live install (±10 tokens).
+const BUDGET = { total: 20000, eagShare: 6000, visibleDescChars: 220, agentDescChars: 160 };
+const skillCost = (desc) => Math.round(31 + desc.length / 2.9);
+const agentCost = (desc) => Math.round(6 + desc.length / 3.0);
+const INDEX_PREFIX = 'eag-';
 
 function readJson(file, errors) {
   try {
@@ -99,17 +108,34 @@ function validateRepo(root) {
     if (!desc) errors.push(`${where}: description is required`);
     else if (desc.length > 1024) errors.push(`${where}: description is ${desc.length} chars (max 1024)`);
     else if (desc.length > 500) warnings.push(`${where}: description is ${desc.length} chars (aim for ≤ 450)`);
-    for (const k of Object.keys(data)) if (!['name', 'description'].includes(k)) warnings.push(`${where}: extra frontmatter key "${k}"`);
-    if (size < 3000) warnings.push(`${where}: SKILL.md is ${size} bytes; looks like a stub`);
+    for (const k of Object.keys(data)) if (!SKILL_KEYS.includes(k)) warnings.push(`${where}: extra frontmatter key "${k}"`);
+    const visible = data['disable-model-invocation'] !== true;
+    if (visible && desc.length > BUDGET.visibleDescChars) {
+      errors.push(`${where}: model-visible description is ${desc.length} chars (max ${BUDGET.visibleDescChars}; Antigravity drops the most expensive skills first). Shorten it or add "disable-model-invocation: true" and list it in an eag-* index`);
+    }
+    if (size < 3000 && !name.startsWith(INDEX_PREFIX)) warnings.push(`${where}: SKILL.md is ${size} bytes; looks like a stub`);
     if (size > 16000) warnings.push(`${where}: SKILL.md is ${size} bytes; move detail into references/`);
     for (const href of relLinks(body)) {
       if (!fs.existsSync(path.join(skillsDir, name, href))) errors.push(`${where}: broken relative link "${href}"`);
     }
     const workflow = /Invoke with \/[a-z0-9-]+\.?\s*$/.test(desc);
-    skills.push({ name, description: desc, size, workflow, body });
+    skills.push({ name, description: desc, size, workflow, visible, index: name.startsWith(INDEX_PREFIX), body });
   }
   stats.skills = skills.length;
   stats.workflows = skills.filter((s) => s.workflow).length;
+  stats.visibleSkills = skills.filter((s) => s.visible).length;
+
+  // Slash-only skills cost no budget, so the model finds them through an eag-* index skill.
+  const indexed = new Set();
+  for (const s of skills.filter((x) => x.index)) {
+    for (const href of relLinks(s.body)) {
+      const m = /^\.\.\/([a-z0-9-]+)\/SKILL\.md$/.exec(href);
+      if (m) indexed.add(m[1]);
+    }
+  }
+  for (const s of skills) {
+    if (!s.visible && !indexed.has(s.name)) errors.push(`skills/${s.name}: slash-only skill is not listed in any eag-* index, so the model can never find it`);
+  }
 
   // ---- agents
   const agentsDir = path.join(root, 'agents');
@@ -129,6 +155,7 @@ function validateRepo(root) {
     if (data.name !== base) errors.push(`${where}: name "${data.name}" must equal the file name`);
     if (BUILTIN_AGENTS.includes(base)) errors.push(`${where}: collides with built-in agent "${base}"`);
     if (!data.description) errors.push(`${where}: description is required`);
+    else if (String(data.description).length > BUDGET.agentDescChars) errors.push(`${where}: description is ${String(data.description).length} chars (max ${BUDGET.agentDescChars}; every subagent description is in every prompt)`);
     for (const k of Object.keys(data)) if (!AGENT_KEYS.includes(k)) errors.push(`${where}: unsupported key "${k}"`);
     if (data.model !== undefined && !MODELS.includes(data.model)) errors.push(`${where}: model must be one of ${MODELS.join('|')} (other values make the loader skip the agent)`);
     if (!Array.isArray(data.tools) || !data.tools.length) errors.push(`${where}: tools must be a non-empty list`);
@@ -139,6 +166,9 @@ function validateRepo(root) {
     agents.push({ name: base, description: data.description || '', model: data.model || 'inherit', tools: data.tools || [] });
   }
   stats.agents = agents.length;
+  stats.budgetTokens = skills.filter((s) => s.visible).reduce((t, s) => t + skillCost(s.description), 0)
+    + agents.reduce((t, a) => t + agentCost(String(a.description)), 0);
+  if (stats.budgetTokens > BUDGET.eagShare) errors.push(`model-visible skills and subagents cost ~${stats.budgetTokens} tokens of Antigravity's ${BUDGET.total}-token customization budget (EAG's share is ${BUDGET.eagShare})`);
 
   // ---- rules
   const rulesDir = path.join(root, 'rules');
@@ -236,4 +266,4 @@ function validateRepo(root) {
   return { errors, warnings, stats, skills, agents, rules };
 }
 
-module.exports = { validateRepo, BUILTIN_COMMANDS, AGENT_TOOLS, MODELS };
+module.exports = { validateRepo, BUILTIN_COMMANDS, AGENT_TOOLS, MODELS, BUDGET, skillCost, agentCost };

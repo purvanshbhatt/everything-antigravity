@@ -1,11 +1,7 @@
 ---
 name: java-reviewer
 description: >-
-  Java reviewer focused on null handling, exceptions, concurrency, JPA and
-  Spring correctness, and security. Delegate to it with a diff or file list;
-  it runs the Maven or Gradle checks (Error Prone, SpotBugs, Checkstyle or
-  Spotless when configured) and targeted tests, and returns severity-ranked
-  findings with file:line and exact patches. Read-only: it never edits files.
+  Read-only Java reviewer for nulls, exceptions, concurrency, JPA and Spring security; runs the build checks.
 tools:
   - view_file
   - grep_search

@@ -1,5 +1,6 @@
 ---
 name: laravel
+disable-model-invocation: true
 description: >-
   Builds and reviews Laravel applications: Eloquent models, relationships and
   N+1 prevention, safe migrations, form request validation, policies and gates,

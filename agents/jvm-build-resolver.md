@@ -1,11 +1,7 @@
 ---
 name: jvm-build-resolver
 description: >-
-  Maven, Gradle and sbt build fixer for Java, Kotlin and Scala. Delegate to it
-  with a failing build command; it separates toolchain, dependency,
-  annotation-processor and compiler failures, fixes one root cause at a time
-  with the smallest diff, and re-runs the build after every fix until green.
-  It does not suppress errors or change behaviour.
+  Fixes Maven, Gradle and sbt failures for Java, Kotlin and Scala one root cause at a time until green.
 tools:
   - view_file
   - grep_search

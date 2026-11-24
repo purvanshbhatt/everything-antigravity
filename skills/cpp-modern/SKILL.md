@@ -1,5 +1,6 @@
 ---
 name: cpp-modern
+disable-model-invocation: true
 description: >-
   Writes and reviews modern C++20/23: RAII and the rule of zero, unique_ptr
   versus shared_ptr, move semantics and noexcept, string_view and span

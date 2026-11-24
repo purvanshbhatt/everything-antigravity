@@ -1,5 +1,6 @@
 ---
 name: golang-testing
+disable-model-invocation: true
 description: >-
   Writes and runs Go tests in depth: table-driven tests and subtests,
   t.Parallel, t.Cleanup and t.TempDir, httptest for handlers and clients,

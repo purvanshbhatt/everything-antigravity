@@ -1,12 +1,7 @@
 ---
 name: tdd-testing
 description: >-
-  Test strategy knowledge that complements the /tdd workflow: test pyramid
-  versus trophy, what to mock (boundaries only), fakes versus mocks,
-  property-based testing (fast-check, Hypothesis), mutation testing (Stryker,
-  mutmut), flaky-test triage, test data builders and contract tests. Use when
-  deciding what kind of tests to write, when tests are brittle, slow or flaky,
-  or when coverage is high but bugs still escape.
+  Test-driven development: failing test first, smallest change to pass, refactor, and test design across unit to e2e.
 ---
 
 # Testing Strategy

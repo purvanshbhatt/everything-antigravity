@@ -1,5 +1,6 @@
 ---
 name: contract-review
+disable-model-invocation: true
 description: >-
   Reviews business contracts (SaaS, MSAs, order forms, NDAs, DPAs, vendor and
   partner agreements): key-terms summary, clause-by-clause issues with risk

@@ -1,5 +1,6 @@
 ---
 name: web-animation
+disable-model-invocation: true
 description: >-
   Adds purposeful web motion: CSS transitions and keyframes on
   compositor-friendly properties, the Web Animations API, View Transitions,

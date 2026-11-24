@@ -1,5 +1,6 @@
 ---
 name: message-queues
+disable-model-invocation: true
 description: >-
   Chooses and operates message brokers (Google Cloud Pub/Sub, Apache Kafka,
   RabbitMQ, Amazon SQS): delivery semantics, acknowledgements and deadlines,

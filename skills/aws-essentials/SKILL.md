@@ -1,5 +1,6 @@
 ---
 name: aws-essentials
+disable-model-invocation: true
 description: >-
   Covers AWS core services for application teams: IAM Identity Center and
   workload roles, VPC layout, choosing EC2, ECS on Fargate or Lambda, S3, RDS,

@@ -1,5 +1,6 @@
 ---
 name: recommender-systems
+disable-model-invocation: true
 description: >-
   Designs recommender systems: objective and guardrails, impression logging,
   popularity and co-visitation baselines, candidate generation with matrix

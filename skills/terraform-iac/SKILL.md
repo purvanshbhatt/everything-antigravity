@@ -1,5 +1,6 @@
 ---
 name: terraform-iac
+disable-model-invocation: true
 description: >-
   Manages infrastructure as code with Terraform or OpenTofu: module layout, GCS
   remote state and locking, per-environment directories, plan review

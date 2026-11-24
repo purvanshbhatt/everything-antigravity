@@ -1,5 +1,6 @@
 ---
 name: static-analysis
+disable-model-invocation: true
 description: >-
   Runs and tunes static analysis for bugs and security: Semgrep (registry
   rulesets, custom rules with tests, diff-aware scans), CodeQL, SonarQube

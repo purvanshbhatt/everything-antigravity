@@ -1,5 +1,6 @@
 ---
 name: kubernetes-gke
+disable-model-invocation: true
 description: >-
   Deploys and operates workloads on Kubernetes and Google Kubernetes Engine:
   Autopilot vs Standard, Deployments, Services, Gateway API, requests and

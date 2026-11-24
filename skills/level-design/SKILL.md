@@ -1,5 +1,6 @@
 ---
 name: level-design
+disable-model-invocation: true
 description: >-
   Plans and iterates game levels: level briefs, player metrics gyms, beat
   charts and intensity curves, bubble diagrams, greybox blockouts, spatial

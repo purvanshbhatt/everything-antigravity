@@ -1,5 +1,6 @@
 ---
 name: dns-tls
+disable-model-invocation: true
 description: >-
   Manages DNS and TLS end to end: record types and apex limits, TTL planning
   for migrations, Cloud DNS, Route 53 and Azure DNS commands, propagation and

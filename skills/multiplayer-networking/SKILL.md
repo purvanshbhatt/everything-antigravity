@@ -1,5 +1,6 @@
 ---
 name: multiplayer-networking
+disable-model-invocation: true
 description: >-
   Designs multiplayer game networking: choosing client, host, dedicated-server,
   lockstep or rollback authority, tick and snapshot rates, client-side

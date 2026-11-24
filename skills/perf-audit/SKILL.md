@@ -1,5 +1,6 @@
 ---
 name: perf-audit
+disable-model-invocation: true
 description: >-
   Audits and fixes performance end to end: sets a target metric and budget,
   measures a reproducible baseline (Lighthouse, field Core Web Vitals, load

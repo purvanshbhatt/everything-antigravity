@@ -1,5 +1,6 @@
 ---
 name: frontend-react-nextjs
+disable-model-invocation: true
 description: >-
   Builds and reviews React 19 and Next.js App Router code: server and client
   component boundaries, data fetching and caching, zod-validated server

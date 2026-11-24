@@ -1,5 +1,6 @@
 ---
 name: crm-pipeline
+disable-model-invocation: true
 description: >-
   Designs and maintains a sales CRM and pipeline: stages defined by buyer
   commitments with exit criteria, BANT and MEDDICC or MEDDPICC qualification,

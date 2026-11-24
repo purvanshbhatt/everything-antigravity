@@ -1,5 +1,6 @@
 ---
 name: copywriting
+disable-model-invocation: true
 description: >-
   Writes and edits developer-focused copy: landing pages, headlines, value
   propositions, README heroes, release notes, docs intros, microcopy, error

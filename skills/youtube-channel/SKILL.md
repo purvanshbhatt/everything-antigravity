@@ -1,5 +1,6 @@
 ---
 name: youtube-channel
+disable-model-invocation: true
 description: >-
   Grows and runs a YouTube channel: audience and content pillars, packaging
   ideas before scripting, titles and thumbnails, hooks and retention-focused

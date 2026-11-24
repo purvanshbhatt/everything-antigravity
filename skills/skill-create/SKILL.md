@@ -1,5 +1,6 @@
 ---
 name: skill-create
+disable-model-invocation: true
 description: >-
   Creates a new Antigravity skill from patterns that repeat in a project: mines
   git history (recurring commit types, frequently co-changed files), existing

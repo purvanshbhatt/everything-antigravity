@@ -1,10 +1,7 @@
 ---
 name: build-error-resolver
 description: >-
-  Build, compile and type error fixer. Delegate to it with a failing build or
-  typecheck command; it groups errors by root cause, fixes one cause at a time
-  with the smallest diff, and re-runs the build after every fix until green.
-  It does not suppress errors or change behaviour.
+  Fixes failing builds and typechecks one root cause at a time with minimal diffs until green. Never suppresses errors.
 tools:
   - view_file
   - grep_search

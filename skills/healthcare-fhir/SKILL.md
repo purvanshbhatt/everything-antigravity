@@ -1,5 +1,6 @@
 ---
 name: healthcare-fhir
+disable-model-invocation: true
 description: >-
   Healthcare interoperability engineering: FHIR R4 resources and REST search,
   profiles and implementation guides such as US Core, terminologies (LOINC,

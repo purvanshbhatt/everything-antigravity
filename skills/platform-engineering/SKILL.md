@@ -1,5 +1,6 @@
 ---
 name: platform-engineering
+disable-model-invocation: true
 description: >-
   Builds internal developer platforms as products: finding developer friction,
   golden paths from repo template to production, self-service infrastructure

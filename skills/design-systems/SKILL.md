@@ -1,5 +1,6 @@
 ---
 name: design-systems
+disable-model-invocation: true
 description: >-
   Builds and evolves a design system: token architecture
   (primitive, semantic, component) in DTCG JSON transformed with Style

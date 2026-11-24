@@ -1,5 +1,6 @@
 ---
 name: python-patterns
+disable-model-invocation: true
 description: >-
   Writes idiomatic modern Python (3.10+): dataclasses versus pydantic versus
   TypedDict, typing with Protocol and generics, match statements, context

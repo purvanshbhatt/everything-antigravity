@@ -1,5 +1,6 @@
 ---
 name: partnerships
+disable-model-invocation: true
 description: >-
   Plans and runs partnerships and business development: partner types, ideal
   partner profiles and scorecards, integration partnerships, referral,

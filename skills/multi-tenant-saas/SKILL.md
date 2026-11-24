@@ -1,5 +1,6 @@
 ---
 name: multi-tenant-saas
+disable-model-invocation: true
 description: >-
   Designs multi-tenant SaaS: pool, bridge and silo isolation models, tenant
   resolution and context propagation, Postgres row-level security,

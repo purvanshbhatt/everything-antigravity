@@ -1,12 +1,7 @@
 ---
 name: agent-shield
 description: >-
-  Explains and tunes EAG's runtime guardrails: what the PreToolUse hook denies
-  (catastrophic commands) or asks about (force-push, hard reset, --no-verify,
-  DROP/TRUNCATE, terraform destroy, kubectl delete, curl|sh, secrets in file
-  writes), profiles via eag profile set, scans with eag shield, and prompt-
-  injection defense for agents reading web pages, issues or PR comments. Use
-  when a command was blocked or a guardrail needs tuning.
+  Explains and tunes EAG guardrails: why a command or secret write was blocked, hook profiles, eag shield scans and prompt-injection defense.
 ---
 
 # AgentShield Guardrails

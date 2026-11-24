@@ -1,5 +1,6 @@
 ---
 name: customer-support
+disable-model-invocation: true
 description: >-
   Sets up and runs customer support operations: ticket taxonomy and triage,
   priority matrices, SLAs, macros and saved replies, drafting replies for

@@ -1,5 +1,6 @@
 ---
 name: dev-environments
+disable-model-invocation: true
 description: >-
   Builds reproducible developer environments: pinned toolchains with mise,
   asdf or version files, Dev Containers and the devcontainer CLI, Nix dev

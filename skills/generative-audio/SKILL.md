@@ -1,5 +1,6 @@
 ---
 name: generative-audio
+disable-model-invocation: true
 description: >-
   Creates music and sound with generative models: writing a sonic brief,
   prompting music models (Google Lyria, open models such as MusicGen and

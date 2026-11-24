@@ -1,11 +1,7 @@
 ---
 name: cpp-build-resolver
 description: >-
-  C and C++ build fixer for CMake, Make, Meson and MSBuild projects. Delegate
-  to it with a failing configure or build command; it separates configure,
-  compile, template and link errors, fixes one root cause at a time with the
-  smallest diff, and rebuilds after every fix until green. It does not
-  suppress warnings-as-errors or change behaviour.
+  Fixes CMake, Make, Meson and MSBuild failures (configure, compile, template, link) one root cause at a time until green.
 tools:
   - view_file
   - grep_search

@@ -1,5 +1,6 @@
 ---
 name: rag-pipelines
+disable-model-invocation: true
 description: >-
   Builds retrieval-augmented generation pipelines: choosing between RAG, long
   context and context caching, chunking, Gemini embeddings, hybrid keyword

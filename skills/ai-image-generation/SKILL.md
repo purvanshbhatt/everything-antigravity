@@ -1,5 +1,6 @@
 ---
 name: ai-image-generation
+disable-model-invocation: true
 description: >-
   Writes prompts and runs image generation for app assets, marketing visuals
   and concept art with Gemini image models, Imagen (Gemini API or Vertex AI),

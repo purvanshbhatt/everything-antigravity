@@ -1,5 +1,6 @@
 ---
 name: typescript-patterns
+disable-model-invocation: true
 description: >-
   Applies advanced TypeScript type-system patterns: strict tsconfig flags,
   narrowing and discriminated unions, exhaustive checks, constrained generics,

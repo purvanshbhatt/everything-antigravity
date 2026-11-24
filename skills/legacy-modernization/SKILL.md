@@ -1,5 +1,6 @@
 ---
 name: legacy-modernization
+disable-model-invocation: true
 description: >-
   Modernizes legacy systems incrementally: mapping hidden consumers,
   characterization tests, seams and branch by abstraction, the

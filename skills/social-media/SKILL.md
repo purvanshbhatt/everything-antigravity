@@ -1,5 +1,6 @@
 ---
 name: social-media
+disable-model-invocation: true
 description: >-
   Plans and runs organic social media: platform choice by audience, content
   pillars, calendars, native formats (short video, carousels, threads, live),

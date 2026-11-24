@@ -1,11 +1,7 @@
 ---
 name: php-reviewer
 description: >-
-  PHP reviewer for modern PHP 8 and Laravel or Symfony code, focused on types,
-  injection and output escaping, mass assignment, ORM query cost and error
-  handling. Delegate to it with a diff or file list; it runs PHPStan or Psalm,
-  the code style checker and targeted PHPUnit or Pest tests, and returns
-  severity-ranked findings with file:line and exact patches. Read-only.
+  Read-only PHP 8, Laravel and Symfony reviewer for types, injection, escaping and ORM cost; runs PHPStan and tests.
 tools:
   - view_file
   - grep_search

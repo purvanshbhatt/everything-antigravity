@@ -1,5 +1,6 @@
 ---
 name: ansible
+disable-model-invocation: true
 description: >-
   Writes, reviews and tests Ansible automation: static and dynamic inventories
   (including the Google Cloud plugin), roles and collections, idempotent tasks

@@ -1,5 +1,6 @@
 ---
 name: load-testing
+disable-model-invocation: true
 description: >-
   Plans, runs and analyses load tests with k6 or Locust: workload models from
   production traffic, open versus closed models, smoke, load, stress, spike and

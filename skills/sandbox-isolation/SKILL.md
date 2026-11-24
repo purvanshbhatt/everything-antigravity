@@ -1,5 +1,6 @@
 ---
 name: sandbox-isolation
+disable-model-invocation: true
 description: >-
   Sets up least-privilege execution for agents: the Antigravity terminal
   sandbox and agy --sandbox, permission rules, per-agent

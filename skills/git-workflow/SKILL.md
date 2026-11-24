@@ -1,12 +1,7 @@
 ---
 name: git-workflow
 description: >-
-  Applies safe, reviewable Git practice for humans and agents: trunk-based vs
-  GitFlow, Conventional Commits, atomic commits, non-interactive history
-  cleanup with fixup and autosquash, conflict resolution, git bisect, reflog
-  recovery, commit signing, branch protection, force-with-lease and worktrees
-  for parallel agents. Use when committing, cleaning up a branch, resolving
-  conflicts, hunting a regression or recovering lost work.
+  Branches, commits, rebases, conflict resolution, PR hygiene and recovery from git mistakes without losing work.
 ---
 
 # Git Workflow

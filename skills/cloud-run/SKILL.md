@@ -1,5 +1,6 @@
 ---
 name: cloud-run
+disable-model-invocation: true
 description: >-
   Operates Cloud Run services and jobs in depth: deploy options, revisions and
   tagged traffic splits, concurrency, CPU allocation and cold starts, probes,

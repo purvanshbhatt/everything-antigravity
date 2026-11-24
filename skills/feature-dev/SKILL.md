@@ -1,5 +1,6 @@
 ---
 name: feature-dev
+disable-model-invocation: true
 description: >-
   Takes a feature from request to a review-ready branch through gated stages:
   /blueprint, /tdd, implementation, /verify, /code-review and /pr-ready, and

@@ -1,5 +1,6 @@
 ---
 name: web-performance
+disable-model-invocation: true
 description: >-
   Diagnoses and fixes web performance problems: Core Web Vitals (LCP, INP,
   CLS) from field and lab data, bundle size and code splitting, image and font

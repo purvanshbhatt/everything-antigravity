@@ -1,10 +1,7 @@
 ---
 name: e2e-runner
 description: >-
-  End-to-end test author and runner using Playwright. Delegate to it with user
-  journeys and a local or test base URL; it writes resilient journey tests,
-  runs them, separates product bugs from flaky tests, quarantines flakes with
-  evidence, and returns pass/fail with trace and screenshot paths.
+  Writes and runs Playwright journey tests, separates real bugs from flakes, returns traces and screenshots.
 tools:
   - view_file
   - grep_search

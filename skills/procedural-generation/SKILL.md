@@ -1,5 +1,6 @@
 ---
 name: procedural-generation
+disable-model-invocation: true
 description: >-
   Implements seeded, reproducible procedural content: PRNGs and hash-based
   seeding, Perlin, Simplex and OpenSimplex2 noise with fBm and domain warping,

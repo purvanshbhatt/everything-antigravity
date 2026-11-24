@@ -1,5 +1,6 @@
 ---
 name: dbt
+disable-model-invocation: true
 description: >-
   Builds and maintains dbt projects: staging, intermediate and mart layers,
   sources with freshness, generic, singular and unit tests, model contracts,

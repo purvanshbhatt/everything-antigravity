@@ -1,5 +1,6 @@
 ---
 name: exploratory-data-analysis
+disable-model-invocation: true
 description: >-
   Runs exploratory data analysis on a new dataset: framing questions,
   profiling schema and types, missing values, duplicates, distributions,

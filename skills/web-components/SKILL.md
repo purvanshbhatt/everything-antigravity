@@ -1,5 +1,6 @@
 ---
 name: web-components
+disable-model-invocation: true
 description: >-
   Builds framework-agnostic UI with custom elements: lifecycle callbacks,
   attributes vs properties, shadow DOM styling with parts and custom

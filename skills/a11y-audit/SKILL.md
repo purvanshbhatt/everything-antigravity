@@ -1,5 +1,6 @@
 ---
 name: a11y-audit
+disable-model-invocation: true
 description: >-
   Audits a web UI against WCAG 2.2 AA in two passes, automated (axe-core,
   Lighthouse) and manual (keyboard, focus, screen reader, zoom and reflow,

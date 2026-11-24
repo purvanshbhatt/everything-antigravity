@@ -1,5 +1,6 @@
 ---
 name: model-serving
+disable-model-invocation: true
 description: >-
   Serves ML models and open LLMs in production: deciding whether to
   self-host, latency SLOs (TTFT, inter-token latency, p95), memory and KV-cache

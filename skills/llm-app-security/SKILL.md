@@ -1,5 +1,6 @@
 ---
 name: llm-app-security
+disable-model-invocation: true
 description: >-
   Secures applications and agents built on LLMs: direct and indirect prompt
   injection, data exfiltration through tools and rendered output, excessive

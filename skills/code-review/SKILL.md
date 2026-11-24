@@ -1,5 +1,6 @@
 ---
 name: code-review
+disable-model-invocation: true
 description: >-
   Reviews a diff, branch, pull request or set of files for correctness,
   security, performance and maintainability defects, and returns ranked

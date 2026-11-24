@@ -1,11 +1,7 @@
 ---
 name: security-guard
 description: >-
-  Application and agent security reviewer. Delegate to it with a diff, branch
-  or directory; it checks OWASP Top 10 and OWASP LLM Top 10 risks, secrets,
-  authorization and the supply chain, and returns severity-ranked findings with
-  an exploit scenario and an exact fix. Read-only: it runs scanners but never
-  edits files.
+  Read-only security reviewer: OWASP Top 10 and LLM Top 10, secrets, authz and supply chain, with exploit and fix.
 tools:
   - view_file
   - grep_search

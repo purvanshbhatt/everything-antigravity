@@ -1,5 +1,6 @@
 ---
 name: concurrency-bugs
+disable-model-invocation: true
 description: >-
   Debugs concurrency defects: data races, check-then-act and lost updates,
   deadlocks, livelocks, ordering and visibility bugs, async pitfalls (missing

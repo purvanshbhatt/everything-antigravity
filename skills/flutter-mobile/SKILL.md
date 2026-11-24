@@ -1,5 +1,6 @@
 ---
 name: flutter-mobile
+disable-model-invocation: true
 description: >-
   Builds Flutter 3 and Dart 3 apps: feature-first architecture with Riverpod
   or BLoC, go_router navigation, platform channels and Pigeon, rebuild

@@ -1,5 +1,6 @@
 ---
 name: investor-updates
+disable-model-invocation: true
 description: >-
   Writes investor updates and board materials: a consistent KPI table tied to
   source data, highlights, lowlights and specific asks, cash and runway, board

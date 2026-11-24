@@ -1,5 +1,6 @@
 ---
 name: svelte-kit
+disable-model-invocation: true
 description: >-
   Builds Svelte 5 and SvelteKit apps with runes ($state, $derived, $effect,
   $props, $bindable), snippets, universal vs server load functions, form actions

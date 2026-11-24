@@ -1,5 +1,6 @@
 ---
 name: stream-processing
+disable-model-invocation: true
 description: >-
   Designs streaming pipelines on Dataflow with Apache Beam, on Apache Flink,
   or with Kafka Streams: event time versus processing time, windows,

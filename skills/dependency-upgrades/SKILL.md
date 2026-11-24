@@ -1,5 +1,6 @@
 ---
 name: dependency-upgrades
+disable-model-invocation: true
 description: >-
   Upgrades dependencies safely: audits outdated and vulnerable
   packages, batches them by risk (security fixes, patch and minor, then each

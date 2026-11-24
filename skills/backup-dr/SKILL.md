@@ -1,5 +1,6 @@
 ---
 name: backup-dr
+disable-model-invocation: true
 description: >-
   Designs and proves backups and disaster recovery: RPO and RTO per data tier,
   the 3-2-1 rule with immutable copies, Cloud SQL point-in-time recovery,

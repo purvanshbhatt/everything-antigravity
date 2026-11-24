@@ -1,5 +1,6 @@
 ---
 name: computer-vision
+disable-model-invocation: true
 description: >-
   Builds computer vision systems: framing classification, detection and
   segmentation tasks, testing Gemini zero-shot before training, dataset

@@ -1,5 +1,6 @@
 ---
 name: bash-scripting
+disable-model-invocation: true
 description: >-
   Writes and reviews robust bash scripts: strict mode and its pitfalls,
   quoting and arrays, safe temp files and cleanup traps, getopts and usage

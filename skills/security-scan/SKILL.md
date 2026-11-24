@@ -1,5 +1,6 @@
 ---
 name: security-scan
+disable-model-invocation: true
 description: >-
   Runs a layered security scan of a repository or diff: secrets (eag shield,
   gitleaks), dependency CVEs (npm, pnpm, pip-audit, govulncheck, cargo audit,

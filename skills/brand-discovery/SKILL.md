@@ -1,5 +1,6 @@
 ---
 name: brand-discovery
+disable-model-invocation: true
 description: >-
   Runs brand and positioning discovery for a product, developer tool or
   open-source project: discovery interview, personas and jobs-to-be-done,

@@ -1,5 +1,6 @@
 ---
 name: kotlin-coroutines
+disable-model-invocation: true
 description: >-
   Uses Kotlin coroutines and Flow correctly: structured concurrency with
   coroutineScope and supervisorScope, dispatchers and withContext, cooperative

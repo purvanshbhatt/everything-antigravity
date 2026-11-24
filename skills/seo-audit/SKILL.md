@@ -1,5 +1,6 @@
 ---
 name: seo-audit
+disable-model-invocation: true
 description: >-
   Runs a technical SEO audit of a site, docs portal or landing page:
   crawlability (robots.txt, sitemaps, canonicals), indexation, SSR vs CSR

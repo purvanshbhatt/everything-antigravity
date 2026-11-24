@@ -1,5 +1,6 @@
 ---
 name: pubsub-eventarc
+disable-model-invocation: true
 description: >-
   Builds event plumbing on Google Cloud with Pub/Sub and Eventarc: pull, push
   and export subscriptions, retry policy, ordering keys, exactly-once

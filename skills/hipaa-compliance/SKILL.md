@@ -1,5 +1,6 @@
 ---
 name: hipaa-compliance
+disable-model-invocation: true
 description: >-
   HIPAA for engineers: identifying PHI, covered entities versus business
   associates, BAAs with every vendor in the PHI path, Security Rule technical

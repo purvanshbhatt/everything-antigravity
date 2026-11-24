@@ -1,5 +1,6 @@
 ---
 name: test-data-management
+disable-model-invocation: true
 description: >-
   Manages test data so suites are fast, isolated and safe: factories
   (factory_boy, FactoryBot, fishery), minimal fixtures, idempotent seeds,

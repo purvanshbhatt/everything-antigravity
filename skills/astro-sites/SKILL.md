@@ -1,5 +1,6 @@
 ---
 name: astro-sites
+disable-model-invocation: true
 description: >-
   Builds fast content sites with Astro: zero-JS pages, islands with client
   directives, server islands, content collections with loaders and zod schemas,

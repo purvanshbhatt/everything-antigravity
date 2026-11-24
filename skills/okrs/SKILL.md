@@ -1,5 +1,6 @@
 ---
 name: okrs
+disable-model-invocation: true
 description: >-
   Writes, reviews and scores OKRs: qualitative objectives, outcome key results
   with baselines and targets, committed versus aspirational goals, health

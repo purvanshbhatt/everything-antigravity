@@ -1,5 +1,6 @@
 ---
 name: llm-fine-tuning
+disable-model-invocation: true
 description: >-
   Decides when to fine-tune an LLM instead of prompting or RAG, then does it:
   baseline evals, dataset design and cleaning, supervised tuning of Gemini on

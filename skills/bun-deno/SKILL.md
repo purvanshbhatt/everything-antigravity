@@ -1,5 +1,6 @@
 ---
 name: bun-deno
+disable-model-invocation: true
 description: >-
   Chooses between Node.js, Bun and Deno and uses the latter two well: built-in
   tooling (install, test, bundle, compile, fmt, lint), Deno's permission flags

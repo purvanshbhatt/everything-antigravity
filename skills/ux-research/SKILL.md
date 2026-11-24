@@ -1,5 +1,6 @@
 ---
 name: ux-research
+disable-model-invocation: true
 description: >-
   Plans and runs UX research: choosing methods by question, recruiting with
   screeners and consent, interview guides about past behaviour, moderated

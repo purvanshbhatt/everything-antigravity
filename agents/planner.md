@@ -1,10 +1,7 @@
 ---
 name: planner
 description: >-
-  Implementation planner. Delegate to it with a feature request, bug or change
-  goal; it inspects the codebase and returns a phased plan with the exact
-  change surface, risks, test strategy and testable acceptance criteria.
-  Read-only: it runs inspection commands but never edits files.
+  Read-only planner: returns a phased plan with change surface, risks, test strategy and acceptance criteria.
 tools:
   - view_file
   - grep_search

@@ -1,11 +1,7 @@
 ---
 name: chief-of-staff
 description: >-
-  Orchestrator for multi-step, multi-speciality goals. Start a session with it
-  (agy --agent chief-of-staff); it decomposes the goal, delegates bounded tasks
-  to EAG subagents with written briefs, keeps a task ledger, merges results and
-  enforces quality gates. It coordinates and verifies; it does not do deep
-  implementation itself.
+  Orchestrator for multi-specialty goals: splits work, briefs EAG subagents, tracks a ledger and enforces quality gates.
 tools:
   - view_file
   - grep_search

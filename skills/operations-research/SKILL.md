@@ -1,5 +1,6 @@
 ---
 name: operations-research
+disable-model-invocation: true
 description: >-
   Formulates and solves optimization problems: linear and mixed-integer
   programming, constraint programming with OR-Tools CP-SAT, vehicle routing

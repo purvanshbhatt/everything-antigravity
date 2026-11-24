@@ -1,5 +1,6 @@
 ---
 name: serverless-functions
+disable-model-invocation: true
 description: >-
   Builds serverless functions on Cloud Run functions, with notes for AWS
   Lambda and Azure Functions: HTTP and event triggers through Eventarc, the

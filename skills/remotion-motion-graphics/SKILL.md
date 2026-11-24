@@ -1,5 +1,6 @@
 ---
 name: remotion-motion-graphics
+disable-model-invocation: true
 description: >-
   Builds programmatic videos with Remotion (React): compositions,
   useCurrentFrame, interpolate and spring animation, Sequence and Series

@@ -1,10 +1,7 @@
 ---
 name: doc-updater
 description: >-
-  Documentation synchroniser. Delegate to it after code changes or before a
-  release; it finds drift between the code and README, API docs, CHANGELOG and
-  CODEMAP, makes minimal edits that match the existing voice, and runs the
-  documented samples and link checks. It edits docs only, never source code.
+  Syncs README, API docs, CHANGELOG and CODEMAP with code changes in the existing voice. Edits docs only.
 tools:
   - view_file
   - grep_search

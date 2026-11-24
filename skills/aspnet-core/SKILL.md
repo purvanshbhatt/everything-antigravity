@@ -1,5 +1,6 @@
 ---
 name: aspnet-core
+disable-model-invocation: true
 description: >-
   Builds ASP.NET Core APIs: minimal APIs with route groups and TypedResults or
   controllers, middleware order, ProblemDetails errors, EF Core usage and

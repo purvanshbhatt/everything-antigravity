@@ -1,5 +1,6 @@
 ---
 name: pytorch-training
+disable-model-invocation: true
 description: >-
   Builds and debugs PyTorch training code: Dataset and DataLoader setup, a
   correct train and eval loop, mixed precision with autocast, gradient

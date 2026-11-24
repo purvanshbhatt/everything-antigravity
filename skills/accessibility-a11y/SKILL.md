@@ -1,5 +1,6 @@
 ---
 name: accessibility-a11y
+disable-model-invocation: true
 description: >-
   Makes web and mobile UIs usable by keyboard, screen reader and zoom users to
   WCAG 2.2 AA: semantic HTML first, ARIA only when needed, focus management,

@@ -1,5 +1,6 @@
 ---
 name: ecommerce
+disable-model-invocation: true
 description: >-
   Builds and improves online stores: platform choice (hosted Shopify versus
   headless), catalog and product data, product pages, cart and checkout UX,

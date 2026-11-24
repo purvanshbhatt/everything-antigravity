@@ -1,5 +1,6 @@
 ---
 name: pwa-offline
+disable-model-invocation: true
 description: >-
   Turns a web app into a reliable Progressive Web App: manifest and
   installability, service worker lifecycle and safe updates, caching strategies
